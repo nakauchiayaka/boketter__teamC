@@ -63,3 +63,5 @@ gem 'erb2haml'
 group :production do
   gem 'unicorn'
 end
+
+gem 'devise'
