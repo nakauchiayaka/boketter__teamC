@@ -1,3 +1,117 @@
-// Place all the styles related to the titles controller here.
-// They will automatically be included in application.css.
-// You can use Sass (SCSS) here: http://sass-lang.com/
+.main{
+      background:url(wood_pattern.png);
+      overflow: scroll;
+      .fixed{
+        left: 0;
+        top: 0;
+        width: 100%;
+        position: fixed;
+        z-index: 100000 !important;
+        #top-bar{
+          background-color: #fff;
+          height: 45px;
+          padding-bottom: 3px;
+          border-bottom:2px solid #666;
+          display: block;
+          #top-navi{
+            width: 1000px;
+            margin: 0 auto;
+            .title-area{
+              position: relative;
+              margin: 0;
+              padding: 0;
+              float: left;
+              .name{
+                .logo_bokete{
+                  width:135px;
+                  height:36px;
+                  display: block;
+                  margin: 4px 16px 8px 0;
+                }
+              }
+            }
+            .top-bar-section{
+              .top-bar-section ul{
+                height: 100%;
+                margin: 0;
+                display: block;
+              }
+              .left{
+                .left__style{
+                  height: 45px;
+                  display: block;
+                  font-weight: bold;
+                  padding: 13px 14px;
+                  color: #111;
+                  float: left;
+                }
+              }
+              .right{
+                .user-icon-top-bar{
+                  height: 22px;
+                  width: 22px;
+                  border-radius: 26px;
+                  padding: 13px 14px;
+                  float: left;
+                }
+                .right__style{
+                  height: 45px;
+                  display: block;
+                  font-weight: bold;
+                  margin: 13px 14px;
+                  color: #111;
+                  float: left;
+                }
+              }
+            }
+          }
+        }
+      }
+      #wrapper{
+       min-height: 1200px;
+       width: 1000px;
+       margin: 0 auto 10px;
+       padding-top: 45px;
+       background-color:#f2EFED;
+       position: relative;
+       border-bottom-left-radius:5px;
+       border-bottom-right-radius: 5px;
+        #container{
+          padding: 0 14px;
+          #header-news{
+            font-size:12px;
+            margin:14px 0;
+            padding: 0;
+            width: 100%;
+          }
+          #main-container{
+            width: 660px;
+            padding: 0;
+            margin:0 10px 20px 0;
+            float: left;
+            #content-menu{
+              width: 640px;
+              height: 30px;
+              font-size:14px;
+              font-weight:bold;
+            }
+            #content{
+              background-color: #fff;
+              min-height: 1000px;
+              overflow: hidden;
+              padding:30px 20px;
+              margin-bottom: 20px;
+              border-radius:5px;
+              font-family:Helvetica, Arial, "ヒラギノ角ゴ Pro W3", Hiragino Kaku Gothic Pro, sans-serif;
+            }
+          }
+        }
+      }
+      #footer{
+        width: 1000px;
+        height: 200px;
+        margin:50px auto 60px;
+        background-color: #fff;
+        border-radius: 5px;
+      }
+}
