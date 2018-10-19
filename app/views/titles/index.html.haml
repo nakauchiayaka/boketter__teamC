@@ -3,8 +3,53 @@
   #wrapper
     #container
       #header-news
-      #main-container
-        #content-menu
-        #content
+        %span#header-news-catch
+          %h1.header-news-catch-heading
+            写真で一言ボケて大喜利・面白ネタ
+        %span#header-news-stats
+          ボケ投稿数
+          %b
+            65450600
+          件&nbsp;お題投稿数
+          %b
+            111223
+          件&nbsp;
 
+      #main-container
+        .content-menu
+          %ul.content-menu-list.inline-list
+            %li.content-menu-list-active
+              = link_to "トップ",""
+            %li
+              = link_to "注目",""
+            %li
+              = link_to "人気",""
+            %li
+              = link_to "コラボ",""
+            %li
+              = link_to "セレクト",""
+            %li
+              = link_to "ピックアップ",""
+            %li
+              = link_to "殿堂入り",""
+        #content
+          .index-title
+            人気ボケ
+          .boke
+            .boke-photo
+              .boke-photo-content
+                = link_to "" do
+                  = image_tag "wood_pattern.png"
+                .boke-photo-meta
+                  = link_to "" do
+                    %span
+                    photo by (写真投稿者)
+                  &nbsp;
+                  =link_to "" do
+                    %span
+                    odai by (お題投稿者)
+            = link_to "諭吉(ボケ)","",class: "boke-text"
+      #right-container
+      #scroll-top.text-right
+        = link_to "ページのトップへ戻る","",class: "btn-primary btn"
   #footer

@@ -7,23 +7,18 @@
             = image_tag "logo.png",class: "logo_bokete"
       .top-bar-section
         %ul.left
-          %li
-            = link_to "https://bokete.jp/"do
-              %p.left__style ボケ
-          %li
-            = link_to "https://bokete.jp/"do
-              %p.left__style お題
-          %li
-            = link_to "https://bokete.jp/"do
-              %p.left__style 職人
+          %li.left__style
+            = link_to "ボケ","https://bokete.jp/"
+          %li.left__style
+            = link_to "お題","https://bokete.jp/"
+          %li.left__style
+            = link_to "職人","https://bokete.jp/"
         %ul.right
-          %li
+          %li.right__style
             = link_to "https://www.yahoo.co.jp/" do
               = image_tag "wood_pattern.png",class: "user-icon-top-bar"
-              %p.right__style ayk6611
-          %li
-            = link_to "https://www.yahoo.co.jp/" do
-              %p.right__style マイページ
-          %li
-            = link_to "https://www.yahoo.co.jp/" do
-              %p.right__style ヘルプ
+              ayk6611
+          %li.right__style
+            = link_to "マイページ","https://www.yahoo.co.jp/"
+          %li.right__style
+            = link_to "ヘルプ","https://www.yahoo.co.jp/"
