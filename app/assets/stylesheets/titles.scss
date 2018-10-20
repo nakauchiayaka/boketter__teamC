@@ -191,7 +191,7 @@ ul .inline-list{
 .boke{
   margin: 20px auto 30px;
   width:610px;
-  border-bottom:1px solid #eee;
+  border-bottom:1px solid red;
 }
 .boke-photo{
   text-align:center;
@@ -231,6 +231,64 @@ ul .inline-list{
 }
 .boke a{
   text-decoration: none;
+}
+.boke-meta{
+  height: 30px;
+  width: 560px;
+  margin: 20px auto;
+  padding: 0;
+}
+.boke-information{
+  margin: 10px auto;
+  width: 480px;
+}
+.boke-information-row{
+  margin: 10px auto;
+  text-align: center;
+  .is-360{
+    width: 360px;
+  }
+}
+.boke-stars{
+  display: block;
+  color: #333;
+  font-weight: bold;
+  font-size: 17px;
+  padding: 0;
+  margin: 0 5px;
+  float: left;
+  margin-left:14px;
+  width:7em;
+}
+.boke-stars a{
+  border-radius: 5px;
+  padding:2px 0 3px;
+  border:1px solid #c6c6c6;
+  display: block;
+  width: 100%;
+  height: 100%;
+  color: #000;
+}
+.boke-information-label{
+  margin: 0 5px;
+  width: auto;
+  display: inline-block;
+  float: left;
+  background-color: #c6c6c6;
+  border-radius: 5px;
+}
+.boke-information-label a{
+  text-decoration: none;
+  display: block;
+  padding: 5px 10px;
+  color: #fff;
+  border-radius: 5px;
+}
+.text-center{
+  text-align: center;
+}
+.btn-long{
+  width: 400px;
 }
 
 #right-container{
