@@ -3,8 +3,8 @@
 ## titlesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
-|category_id|integer|null: false, foreign_key: true|
+|user_id|references|null: false, foreign_key: true|
+|category_id|references|null: false, foreign_key: true|
 |image|text|
 
 ### Association
@@ -42,8 +42,8 @@
 ## bokesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
-|tag_id|integer|null: false, foreign_key: true|
+|user_id|references|null: false, foreign_key: true|
+|tag_id|references|null: false, foreign_key: true|
 |text|text|
 
 ### Association
@@ -94,8 +94,8 @@
 ## commentsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
-|boke_id|integer|null: false, foreign_key: true|
+|user_id|references|null: false, foreign_key: true|
+|boke_id|references|null: false, foreign_key: true|
 |text|text|
 
 ### Association
@@ -107,8 +107,8 @@
 ## starsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
-|boke_id|integer|null: false, foreign_key: true|
+|user_id|references|null: false, foreign_key: true|
+|boke_id|references|null: false, foreign_key: true|
 
 ### Association
 - belong_to :user
