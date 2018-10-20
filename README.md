@@ -81,8 +81,8 @@
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
-|e-mail|text|null: false|
-|password|text|null: false|
+|e-mail|string|null: false|
+|password|string|null: false|
 
 ### Association
 - has_many :titles
