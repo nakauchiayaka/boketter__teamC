@@ -70,7 +70,7 @@
 |name|string|
 
 ### Association
-- has_many :tags ,through: :boke_tags
+- has_many :bokes ,through: :boke_tags
 - has_many :boke_tags
 
 
@@ -113,11 +113,6 @@
 ### Association
 - belong_to :user
 - belong_to :boke
-
-
-
-
-
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
