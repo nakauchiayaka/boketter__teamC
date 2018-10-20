@@ -11,6 +11,7 @@
 - belongs_to :user
 - has_many :bokes
 - has_many :categorys ,through: :title_categorys
+- has_many :title_categorys
 
 
 ## title_categorysテーブル
@@ -31,6 +32,8 @@
 
 ### Association
 - has_many :titles ,through: :title_categorys
+- has_many :title_categorys
+
 
 
 
@@ -49,6 +52,7 @@
 - has_many :stars
 - has_many :comments
 - has_many :tags ,through: :boke_tags
+- has_many :boke_tags
 
 ## boke_tagsテーブル
 |Column|Type|Options|
@@ -67,6 +71,7 @@
 
 ### Association
 - has_many :tags ,through: :boke_tags
+- has_many :boke_tags
 
 
 
