@@ -42,23 +42,170 @@
                   = image_tag "wood_pattern.png"
                 .boke-photo-meta
                   = link_to "" do
-                    %span
+                    %i.fas.fa-camera
                     photo by (写真投稿者)
                   &nbsp;
                   =link_to "" do
-                    %span
+                    %i.far.fa-image
                     odai by (お題投稿者)
             = link_to "諭吉(ボケ)","",class: "boke-text"
             .boke-meta
               .boke-information
                 .boke-information-row.is-360
                   .boke-stars
-                    = link_to "4,472",""
+                    = link_to "" do
+                      %i.fas.fa-star{style:"color:#ebbf2a"}
+                      4772
                   .boke-information-label
                     = link_to "２日くらい前",""
+
           %p.text-center
             = link_to "もっと見る","",class: "btn-primary btn btn-long"
+          %br
+          .index-title
+            注目ボケ
+          .boke-horizon
+            = link_to "",class: "photo" do
+              = image_tag "wood_pattern.png"
+            .photo-meta
+              = link_to "" do
+                %i.fas.fa-camera
+                (写真投稿者)
+              &nbsp;
+              = link_to "" do
+                %i.far.fa-image
+                (お題投稿者)
+          %p.text-center
+            = link_to "もっと見る","",class: "btn-primary btn btn-long"
+          %br
+          .index-title
+            新着ボケ
+          .boke-horizon
+            = link_to "",class: "photo" do
+              = image_tag "wood_pattern.png"
+            .photo-meta
+              = link_to "" do
+                %i.fas.fa-camera
+                (写真投稿者)
+              &nbsp;
+              = link_to "" do
+                %i.far.fa-image
+                (お題投稿者)
+          %p.text-center
+            = link_to "もっと見る","",class: "btn-primary btn btn-long"
+          %br
+          .index-title
+            注目ボケタグ
+          .tag-container
+            = link_to "",class: "tag-content" do
+              バカ
+              %small
+                (111個)
+          %br
+          %br
+          %p.text-center
+            = link_to "もっと見る","",class: "btn-primary btn btn-long"
+
+
       #right-container
+        .side-widget
+          .side-widget-title
+            最近のコメント
+          .side-widget-content
+            %ul
+              %li
+                %dl
+                  %dt
+                    = link_to "" do
+                      = image_tag "wood_pattern.png" ,class: "user-icon"
+                  %dd
+                    = link_to "aaaaaaaaaaaa",""
+              %li
+                %dl
+                  %dt
+                    = link_to "" do
+                      = image_tag "wood_pattern.png" ,class: "user-icon"
+                  %dd
+                    = link_to "aaaaaaaaaaaa",""
+        .side-widget
+          .side-widget-title
+            最近の評価されている職人
+          .side-widget-content
+            %ul
+              %li
+                %dl
+                  %dt
+                    = link_to "" do
+                      = image_tag "wood_pattern.png" ,class: "user-icon"
+                  %dd
+                    = link_to "ユーザー名",""
+              %li
+                %dl
+                  %dt
+                    = link_to "" do
+                      = image_tag "wood_pattern.png" ,class: "user-icon"
+                  %dd
+                    = link_to "中内",""
+        .side-app
+          = link_to "" do
+            = image_tag "app_banner_apple.png"
+          = link_to "" do
+            = image_tag "app_banner_google.png"
+
       #scroll-top.text-right
         = link_to "ページのトップへ戻る","",class: "btn-primary btn"
   #footer
+    .row.footer-list
+      .col-md-3
+        %b
+          ボケを見る
+        %br
+        %ul
+          %li
+            = link_to "殿堂入り",""
+          %li
+            = link_to "人気ポケ",""
+          %li
+            = link_to "注目ボケ",""
+          %li
+            = link_to "新着ボケ",""
+          %li
+            = link_to "セレクト",""
+          %li
+            = link_to "ピックアップ",""
+      .col-md-3
+        %b
+          ボケを探す
+        %br
+        %ul
+          %li
+            = link_to "人気のタグから探す",""
+          %li
+            = link_to "キーワードから探す",""
+          %li
+            = link_to "ラベルから探す",""
+      .col-md-3
+        %b
+          ご利用について
+        %br
+        %ul
+          %li
+            = link_to "プライバシーポリシー",""
+          %li
+            = link_to "ご利用規約",""
+          %li
+            = link_to "ヘルプ・よくある質問",""
+          %li
+            = link_to "お問い合わせ",""
+          %li
+            = link_to "広告掲載について",""
+      .col-md-3
+        %b
+          会社について
+        %br
+        %ul
+          %li
+            = link_to "運営会社",""
+    %hr
+    .adress
+      Copyright © ボケて（bokete）All rights reserved. 株式会社オモロキ

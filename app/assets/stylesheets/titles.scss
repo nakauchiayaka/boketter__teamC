@@ -101,7 +101,7 @@
  position: relative;
  border-bottom-left-radius:5px;
  border-bottom-right-radius: 5px;
-
+ overflow: auto;
 }
 #container{
     padding: 0 14px;
@@ -149,6 +149,9 @@
                   background-color: #fff;
                   border-top-left-radius:3px;
                   border-top-right-radius: 3px;
+                  a{
+
+                  }
                 }
 ul .inline-list{
   margin: 0;
@@ -164,7 +167,7 @@ ul .inline-list{
 }
 
 .inline-list li a{
-  color:#333;
+  color:#666666;
   display: block;
   padding:5px 16px;
   margin: 0;
@@ -191,7 +194,7 @@ ul .inline-list{
 .boke{
   margin: 20px auto 30px;
   width:610px;
-  border-bottom:1px solid red;
+  border-bottom:1px solid #eee;
 }
 .boke-photo{
   text-align:center;
@@ -216,6 +219,7 @@ ul .inline-list{
   }
 .boke-photo-meta a{
   text-decoration: none;
+  color:#2b6bc3;
 }
 .boke-text{
   color: #000;
@@ -284,20 +288,131 @@ ul .inline-list{
   color: #fff;
   border-radius: 5px;
 }
+
 .text-center{
   text-align: center;
 }
 .btn-long{
   width: 400px;
 }
+.boke-horizon{
+  height: 100%;
+  float: left;
+  margin: 20px 5px 20px 0;
+  width: 200px;
+  .photo{
+    display: block;
+    height: 128px;
+    width: 200px;
+    text-align: center;
+    img{
+          margin-bottom:5px;
+          max-height:128px;
+          max-width:200px;
+          width: auto;
+        }
+  }
+  .photo-meta{
+    height: 20px;
+    margin: 0 10px;
+    overflow: hidden;
+    text-align: center;
+    width: 180px;
+    a{
+      font-size:10px;
+      color:#2b6bc3;
+      text-decoration: none;
+    }
+  }
+}
+.tag-container{
+  a{
+  text-decoration: none;
+}
+  .tag-content{
+    background-color: #eee;
+    border:1px solid #999;
+    border-radius: 4px;
+    color: #444;
+    font-size: 18px;
+    margin: 4px;
+    padding:4px 10px;
+    small{
+      color: #666;
+      font-size: 14px;
+    }
+  }
+}
+
+
+//右の広告やコメントのあるところ
 
 #right-container{
       width: 300px;
       margin: 0 0 90px 0;
       float: left;
       min-height: 1000px;
-      background-color: green;
     }
+.side-widget{
+  width: 300px;
+  margin:0 0 1em;
+  background-color: #fff;
+  border:1px solid #cbcbcb;
+  font-size: 12.5px;
+}
+.side-widget-title{
+  font-size: 16px;
+  font-weight: bold;
+  margin: 0.5em;
+}
+.side-widget-content{
+  ul{
+    margin-left: 1em;
+    li{
+      list-style: none;
+      dl{
+        padding:0.2em 1em;
+        list-style: none;
+        margin: 0;
+        dd{
+          display: inline;
+          line-height:1.428;
+          margin-left: 0;
+          a{
+            color:#2b6bc3;
+            text-decoration: none;
+          }
+        }
+        dt{
+          display: inline;
+          font-weight: normal;
+          a{
+            img{
+           height: 22px;
+           width: 22px;
+        }
+          }
+        }
+      }
+    }
+  }
+}
+.user-icon{
+  width:24px;
+  height: 24px;
+  border:1px solid #999;
+  border-radius: 24px;
+}
+.side-app{
+  width:300px;
+  a{
+    text-decoration: none;
+    img{
+      width:147px;
+      height:51px;
+    }
+  }
+}
 
 #scroll-top{
   bottom: 40px;
@@ -332,12 +447,55 @@ ul .inline-list{
 //フッター
 #footer{
   width: 1000px;
-  height: 200px;
-  margin:50px auto 60px;
+  height: 250px;
+  margin:10px auto 60px;
   background-color: #fff;
   border-radius: 5px;
+  .footer-list{
+    background-size:120px 80px;
+  }
+  ul{
+    margin: 10px 0 0.5em 0;
+    list-style: none;
+    li{
+    font-size: 12px;
+    a{
+      color:#2b6bc3;
+      text-decoration: none;
+    }
+  }
+  }
 }
-
-
+.row{
+  padding-top: 20px;
+  margin-left: 15px;
+  margin-right: 15px;
+  height:150px;
+}
+.col-md-3{
+  width: 21%;
+  float: left;
+  position: relative;
+  min-height: 1px;
+  padding-left: 15px;
+  padding-right: 15px;
+  b{
+    font-weight: bold;
+  }
+}
+hr{
+    margin-left: 15px;
+    margin-right: 15px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    border:0;
+    border-top:1px solid #eee;
+  }
+.adress{
+  padding-left: 15px;
+  font-size:12px;
+  font-style: normal;
+  margin:0;
+}
 
 

@@ -3,14 +3,15 @@
 ## titlesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
-|category_id|integer|null: false, foreign_key: true|
+|user_id|references|null: false, foreign_key: true|
+|category_id|references|null: false, foreign_key: true|
 |image|text|
 
 ### Association
 - belongs_to :user
 - has_many :bokes
 - has_many :categorys ,through: :title_categorys
+- has_many :title_categorys
 
 
 ## title_categorysテーブル
@@ -31,6 +32,8 @@
 
 ### Association
 - has_many :titles ,through: :title_categorys
+- has_many :title_categorys
+
 
 
 
@@ -39,8 +42,8 @@
 ## bokesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
-|tag_id|integer|null: false, foreign_key: true|
+|user_id|references|null: false, foreign_key: true|
+|tag_id|references|null: false, foreign_key: true|
 |text|text|
 
 ### Association
@@ -49,6 +52,7 @@
 - has_many :stars
 - has_many :comments
 - has_many :tags ,through: :boke_tags
+- has_many :boke_tags
 
 ## boke_tagsテーブル
 |Column|Type|Options|
@@ -66,7 +70,8 @@
 |name|string|
 
 ### Association
-- has_many :tags ,through: :boke_tags
+- has_many :bokes ,through: :boke_tags
+- has_many :boke_tags
 
 
 
@@ -76,8 +81,8 @@
 |Column|Type|Options|
 |------|----|-------|
 |name|string|null: false|
-|e-mail|text|null: false|
-|password|text|null: false|
+|e-mail|string|null: false|
+|password|string|null: false|
 
 ### Association
 - has_many :titles
@@ -89,8 +94,8 @@
 ## commentsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
-|boke_id|integer|null: false, foreign_key: true|
+|user_id|references|null: false, foreign_key: true|
+|boke_id|references|null: false, foreign_key: true|
 |text|text|
 
 ### Association
@@ -102,17 +107,12 @@
 ## starsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|integer|null: false, foreign_key: true|
-|boke_id|integer|null: false, foreign_key: true|
+|user_id|references|null: false, foreign_key: true|
+|boke_id|references|null: false, foreign_key: true|
 
 ### Association
 - belong_to :user
 - belong_to :boke
-
-
-
-
-
 This README would normally document whatever steps are necessary to get the
 application up and running.
 
