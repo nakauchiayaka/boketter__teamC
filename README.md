@@ -3,8 +3,8 @@
 ## odaisテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|references|null: false, foreign_key: true|
-|category_id|references|null: false, foreign_key: true|
+|user|references|null: false, foreign_key: true|
+|category|references|null: false, foreign_key: true|
 |image|text|
 |title|text|
 
@@ -43,8 +43,8 @@
 ## bokesテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|references|null: false, foreign_key: true|
-|tag_id|references|null: false, foreign_key: true|
+|user|references|null: false, foreign_key: true|
+|tag|references|null: false, foreign_key: true|
 |text|text|
 
 ### Association
@@ -95,8 +95,8 @@
 ## commentsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|references|null: false, foreign_key: true|
-|boke_id|references|null: false, foreign_key: true|
+|user|references|null: false, foreign_key: true|
+|boke|references|null: false, foreign_key: true|
 |text|text|
 
 ### Association
@@ -108,8 +108,8 @@
 ## starsテーブル
 |Column|Type|Options|
 |------|----|-------|
-|user_id|references|null: false, foreign_key: true|
-|boke_id|references|null: false, foreign_key: true|
+|user|references|null: false, foreign_key: true|
+|boke|references|null: false, foreign_key: true|
 
 ### Association
 - belong_to :user
