@@ -1,27 +1,28 @@
 # README
 
-## titlesテーブル
+## odaisテーブル
 |Column|Type|Options|
 |------|----|-------|
 |user_id|references|null: false, foreign_key: true|
 |category_id|references|null: false, foreign_key: true|
 |image|text|
+|title|text|
 
 ### Association
 - belongs_to :user
 - has_many :bokes
-- has_many :categorys ,through: :title_categorys
-- has_many :title_categorys
+- has_many :categorys ,through: :odai_categorys
+- has_many :odai_categorys
 
 
-## title_categorysテーブル
+## odai_categorysテーブル
 |Column|Type|Options|
 |------|----|-------|
-|title|references|null: false,index: true, foreign_key: true|
+|odai|references|null: false,index: true, foreign_key: true|
 |category|references|null: false,index: true, foreign_key: true|
 
 ### Association
-- belongs_to :title
+- belongs_to :odai
 - belongs_to :category
 
 
@@ -31,8 +32,8 @@
 |name|string|
 
 ### Association
-- has_many :titles ,through: :title_categorys
-- has_many :title_categorys
+- has_many :odais ,through: :odai_categorys
+- has_many :odai_categorys
 
 
 
@@ -48,7 +49,7 @@
 
 ### Association
 - belong_to :user
-- belong_to :title
+- belong_to :odai
 - has_many :stars
 - has_many :comments
 - has_many :tags ,through: :boke_tags
@@ -85,7 +86,7 @@
 |password|string|null: false|
 
 ### Association
-- has_many :titles
+- has_many :odais
 - has_many :bokes
 - has_many :comments
 - has_many :stars
