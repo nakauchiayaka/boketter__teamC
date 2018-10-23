@@ -17,8 +17,8 @@
       #main-container
         .content-menu
           %ul.content-menu-list.inline-list
-            %li.content-menu-list-active
-              = link_to "新着",""
+            %li
+              = link_to "新着", odais_path
             %li
               = link_to "注目",""
             %li
@@ -29,24 +29,22 @@
               = link_to "ラベル",""
             %li
               = link_to "セレクト",""
-            %li
-              = link_to "お題投稿",new_odai_path
+            %li.content-menu-list-active
+              = link_to "お題投稿",""
         #content
           .index-title
-            新着お題一覧
-          .odai-list
-            .pin
-              .odai-inner
-                - @odais.each do |odai|
-                  .odai-photo-warapper
-                    = link_to "" ,class: "odai-photo" do
-                      = image_tag odai.image
-                  .odai-meta
-                    .mt10
-                      = link_to "このお題でボケる",""
-
+            お題の投稿
+          .text-center{style:"margin:0 auto 20px;"}
+            = image_tag "https://tech-master.s3.amazonaws.com/uploads/curriculums/images/Rails1-4/sample.jpg",style:"width:300px;"
+          .form
+            = form_for @odai do |f|
+              = f.text_field :title,placeholder:'タイトル入力'
+              .form__mask
+                = f.label :image do
+                  = f.file_field :image
+              = f.submit 'Send'
           %p.text-center
-            = link_to "もっと読み込む","",class: "btn-primary btn btn-long"
+            = link_to "確認画面へ","",class: "btn-primary btn btn-long"
 
 
       = render 'shared/right-container'
