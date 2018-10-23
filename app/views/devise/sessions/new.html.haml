@@ -1,0 +1,69 @@
+#wrapper
+  #container
+    #header-news
+      %span#header-news-catch
+      %span#header-news-stats
+        ボケ投稿数
+        %b
+          66,962,143
+        件&nbsp;お題投稿数
+        %b
+          3,921,978
+        件&nbsp;
+        = link_to "#", cless: "safe-mode-btn" do
+          %i.fa.fa-lg.fa-toggle-on
+          &nbsp; safe on
+
+    #one-column-container
+      #content
+        #login
+          .login-header
+            .other-title
+              ボケてにログイン
+          .login-form
+            .login-form-content
+              .alert.alert-danger
+                %ul
+                  <!-- ngRepeat: display_error_message in display_error_messages -->
+              = form_for(resource, as: resource_name, url: session_path(resource_name), class: "ng-pristine ng-invalid ng-invalid-required") do |f|
+                .form-group
+                  = f.label :email, "メールアドレス"
+                  %br/
+                  = f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", placeholder: "メールアドレス"
+                .form-group
+                  = f.label :password, "パスワード"
+                  %br/
+                  = f.password_field :password, autocomplete: "current-password", class: "form-control", placeholder: "パスワード"
+                .actions
+                  = f.submit "ログイン", {class: "btn btn-primary btn-lg"}
+
+          .login-description
+            %p.text
+              パスワードを忘れた場合は
+              = link_to "パスワード再発行フォーム", "#"
+              より、新規パスワードを登録してログインしてください。
+              %b
+                *@omoroki.com からのメールが届くようにフィルターの設定
+              をお願いします。ボケてのアカウントをまだ取得していない方は
+              = link_to "新規登録", new_registration_path(resource_name)
+              から新しく登録をお願いします。登録・利用ともに完全無料です。
+
+      .bcl
+        %ol
+          %li
+            = link_to "/" do
+              %div
+              😃
+              %span
+                ボケて（bokete）トップ
+          >
+          %li
+            = link_to "#" do
+              %span
+                ログイン
+    .clearfix
+    <!-- / #main-container -->
+  .clearfix
+  <!-- /container -->
+  #scroll-top.text-right
+    = link_to "ページのトップへ戻る", "#", {class: "btn-primary btn"}
