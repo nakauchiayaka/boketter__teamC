@@ -1,1 +1,128 @@
-%p Hello World!
+.main
+  = render 'shared/header'
+  #wrapper
+    #container
+      #header-news
+        %span#header-news-catch
+          %h1.header-news-catch-heading
+            写真で一言ボケて大喜利・面白ネタ
+        %span#header-news-stats
+          ボケ投稿数
+          %b
+            65450600
+          件&nbsp;お題投稿数
+          %b
+            111223
+          件&nbsp;
+
+      #main-container
+        .content-menu
+          %ul.content-menu-list.inline-list
+            %li.content-menu-list-active
+              = link_to "トップ",""
+            %li
+              = link_to "注目",""
+            %li
+              = link_to "人気",""
+            %li
+              = link_to "コラボ",""
+            %li
+              = link_to "セレクト",""
+            %li
+              = link_to "ピックアップ",""
+            %li
+              = link_to "殿堂入り",""
+        #content
+          .index-title
+            人気ボケ
+          .boke
+            .boke-photo
+              .boke-photo-content
+                = link_to "" do
+                  = image_tag "wood_pattern.png"
+                .boke-photo-meta
+                  = link_to "" do
+                    %i.fas.fa-camera
+                    photo by (写真投稿者)
+                  &nbsp;
+                  =link_to "" do
+                    %i.far.fa-image
+                    odai by (お題投稿者)
+            = link_to "諭吉(ボケ)","",class: "boke-text"
+            .boke-meta
+              .boke-information
+                .boke-information-row.is-360
+                  .boke-stars
+                    = link_to "" do
+                      %i.fas.fa-star{style:"color:#ebbf2a"}
+                      4772
+                  .boke-information-label
+                    = link_to "２日くらい前",""
+                  %span.boke-share-social
+                    = link_to "" do
+                      %i.fab.fa-facebook-f
+                  %span.boke-share-social
+                    = link_to "" do
+                      %i.fab.fa-twitter
+              .boke-information-row.ng-scope
+                .boke-rate
+                  = link_to "" do
+                    %i.fas.fa-times-circle.boke-rate-times
+                  %span.boke-rating
+                    = link_to "" do
+                      %i.far.fa-star{style:"color:#ebbf2a"}
+                    = link_to "" do
+                      %i.far.fa-star{style:"color:#ebbf2a"}
+                    = link_to "" do
+                      %i.far.fa-star{style:"color:#ebbf2a"}
+
+          %p.text-center
+            = link_to "もっと見る","",class: "btn-primary btn btn-long"
+          %br
+          .index-title
+            注目ボケ
+          .boke-horizon
+            = link_to "",class: "photo" do
+              = image_tag "wood_pattern.png"
+            .photo-meta
+              = link_to "" do
+                %i.fas.fa-camera
+                (写真投稿者)
+              &nbsp;
+              = link_to "" do
+                %i.far.fa-image
+                (お題投稿者)
+          %p.text-center
+            = link_to "もっと見る","",class: "btn-primary btn btn-long"
+          %br
+          .index-title
+            新着ボケ
+          .boke-horizon
+            = link_to "",class: "photo" do
+              = image_tag "wood_pattern.png"
+            .photo-meta
+              = link_to "" do
+                %i.fas.fa-camera
+                (写真投稿者)
+              &nbsp;
+              = link_to "" do
+                %i.far.fa-image
+                (お題投稿者)
+          %p.text-center
+            = link_to "もっと見る","",class: "btn-primary btn btn-long"
+          %br
+          .index-title
+            注目ボケタグ
+          .tag-container
+            = link_to "",class: "tag-content" do
+              バカ
+              %small
+                (111個)
+          %br
+          %br
+          %p.text-center
+            = link_to "もっと見る","",class: "btn-primary btn btn-long"
+
+
+      = render 'shared/right-container'
+  = render 'shared/footer'
