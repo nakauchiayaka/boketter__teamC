@@ -1,5 +1,5 @@
 .fixed
-  #top-bar
+  #top-bar.top-bar
     #top-navi
       %ul.title-area
         %li.name
@@ -14,11 +14,17 @@
           %li.left__style
             = link_to "職人","https://bokete.jp/"
         %ul.right
-          %li.right__style
-            = link_to "https://www.yahoo.co.jp/" do
-              = image_tag "wood_pattern.png",class: "user-icon-top-bar"
-              ayk6611
-          %li.right__style
-            = link_to "マイページ","https://www.yahoo.co.jp/"
+          - if user_signed_in?
+            %li.right__style
+              = link_to "#" do
+                = image_tag "wood_pattern.png",class: "user-icon-top-bar"
+                ayk6611
+            %li.right__style
+              = link_to "マイページ", edit_user_path(current_user.id)
+          - else
+            %li
+              = link_to "新規登録", new_user_registration_path
+            %li
+              = link_to "ログイン", new_user_session_path
           %li.right__style
             = link_to "ヘルプ","https://www.yahoo.co.jp/"
