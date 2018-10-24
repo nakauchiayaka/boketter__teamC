@@ -6,14 +6,6 @@
 }
 
 #content {
-  background-color: #fff;
-  min-height: 850px;
-  overflow: hidden;
-  padding: 30px 20px;
-  margin-bottom: 20px;
-  border-radius: 5px;
-  font-family: Helvetica, Arial, "ヒラギノ角ゴ Pro W3", Hiragino Kaku Gothic Pro, sans-serif;
-
   .other-title {
     border-bottom: 2px solid #f4c536;
     color: #222;
@@ -104,103 +96,28 @@
 
 
 // 共通 ------------------------------
-* {
-  margin: 0;
-  padding: 0;
-}
-*:before, *:after {
-  box-sizing: border-box;
-}
+.bcl {
+  max-width: 640px;
+  overflow: hidden;
+  text-overflow: ellipsis;
 
-#wrapper {
-  width: 1000px;
-  margin: 0 auto 10px;
-  padding-top: 45px;
-  background-color: #f2efed;
-  position: relative;
-  border-bottom-right-radius: 5px;
-  border-bottom-left-radius: 5px;
-
-  #container {
-    padding: 0 14px;
-  }
-
-  #header-news {
-    font-size: 12px;
-    margin: 14px 0;
-    padding: 0;
-    width: 100%;
-
-    #header-news-catch {
-      float: left;
-    }
-
-    #header-news-stats {
-      float: right;
-      a.safe-mode-btn {
-        color: #e6282f;
-      }
-      .fa-toggle-on:before {
-        content: "";
+  ol {
+    list-style: none;
+    word-wrap: break-word;
+    display: block;
+    height: 20px;
+    margin-bottom: 0 !important;
+    li {
+      display: inline;
+      line-height: 20px;
+      a {
+        text-decoration: none !important;
+        color: #666;
       }
     }
   }
-
-  .bcl {
-    max-width: 640px;
-    overflow: hidden;
-    text-overflow: ellipsis;
-
-    ol {
-      list-style: none;
-      word-wrap: break-word;
-      display: block;
-      height: 20px;
-      margin-bottom: 0 !important;
-      li {
-        display: inline;
-        line-height: 20px;
-        a {
-          text-decoration: none !important;
-          color: #666;
-        }
-      }
-    }
-  }
-
-  #scroll-top {
-    bottom: 40px;
-    right: 20px;
-    position: absolute;
-    clear: both;
-  }
-  .text-right {
-    text-align: right;
-  }
 }
 
-.btn-primary {
-  color: #fff;
-  background-color: #f4c536;
-  border-color: #f3be1e;
-}
-.btn {
-  display: inline-block;
-  margin-bottom: 0;
-  font-weight: bold;
-  text-align: center;
-  vertical-align: middle;
-  touch-action: manipulation;
-  cursor: pointer;
-  background-image: none;
-  border: 1px solid transparent;
-  white-space: nowrap;
-  padding: 6px 12px;
-  font-size: 14px;
-  line-height: 1.42857143;
-  border-radius: 4px;
-  user-select: none;
-}
 .text {
   font-size: 1.1em;
 }
@@ -225,13 +142,6 @@
   clear: both;
 }
 
-
-a {
-  color: #2b6bc3;
-  cursor: pointer;
-  text-decoration: none;
-  background-color: transparent;
-}
 p {
   margin: 0 0 10px;
 }
@@ -255,6 +165,7 @@ button, input, optgroup, select, textarea {
   margin: 0;
 }
 label {
+  display: inline-block;
   max-width: 100%;
   margin-bottom: 5px;
   font-weight: bold;
