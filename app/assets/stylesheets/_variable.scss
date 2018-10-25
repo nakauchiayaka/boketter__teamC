@@ -1,0 +1,197 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+* {
+  -webkit-box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  box-sizing: border-box;
+}
+
+// body
+.block-ui {
+  position: relative;
+}
+body {
+  background: #fff url(wood_pattern.png);
+  margin: 0;
+  padding: 0;
+}
+body {
+  font-family: "Helvetica Neue",Helvetica,Arial,sans-serif;
+  font-size: 14px;
+  line-height: 1.42857143;
+  color: #333;
+  background-color: #fff;
+}
+
+.fb_reset {
+  background: none;
+  border: 0;
+  border-spacing: 0;
+  color: #000;
+  cursor: auto;
+  direction: ltr;
+  font-family: "lucida grande", tahoma, verdana, arial, "hiragino kaku gothic pro",meiryo,"ms pgothic",sans-serif;
+  font-size: 11px;
+  font-style: normal;
+  font-variant: normal;
+  font-weight: normal;
+  letter-spacing: normal;
+  line-height: 1;
+  margin: 0;
+  overflow: visible;
+  padding: 0;
+  text-align: left;
+  text-decoration: none;
+  text-indent: 0;
+  text-shadow: none;
+  text-transform: none;
+  visibility: visible;
+  white-space: normal;
+  word-spacing: normal;
+}
+
+.bcl ol {
+  list-style: none;
+  word-wrap: break-word;
+  display: block;
+  height: 20px;
+  margin-bottom: 0 !important;
+}
+.bcl ol li {
+  display: inline;
+  line-height: 20px;
+}
+
+#footer {
+  width: 1000px;
+  margin: 10px auto 60px;
+  padding: 20px 30px;
+  background: #fff;
+  border-radius: 5px;
+}
+
+a {
+  color: #2b6bc3;
+  cursor: pointer;
+  text-decoration: none;
+}
+a {
+  color: #2b6bc3;
+  text-decoration: none;
+}
+a {
+  background-color: transparent;
+}
+img {
+  vertical-align: middle;
+}
+
+
+// 修正
+.top-bar {
+  margin-bottom: 0;
+}
+#top-bar ul li {
+  list-style-type: none;
+  display: inline-block;
+}
+// top-bar-selection 入れ子になってる
+.left {
+  float: left;
+}
+.right {
+  float: right;
+}
+// .left__style a になっている(.left__styleは不要)
+.top-bar-section ul li a {
+  height: 45px;
+  display: block;
+  font-weight: bold;
+  padding: 13px 14px;
+  color: #111;
+}
+.top-bar-section .right img {
+  display: inline;
+  margin-right: 1px;
+  // width: 22px;
+  // height: 22px;
+  border: 1px solid #d4cac4;
+}
+.user-icon-top-bar {
+  width: 26px;
+  height: 26px;
+  border: 1px solid #999;
+  -moz-border-radius: 26px;
+  -webkit-border-radius: 26px;
+  border-radius: 26px;
+}
+.fa, .howto-widget h4:before {
+  display: inline-block;
+  font: normal normal normal 14px/1 FontAwesome;
+  font-size: inherit;
+  text-rendering: auto;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+.boke-horizon .text {
+  font-family: "ＭＳ Ｐゴシック",Osaka,"ヒラギノ角ゴ Pro W3",sans-serif;
+  font-weight: bold;
+  margin: 5px;
+  text-align: center;
+  word-break: break-word;
+}
+.text {
+  font-size: 1.1em;
+}
+.boke-horizon .rating {
+  margin: 0 auto;
+  text-align: center;
+  font-size: 12px;
+  background-color: #efefef;
+  border: 1px solid #eee;
+  padding: 0;
+  display: block;
+  width: 100px;
+  border-radius: 6px;
+}
+.boke-horizon .rating a {
+  padding: 5px;
+  display: block;
+  color: #000;
+  width: 100%;
+  height: 100%;
+}
+.fa-star, .howto-widget h4:before, .fa-star-o {
+  color: #ebbf2a;
+}
+.fa-lg {
+  font-size: 1.33333333em;
+  line-height: .75em;
+  vertical-align: -15%;
+}
+.tag-container {
+  display: inline-flex;
+  flex-wrap: wrap;
+}
+.clear {
+  clear: both;
+}
+.btn {
+  // display: inline-block;
+  // margin-bottom: 0;
+  // font-weight: bold;
+  // text-align: center;
+  // vertical-align: middle;
+  touch-action: manipulation;
+  // cursor: pointer;
+  // background-image: none;
+  border: 1px solid transparent;
+  // white-space: nowrap;
+  // padding: 6px 12px;
+  // font-size: 14px;
+  // line-height: 1.42857143;
+  // border-radius: 4px;
+  // user-select: none;
+}
