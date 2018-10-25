@@ -31,13 +31,13 @@
         .text-center
           .btn-group.category-tab-menu
             %label.category-element.active-category
-              = link_to "プロフィール編集", edit_user_path(current_user.id)
+              = link_to "プロフィール編集", account_path, method: :get
             %label.category-element
               = link_to "プロフィール写真変更", "#"
             %label.category-element
               = link_to "パスワード変更", "#"
             %label.category-element
-              = link_to "メアド変更", "#"
+              = link_to "メアド変更", account_email_path, method: :get
             %label.category-element
               = link_to "退会手続き", "#"
 
