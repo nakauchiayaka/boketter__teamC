@@ -1,0 +1,10 @@
+.content-menu
+  %ul.content-menu-list.inline-list
+    %li
+      = link_to "マイページ","#"
+    %li.content-menu-list-active
+      = link_to "設定","#"
+    %li
+      = link_to "ミュート","#"
+    %li
+      = link_to "ログアウト", destroy_user_session_path, method: :delete
