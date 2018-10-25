@@ -3,12 +3,16 @@ class AccountsController < ApplicationController
   def edit
   end
 
-  def profile
-    if current_user.update(user_params)
-      redirect_to root_path
-    else
-      render :edit
-    end
+  def photo
+  end
+
+  def password
+  end
+
+  def email
+  end
+
+  def delete
   end
 
   private
@@ -16,4 +20,5 @@ class AccountsController < ApplicationController
   def user_params
     params.require(:user).permit(:name, :email)
   end
+
 end
