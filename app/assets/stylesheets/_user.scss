@@ -139,3 +139,40 @@ ul.inline-list {
   -webkit-border-radius: 5px;
   border-radius: 5px;
 }
+
+
+.panel {
+  margin-bottom: 20px;
+  background-color: #fff;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  box-shadow: 0 1px 1px rgba(0,0,0,0.05);
+}
+.panel-default {
+  border-color: #ddd;
+}
+.panel {
+  text-align: center;
+  border-width: 2px;
+  margin-bottom: 40px;
+}
+.panel-body {
+  color: #000;
+}
+.panel-body {
+  padding: 15px;
+}
+.panel-body:before, .panel-body:after {
+  content: " ";
+  display: table;
+}
+.panel-body:after {
+  clear: both;
+}
+
+
+@media (min-width: 768px) {
+  .col-sm-6 {
+    width: 50%;
+  }
+}
