@@ -102,7 +102,7 @@
 ### Association
 - belong_to :user
 - belong_to :boke
-
+/Users/owner/Desktop/README push
 
 
 ## starsテーブル

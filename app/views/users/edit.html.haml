@@ -1,0 +1,85 @@
+= render 'shared/header'
+#wrapper
+  #container
+    #header-news
+      %span#header-news-catch
+      %span#header-news-stats
+        ボケ投稿数
+        %b
+          66,962,143
+        件&nbsp;お題投稿数
+        %b
+          3,921,978
+        件&nbsp;
+        = link_to "#", cless: "safe-mode-btn" do
+          %i.fa.fa-lg.fa-toggle-on
+          &nbsp; safe on
+
+    #main-container
+      .content-menu
+        %ul.content-menu-list.inline-list
+          %li
+            = link_to "マイページ","#"
+          %li.content-menu-list-active
+            = link_to "設定","#"
+          %li
+            = link_to "ミュート","#"
+          %li
+            = link_to "ログアウト", destroy_user_session_path, method: :delete
+
+      #content
+        .text-center
+          .btn-group.category-tab-menu
+            %label.category-element.active-category
+              = link_to "プロフィール編集", edit_user_path(current_user.id)
+            %label.category-element
+              = link_to "プロフィール写真変更", "#"
+            %label.category-element
+              = link_to "パスワード変更", "#"
+            %label.category-element
+              = link_to "メアド変更", "#"
+            %label.category-element
+              = link_to "退会手続き", "#"
+
+        .other-title
+          プロフィールの変更
+
+        .ng-scope{style: "width:600px;margin:0 auto;"}
+          .alert.alert-danger.ng-hide
+            %ul
+              <!-- ngRepeat: display_error_message in display_error_messages -->
+          = form_for (current_user), html: {name: "validation_form", class: "form-horizontal ng-pristine ng-valid ng-valid-required"} do |f|
+            .form-group
+              %label.control-label.col-sm-4
+                メールアドレス
+              .col-sm-8
+                %b
+                  = current_user.email
+            .form-group
+              = f.label :name, "ニックネーム（10文字以内)", class: "control-label col-sm-4"
+              .col-sm-8
+                = f.text_field :name, class: "form-control ng-pristine ng-valid-maxlength ng-valid ng-valid-required"
+            %hr
+            .form-group
+              .col-sm-offset-4.col-sm-4
+                = f.submit "更新", class: "form-control active-btn button"
+
+      .bcl
+        %ol
+          %li
+            = link_to "/" do
+              %div
+              😃
+              %span
+                ボケて（bokete）トップ
+          >
+          %li
+            = link_to "#" do
+              %span
+                アカウント編集
+
+    = render 'mypage_shared/right-container'
+    .clearfix
+
+  = render 'mypage_shared/scroll-top'
+= render 'shared/footer'
