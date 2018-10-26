@@ -28,7 +28,28 @@
     }
   }
 }
-
+.odai-meta{
+  font-size: 12px;
+  margin-top:5px;
+}
+.pull-left{
+  float: left;
+}
+.btn-default{
+  color: #333;
+  background-color: #fff;
+  border-color: #ccc;
+}
+.btn-sm{
+  padding: 5px 10px;
+  font-size: 12px;
+  line-height: 1.5;
+  border-radius:3px;
+}
+.btn-block{
+  display: block;
+  width: 100%;
+}
 label{
   display: inline-block;
   max-width: 100%;
