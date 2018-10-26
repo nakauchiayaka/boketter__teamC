@@ -30,7 +30,9 @@
             %li
               = link_to "セレクト",""
             %li
-              = link_to "お題投稿",new_odai_path
+              = link_to new_odai_path do
+                %i.fas.fa-upload
+                お題投稿
         #content
           .index-title
             新着お題一覧

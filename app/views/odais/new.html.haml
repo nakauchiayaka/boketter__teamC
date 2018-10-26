@@ -30,7 +30,9 @@
             %li
               = link_to "セレクト",""
             %li.content-menu-list-active
-              = link_to "お題投稿",""
+              = link_to new_odai_path do
+                %i.fas.fa-upload
+                お題投稿
         #content
           .index-title
             お題の投稿
