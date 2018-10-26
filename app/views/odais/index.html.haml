@@ -35,9 +35,9 @@
           .index-title
             新着お題一覧
           .odai-list
-            .pin
-              .odai-inner
-                - @odais.each do |odai|
+            - @odais.each do |odai|
+              .pin
+                .odai-inner
                   .odai-photo-warapper
                     = link_to "" ,class: "odai-photo" do
                       = image_tag odai.image

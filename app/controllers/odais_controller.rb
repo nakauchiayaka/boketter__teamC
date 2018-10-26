@@ -1,12 +1,12 @@
 class OdaisController < ApplicationController
   def index
-    @odais = Odai.all
+    @odais = Odai.order("created_at DESC")
   end
    def new
     @odai =Odai.new
    end
    def create
-    odai = Odai.create(odai_params)
+    Odai.create(title: odai_params[:title],image: odai_params[:image],user_id: current_user.id)
    end
 
 

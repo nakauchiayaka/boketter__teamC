@@ -18,7 +18,7 @@
             %li.right__style
               = link_to "#" do
                 = image_tag "wood_pattern.png",class: "user-icon-top-bar"
-                ayk6611
+                = current_user.name
             %li.right__style
               = link_to "マイページ", edit_user_path(current_user.id)
           - else
