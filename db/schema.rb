@@ -19,7 +19,7 @@ ActiveRecord::Schema.define(version: 20181022060725) do
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
 
-ActiveRecord::Schema.define(version: 20181018055926) do
+  end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name",                                null: false
