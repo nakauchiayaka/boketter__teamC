@@ -7,6 +7,7 @@ class AccountsController < ApplicationController
   end
 
   def password
+    @password_change = false
   end
 
   def email
