@@ -1,18 +1,8 @@
+= render 'shared/header'
 #wrapper
   #container
-    #header-news
-      %span#header-news-catch
-      %span#header-news-stats
-        ボケ投稿数
-        %b
-          66,962,143
-        件&nbsp;お題投稿数
-        %b
-          3,921,978
-        件&nbsp;
-        = link_to "#", cless: "safe-mode-btn" do
-          %i.fa.fa-lg.fa-toggle-on
-          &nbsp; safe on
+    = render 'shared/header-news'
+
     #one-column-container
       #content
         .other-title
@@ -37,26 +27,31 @@
               %b
                 登録情報の入力
             %hr.white
+
             %div
-              .alert.alert-danger.ng-hide
-                %ul
-                  <!-- ngRepeat: display_error_message in display_error_messages -->
-              = form_for(resource, as: resource_name, url: registration_path(resource_name), class: "ng-pristine ng-invalid-required ng-invalid") do |f|
-                = devise_error_messages!
-                .form-group
-                  = f.label :name, "ニックネーム（10文字以内）"
-                  = f.text_field :name, autofocus: true, class: "form-control"
-                .form-group
-                  = f.label :"email", "メールアドレス"
-                  = f.email_field :email, autofocus: true, class: "form-control"
-                .form-group
-                  = f.label :"password", "パスワード（4文字以上20文字以内）"
-                  = f.password_field :password, class: "form-control"
-                .form-group
-                  = f.label :"password_confirmation", "パスワード（確認）"
-                  = f.password_field :password_confirmation, class: "form-control"
-                %div
-                  = f.submit "送信", {class: "btn btn-primary btn-lg"}
+              - if @error_message
+                .alert.alert-danger.ng-hide
+                  %ul
+                    %li.ng-binding.ng-scope
+                      @error_message
+
+              - else
+                = form_for(resource, as: resource_name, url: registration_path(resource_name), class: "ng-pristine ng-invalid-required ng-invalid") do |f|
+                  = devise_error_messages!
+                  .form-group
+                    = f.label :name, "ニックネーム（10文字以内）"
+                    = f.text_field :name, autofocus: true, class: "form-control"
+                  .form-group
+                    = f.label :"email", "メールアドレス"
+                    = f.email_field :email, autofocus: true, class: "form-control"
+                  .form-group
+                    = f.label :"password", "パスワード（4文字以上20文字以内）"
+                    = f.password_field :password, class: "form-control"
+                  .form-group
+                    = f.label :"password_confirmation", "パスワード（確認）"
+                    = f.password_field :password_confirmation, class: "form-control"
+                  %div
+                    = f.submit "送信", {class: "btn btn-primary btn-lg"}
 
       .bcl
         %ol
@@ -75,8 +70,5 @@
     <!-- / #main-container -->
   .clearfix
   <!-- /container -->
-  #scroll-top.text-right
-    = link_to "ページのトップへ戻る", "#", {class: "btn-primary btn"}
-
-
-= link_to "ログイン", new_session_path(resource_name)
+  = render 'mypage_shared/scroll-top'
+= render 'shared/footer'
