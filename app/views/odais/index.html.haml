@@ -1,0 +1,64 @@
+.main
+  = render 'shared/header'
+  #wrapper
+    #container
+      #header-news
+        %span#header-news-catch
+          %h1.header-news-catch-heading
+        %span#header-news-stats
+          ボケ投稿数
+          %b
+            65450600
+          件&nbsp;お題投稿数
+          %b
+            111223
+          件&nbsp;
+
+      #main-container
+        .content-menu
+          %ul.content-menu-list.inline-list
+            %li.content-menu-list-active
+              = link_to "新着",""
+            %li
+              = link_to "注目",""
+            %li
+              = link_to "人気",""
+            %li
+              = link_to "コラボ",""
+            %li
+              = link_to "ラベル",""
+            %li
+              = link_to "セレクト",""
+            %li
+              = link_to new_odai_path do
+                %i.fas.fa-upload
+                お題投稿
+        #content
+          .index-title
+            新着お題一覧
+          .odai-list
+            - @odais.each do |odai|
+              .pin
+                .odai-inner
+                  .odai-photo-warapper
+                    = link_to "" ,class: "odai-photo" do
+                      = image_tag odai.image
+                  .odai-meta
+                    .clearfix
+                      .pull-left
+                        = link_to "" do
+                          %i.fas.fa-camera
+                          = odai.user.name
+                        &nbsp;
+                        = link_to "" do
+                          %i.far.fa-image
+                          = odai.user.name
+                    .mt10
+                      = link_to "このお題でボケる","",class: "btn btn-default btn-sm btn-block"
+
+          %p.text-center
+            = link_to "もっと読み込む","",class: "btn-primary btn btn-long"
+
+
+      = render 'shared/right-container'
+  = render 'shared/footer'

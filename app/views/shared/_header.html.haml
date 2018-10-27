@@ -8,17 +8,17 @@
       .top-bar-section
         %ul.left
           %li.left__style
-            = link_to "ボケ","https://bokete.jp/"
+            = link_to "ボケ",""
           %li.left__style
-            = link_to "お題","https://bokete.jp/"
+            = link_to "お題",odais_path
           %li.left__style
-            = link_to "職人","https://bokete.jp/"
+            = link_to "職人",""
         %ul.right
           - if user_signed_in?
             %li.right__style
               = link_to "#" do
                 = image_tag "wood_pattern.png",class: "user-icon-top-bar"
-                ayk6611
+                = current_user.name
             %li.right__style
               = link_to "マイページ", edit_user_path(current_user.id)
           - else
@@ -27,4 +27,4 @@
             %li
               = link_to "ログイン", new_user_session_path
           %li.right__style
-            = link_to "ヘルプ","https://www.yahoo.co.jp/"
+            = link_to "ヘルプ",""
