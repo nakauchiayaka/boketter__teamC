@@ -1,0 +1,49 @@
+= render 'shared/header'
+#wrapper
+  #container
+    = render 'shared/header-news'
+
+    #main-container
+      = render 'mypage_shared/content-menu'
+
+      #content
+        = render 'mypage_shared/text-center'
+
+        .other-title
+          プロフィール写真のアップロード・変更
+
+        .gray-box.ng-scope
+          %div{style: "display:inline-table;"}
+            .drag-area{style: "background-image:url();"}
+          -# = form_for(action: "/account/photo", method: "post", html: {class: "ng-pristine ng-valid"})
+          %div
+            %button.btn.btn-default{onclick: "$('input[id=fileInput]').click();"}
+              ファイルを選択
+          %br
+          %div
+            %button.btn.btn-primary{type: "submit"}
+              アップロード
+
+        #preview_field
+
+        .alert.alert-warning
+          %ul
+            %li
+              写真・画像は5MB以内でファイル形式
+              %code
+                \.gif .jpg .png
+              をサポートしています。
+            %li
+              登録写真について、別人の写真の利用、他のユーザーや、運営事務局に迷惑がかかることを禁止しています。必ず
+              = link_to "#" do
+                利用規約
+              をご確認のうえ投稿をお願いいたします。
+
+      .bcl
+        = render 'mypage_shared/bcl'
+
+    = render 'mypage_shared/right-container'
+    .clearfix
+
+  = render 'mypage_shared/scroll-top'
+= render 'shared/footer'
