@@ -44,6 +44,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |user|references|null: false, foreign_key: true|
+|odai|references|null: false, foreign_key: true|
 |tag|references|null: false, foreign_key: true|
 |text|text|
 
