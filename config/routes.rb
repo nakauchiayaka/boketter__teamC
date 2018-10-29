@@ -4,5 +4,6 @@ Rails.application.routes.draw do
   get 'titles' => 'titles#index'
   resources :users, only: [:edit, :update]
   resources :odais
+  resources :categorys
 
 end

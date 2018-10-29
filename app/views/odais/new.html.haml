@@ -46,8 +46,33 @@
               .form__mask
                 = f.label :image do
                   = f.file_field :image
+              %label
+                カテゴリ
+              .boke-new-form-input-radio-container
+                %label.radio-inline
+                  = f.radio_button :category_id,1
+                  人物
+                %label.radio-inline
+                  = f.radio_button :category_id,2
+                  人物2人以上
+                %label.radio-inline
+                  = f.radio_button :category_id,3
+                  動物
+                %label.radio-inline
+                  = f.radio_button :category_id,4
+                  風景
+                %label.radio-inline
+                  = f.radio_button :category_id,5
+                  無機物
+                %label.radio-inline
+                  = f.radio_button :category_id,6
+                  イラスト
+                %label.radio-inline
+                  = f.radio_button :category_id,7
+                  その他
               %p.text-center
                 = f.submit 'Send',class: " btn-primary btn btn-long"
+
 
 
       = render 'shared/right-container'

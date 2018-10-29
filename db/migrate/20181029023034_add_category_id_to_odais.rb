@@ -1,5 +1,5 @@
 class AddCategoryIdToOdais < ActiveRecord::Migration[5.0]
   def change
-    add_reference :odais, :category, foreign_key: true,null: false
+    add_column :odais, :category_id, :integer
   end
 end
