@@ -36,6 +36,24 @@
         #content
           .index-title
             新着お題一覧
+          .text-center
+            .btn-group.category-tab-menu
+              %label.category-element.active-category
+                = link_to "全カテゴリ",""
+              %label.category-element
+                = link_to "人物",""
+              %label.category-element
+                = link_to "人物2人以上",""
+              %label.category-element
+                = link_to "動物",""
+              %label.category-element
+                = link_to "風景",""
+              %label.category-element
+                = link_to "無機物",""
+              %label.category-element
+                = link_to "イラスト",""
+              %label.category-element
+                = link_to "その他",""
           .odai-list
             - @odais.each do |odai|
               .pin
