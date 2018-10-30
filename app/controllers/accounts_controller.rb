@@ -1,5 +1,8 @@
 class AccountsController < ApplicationController
 
+  def my
+  end
+
   def edit
   end
 
