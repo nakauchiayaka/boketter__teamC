@@ -12,4 +12,7 @@ Rails.application.routes.draw do
   get '/account/email',     to: 'accounts#email'
   get '/account/delete',    to: 'accounts#delete'
   get '/mute',              to: 'accounts#mute'
+  
+  resources :odais
+
 end

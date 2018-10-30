@@ -5,8 +5,8 @@
 |------|----|-------|
 |user|references|null: false, foreign_key: true|
 |category|references|null: false, foreign_key: true|
-|image|text|
-|title|text|
+|image|text|null: false|
+|title|text|null: false|
 
 ### Association
 - belongs_to :user
@@ -44,6 +44,7 @@
 |Column|Type|Options|
 |------|----|-------|
 |user|references|null: false, foreign_key: true|
+|odai|references|null: false, foreign_key: true|
 |tag|references|null: false, foreign_key: true|
 |text|text|
 
