@@ -17,7 +17,7 @@
             .alert.alert-danger.ng-hide
               %ul
                 %li.ng-binding.ng-scope
-                  @error_message
+                  = @error_message
 
           - else
             = form_for (current_user), html: {name: "validation_form", class: "form-horizontal ng-pristine ng-valid ng-valid-required"} do |f|

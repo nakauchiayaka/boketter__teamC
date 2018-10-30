@@ -16,7 +16,7 @@
                 .alert.alert-danger
                   %ul
                     %li.ng-binding.ng-scope
-                      @error_message
+                      = @error_message
 
               - else
                 = form_for(resource, as: resource_name, url: session_path(resource_name), class: "ng-pristine ng-invalid ng-invalid-required") do |f|

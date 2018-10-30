@@ -33,7 +33,7 @@
                 .alert.alert-danger.ng-hide
                   %ul
                     %li.ng-binding.ng-scope
-                      @error_message
+                      = @error_message
 
               - else
                 = form_for(resource, as: resource_name, url: registration_path(resource_name), class: "ng-pristine ng-invalid-required ng-invalid") do |f|
