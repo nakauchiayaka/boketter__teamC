@@ -1,0 +1,25 @@
+= render 'shared/header'
+#wrapper
+  #container
+    = render 'shared/header-news'
+
+    #main-container
+      = render 'mypage_shared/content-menu'
+
+      #content
+
+        #my
+          .other-title
+            ミュートしているユーザー
+          .text-center
+            ミュートしているユーザーはいません
+
+
+      .bcl
+        = render 'mypage_shared/bcl'
+
+    = render 'mypage_shared/right-container'
+    .clearfix
+
+  = render 'mypage_shared/scroll-top'
+= render 'shared/footer'
