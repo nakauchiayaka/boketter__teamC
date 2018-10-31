@@ -1,0 +1,55 @@
+// プロフィール
+.user-info-photo {
+  float: left;
+  text-align: center;
+  width: 200px;
+  margin-bottom: 30px;
+}
+.user-info-photo img {
+  height: 180px;
+  width: 180px;
+  margin: 20px 0 10px;
+  border: 3px solid #eee;
+  border-radius: 180px;
+}
+.user-info-profile {
+  float: right;
+  width: 400px;
+}
+.user-info-profile-title {
+  font-family: "ＭＳ Ｐゴシック", Osaka, "ヒラギノ角ゴ Pro W3", sans-serif;
+  font-size: 18px;
+  margin: 10px 0;
+  font-weight: bold;
+  line-height: 1.2;
+}
+.table {
+  width: 100%;
+  max-width: 100%;
+  margin-bottom: 20px;
+}
+.table>thead>tr>th, .table>thead>tr>td, .table>tbody>tr>th, .table>tbody>tr>td, .table>tfoot>tr>th, .table>tfoot>tr>td {
+  padding: 8px;
+  line-height: 1.42857143;
+  vertical-align: top;
+  border-top: 1px solid #ddd;
+}
+.fa-check:before {
+  content: "";
+}
+.user-info:before, .user-info:after {
+  content: " ";
+  display: table;
+}
+.user-info:after {
+  clear: both;
+}
+.user-index-widget {
+  margin: 20px 0;
+}
+.text-right {
+  text-align: right;
+}
+.text-right a:link, .text-right a:visited {
+  text-decoration: underline;
+}
