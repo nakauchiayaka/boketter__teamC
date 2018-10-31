@@ -32,7 +32,6 @@ class OdaisController < ApplicationController
     @odais = Odai.where(category_id:7)
   end
 
-
   private
   def odai_params
     params.require(:odai).permit(:title,:image,:category_id)

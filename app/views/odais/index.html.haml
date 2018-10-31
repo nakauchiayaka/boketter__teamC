@@ -30,9 +30,14 @@
             %li
               = link_to "セレクト",""
             %li
-              = link_to new_odai_path do
-                %i.fas.fa-upload
-                お題投稿
+              -if current_user
+                = link_to new_odai_path do
+                  %i.fas.fa-upload
+                  お題投稿
+              -else
+                = link_to notlogin_titles_path do
+                  %i.fas.fa-upload
+                  お題投稿
         #content
           .index-title
             新着お題一覧

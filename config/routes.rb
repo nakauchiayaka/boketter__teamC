@@ -1,7 +1,6 @@
 Rails.application.routes.draw do
   devise_for :users
   root 'titles#index'
-  get 'titles' => 'titles#index'
   put '/users/password_upadate',  to: 'users#password_update'
   resources :users, only: [:edit, :update]
 
@@ -12,7 +11,12 @@ Rails.application.routes.draw do
   get '/account/email',     to: 'accounts#email'
   get '/account/delete',    to: 'accounts#delete'
   get '/mute',              to: 'accounts#mute'
-  
+
+  resources :titles do
+    collection do
+     get 'notlogin'
+    end
+  end
   resources :odais do
     collection do
       get 'jinbutsu'
