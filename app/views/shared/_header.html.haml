@@ -16,7 +16,7 @@
         %ul.right
           - if user_signed_in?
             %li.right__style
-              = link_to "#" do
+              = link_to user_path(current_user) do
                 = image_tag "wood_pattern.png",class: "user-icon-top-bar"
                 = current_user.name
             %li.right__style
