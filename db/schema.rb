@@ -10,17 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181022060725) do
+ActiveRecord::Schema.define(version: 20181029023034) do
+
+  create_table "categories", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.string   "name",       null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["name"], name: "index_categories_on_name", using: :btree
+  end
 
   create_table "odais", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-
-    t.text     "title",      limit: 65535, null: false
-    t.text     "image",      limit: 65535, null: false
-    t.integer  "user_id",                  null: false
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.text     "title",       limit: 65535, null: false
+    t.text     "image",       limit: 65535, null: false
+    t.integer  "user_id",                   null: false
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+    t.integer  "category_id"
     t.index ["user_id"], name: "index_odais_on_user_id", using: :btree
-
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
