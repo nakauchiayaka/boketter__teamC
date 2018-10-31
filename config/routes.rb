@@ -3,7 +3,7 @@ Rails.application.routes.draw do
   root 'titles#index'
   get 'titles' => 'titles#index'
   put '/users/password_upadate',  to: 'users#password_update'
-  resources :users, only: [:edit, :update]
+  resources :users, only: [:edit, :show, :update]
 
   get '/my',                to: 'accounts#my'
   get '/account',           to: 'accounts#edit'
@@ -12,7 +12,7 @@ Rails.application.routes.draw do
   get '/account/email',     to: 'accounts#email'
   get '/account/delete',    to: 'accounts#delete'
   get '/mute',              to: 'accounts#mute'
-  
+
   resources :odais do
     collection do
       get 'jinbutsu'
@@ -24,11 +24,9 @@ Rails.application.routes.draw do
       get 'other'
     end
   end
-  # namespace :odai do
-  #   resources :popular do
-  #     collection do
-  #       get 'jinbutsu'
-  #     end
-  #   end
-  # end
+
+  get '/user/:id/boke',       to: 'user#boke'
+  get '/user/:id/odai',       to: 'user#odai'
+  get '/user/:id/favorites',  to: 'user#favorites'
+  get '/user/:id/ratings',    to: 'user#ratings'
 end
