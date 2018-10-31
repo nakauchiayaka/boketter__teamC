@@ -19,6 +19,7 @@ Rails.application.routes.draw do
   end
   resources :odais do
     collection do
+      post :preview
       get 'jinbutsu'
       get 'jinbutsu2ri'
       get 'animal'

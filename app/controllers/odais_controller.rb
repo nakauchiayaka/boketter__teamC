@@ -12,6 +12,10 @@ class OdaisController < ApplicationController
     Odai.create(title: odai_params[:title],image: odai_params[:image],user_id: current_user.id,category_id: odai_params[:category_id])
   end
 
+  def preview
+
+  end
+
   def jinbutsu
     @odais = Odai.where(category_id:1)
   end

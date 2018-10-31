@@ -26,7 +26,8 @@
           .index-title
             お題の投稿
           .text-center{style:"margin:0 auto 20px;"}
-            = image_tag "https://tech-master.s3.amazonaws.com/uploads/curriculums/images/Rails1-4/sample.jpg",style:"width:300px;"
+            .gray-box
+              = image_tag "",name:"preview",class:"image-preview"
           .form
             = form_for @odai do |f|
               %label
@@ -34,7 +35,7 @@
               = f.text_field :title,placeholder:'タイトル入力',class: 'form-control input-lg'
               .form__mask
                 = f.label :image do
-                  = f.file_field :image
+                  = f.file_field :image,onchange:"previewFile()",type:"file"
               %label
                 カテゴリ
               .boke-new-form-input-radio-container
