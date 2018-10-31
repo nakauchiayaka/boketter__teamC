@@ -20,7 +20,7 @@
                 = image_tag "wood_pattern.png",class: "user-icon-top-bar"
                 = current_user.name
             %li.right__style
-              = link_to "マイページ", edit_user_path(current_user.id)
+              = link_to "マイページ", my_path
           - else
             %li
               = link_to "新規登録", new_user_registration_path
