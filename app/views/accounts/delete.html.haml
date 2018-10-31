@@ -20,6 +20,30 @@
           %button.btn.btn-warning
             退会する
 
+      #user-delete-modal.modal{"aria-hidden" => "true", "aria-labelledby" => "", :role => "dialog", :style => "display: none;", :tabindex => "-1"}
+        .modal-dialog
+          .modal-content
+            .modal-header
+              %button.close{"data-dismiss" => "modal", :type => "button"}
+                %span{"aria-hidden" => "true"} ×
+                %span.sr-only Close
+              %h4.modal-title#myModalLabel 確認
+            .modal-body
+              %p.text
+                %b 本当に退会しますか？
+              %p.text
+                退会をすると、今後ログインが出来なくなり、今までのボケやお気に入り等は削除されます。また、再度同じ「ボケてアカウント名」「メールアドレス」での会員登録はできません。
+            .modal-footer
+              -# = form_for (current_user, url: /account/delete, method: "post", html: { class: "form-inline ng-pristine ng-valid" }) do |f|
+              .form-inline.ng-pristine.ng-valid
+                .text-center
+                  %button.btn.btn-default.close-btn{"data-dismiss" => "modal"}
+                    閉じる
+                  &nbsp;
+                  %button.btn.btn-warning{:type => "submit"}
+                    退会する
+
+
       .bcl
         = render 'mypage_shared/bcl'
 
