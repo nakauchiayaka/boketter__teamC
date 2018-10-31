@@ -1,0 +1,71 @@
+= render 'shared/header'
+#wrapper
+  #container
+    = render 'shared/header-news'
+
+    #main-container
+      = render 'users_shared/content-menu'
+
+      #content.content-boke.content-top-left-radius-none
+        .user-info
+          .user-info-photo
+            %img{:src => "//d3pb2x7032n52.cloudfront.net/static/images/user_img.gif"}
+          .user-info-profile
+            .user-info-profile-title
+              = current_user.name
+              さんのページ
+            %table.table
+              %tbody
+                %tr
+                  %td{:width => "120"}
+                    %i.fa.fa-check
+                    &nbsp; ボケてID
+                  %td
+                    = current_user.name
+                %tr
+                  %td
+                    %i.fa.fa-star{:style => "color:#000"}
+                    &nbsp; 星の合計
+                  %td 0
+                %tr
+                  %td
+                    %i.fa.fa-comment
+                    &nbsp; ボケ投稿数
+                  %td 0
+                %tr
+                  %td
+                    %i.fa.fa-picture-o
+                    &nbsp; お題投稿数
+                  %td 0
+
+        .user-index-widget
+          .other-title
+            = current_user.name
+            さんの最近評価したボケ
+          .user-index-widget-content
+            -# 以下サンプル ---------------------------------------
+            = render 'mypage_shared/sample_boke-horizon'
+            = render 'mypage_shared/sample_boke-horizon'
+            = render 'mypage_shared/sample_boke-horizon'
+            -# --------------------------------------------------
+            .clear
+
+          .text-right
+            = link_to "" do
+              = current_user.name
+              さんの評価したボケをもっとみる
+
+          = link_to ""
+
+        = link_to ""
+
+      = link_to ""
+
+      .bcl
+        = render 'mypage_shared/bcl'
+
+    = render 'mypage_shared/right-container'
+    .clearfix
+
+  = render 'mypage_shared/scroll-top'
+= render 'shared/footer'
