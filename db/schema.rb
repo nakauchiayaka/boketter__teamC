@@ -10,27 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181029085030) do
-
-  create_table "bokes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "user_id",                  null: false
-    t.integer  "odai_id",                  null: false
-    t.integer  "tag_id"
-    t.text     "text",       limit: 65535, null: false
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
-    t.index ["odai_id"], name: "index_bokes_on_odai_id", using: :btree
-    t.index ["tag_id"], name: "index_bokes_on_tag_id", using: :btree
-    t.index ["user_id"], name: "index_bokes_on_user_id", using: :btree
-  end
+ActiveRecord::Schema.define(version: 20181022060725) do
 
   create_table "odais", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+
     t.text     "title",      limit: 65535, null: false
     t.text     "image",      limit: 65535, null: false
     t.integer  "user_id",                  null: false
     t.datetime "created_at",               null: false
     t.datetime "updated_at",               null: false
     t.index ["user_id"], name: "index_odais_on_user_id", using: :btree
+
   end
 
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -46,7 +36,5 @@ ActiveRecord::Schema.define(version: 20181029085030) do
     t.index ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true, using: :btree
   end
 
-  add_foreign_key "bokes", "odais"
-  add_foreign_key "bokes", "users"
   add_foreign_key "odais", "users"
 end
