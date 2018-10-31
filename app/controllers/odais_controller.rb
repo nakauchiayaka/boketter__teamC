@@ -1,5 +1,7 @@
 class OdaisController < ApplicationController
   before_action :move_to_index, except: :index
+  before_action :set_odais
+
   def index
     @odais = Odai.order("created_at DESC")
   end
@@ -39,5 +41,8 @@ class OdaisController < ApplicationController
 
   def move_to_index
     redirect_to action: :index unless user_signed_in?
+  end
+  def set_odais
+    @odais = Odai.all
   end
 end
