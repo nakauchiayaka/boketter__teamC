@@ -1,5 +1,8 @@
 class UserController < ApplicationController
 
+  def show
+  end
+
   def boke
   end
 
