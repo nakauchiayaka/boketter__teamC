@@ -5,6 +5,16 @@ Rails.application.routes.draw do
   put '/users/password_upadate',  to: 'users#password_update'
   resources :users, only: [:edit, :update]
 
+  #resources :odais
+  resources :odais do
+    resources :bokes
+  end
+
+  scope :bokes do
+    get "/hot" => "bokes#hot"
+  end
+
+
   get '/my',                to: 'accounts#my'
   get '/account',           to: 'accounts#edit'
   get '/account/photo',     to: 'accounts#photo'
