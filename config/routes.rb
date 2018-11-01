@@ -4,10 +4,7 @@ Rails.application.routes.draw do
   put '/users/password_upadate',  to: 'users#password_update'
   resources :users, only: [:edit, :update]
 
-
-  scope :bokes do
-    get "/hot" => "bokes#hot"
-  end
+  resources :bokes, only: :index
 
 
   get '/my',                to: 'accounts#my'
