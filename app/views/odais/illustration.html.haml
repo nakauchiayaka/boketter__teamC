@@ -36,10 +36,9 @@
         #content
           .index-title
             新着お題一覧
-
           .text-center
             .btn-group.category-tab-menu
-              %label.category-element.active-category
+              %label.category-element
                 = link_to "全カテゴリ",odais_path
               %label.category-element
                 = link_to "人物",jinbutsu_odais_path
@@ -51,7 +50,7 @@
                 = link_to "風景",scenery_odais_path
               %label.category-element
                 = link_to "無機物",inorganicmatter_odais_path
-              %label.category-element
+              %label.category-element.active-category
                 = link_to "イラスト",illustration_odais_path
               %label.category-element
                 = link_to "その他",other_odais_path

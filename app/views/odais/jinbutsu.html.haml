@@ -36,12 +36,11 @@
         #content
           .index-title
             新着お題一覧
-
           .text-center
             .btn-group.category-tab-menu
-              %label.category-element.active-category
-                = link_to "全カテゴリ",odais_path
               %label.category-element
+                = link_to "全カテゴリ",odais_path
+              %label.category-element.active-category
                 = link_to "人物",jinbutsu_odais_path
               %label.category-element
                 = link_to "人物2人以上",jinbutsu2ri_odais_path

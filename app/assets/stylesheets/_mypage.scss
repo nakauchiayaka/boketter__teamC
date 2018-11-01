@@ -1,3 +1,4 @@
+// 設定
 .content-menu:before, .content-menu:after {
   content: " ";
   display: table;
@@ -138,4 +139,167 @@ ul.inline-list {
   -moz-border-radius: 5px;
   -webkit-border-radius: 5px;
   border-radius: 5px;
+}
+
+
+.panel {
+  margin-bottom: 20px;
+  background-color: #fff;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  box-shadow: 0 1px 1px rgba(0,0,0,0.05);
+}
+.panel-default {
+  border-color: #ddd;
+}
+.panel {
+  text-align: center;
+  border-width: 2px;
+  margin-bottom: 40px;
+}
+.panel-body {
+  color: #000;
+}
+.panel-body {
+  padding: 15px;
+}
+.panel-body:before, .panel-body:after {
+  content: " ";
+  display: table;
+}
+.panel-body:after {
+  clear: both;
+}
+
+
+@media (min-width: 768px) {
+  .col-sm-6 {
+    width: 50%;
+  }
+}
+
+
+.alert-success {
+  background-color: #f1f6fc;
+  border-color: #c7e1f3;
+  color: #4a85d7;
+}
+.alert-success {
+  color: #4a85d7;
+  background-color: #fff;
+  border: 1px solid #467ecc;
+  z-index: 100;
+  position: relative;
+}
+
+
+.btn-warning {
+  color: #fff;
+  background-color: #ea6e29;
+  border-color: #e36016;
+}
+
+.gray-box {
+  padding: 20px;
+  text-align: center;
+  margin-bottom: 20px;
+}
+.drag-area {
+  background-color: #efefef;
+  width: 480px;
+  height: 320px;
+  margin: 0 auto 20px;
+  background-clip: padding-box;
+  border: 20px solid transparent;
+  display: block;
+  vertical-align: middle;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+button, select {
+  text-transform: none;
+}
+button {
+  overflow: visible;
+}
+.btn-default {
+  color: #333;
+  background-color: #fff;
+  border-color: #ccc;
+}
+.alert-warning {
+  background-color: #fcece3;
+  border-color: #f8c1b4;
+  color: #ea6e29;
+}
+code {
+  padding: 2px 4px;
+  font-size: 90%;
+  color: #c7254e;
+  background-color: #f9f2f4;
+  border-radius: 4px;
+}
+.alert-warning a:link, .alert-warning a:visited, .alert-warning a:hover {
+  font-weigth: bold;
+  color: #ea6e29;
+}
+
+.alert-danger {
+  background-color: #fbdfe0;
+  border-color: #f1839a;
+  color: #e6282f;
+}
+
+
+// マイページ
+.boke-meta:before, .boke-meta:after {
+  content: " ";
+  display: table;
+}
+.boke-meta:after {
+  clear: both;
+}
+.boke-information-row.is-360 {
+  width: 360px;
+}
+
+.boke-meta a {
+  cursor: pointer;
+}
+.boke-rate-times {
+  color: #c6c6c6;
+}
+.fa-times-circle:before {
+  content: "";
+}
+.boke-rating {
+  unicode-bidi: bidi-override;
+  direction: rtl;
+  font-size: 20px;
+}
+.fa-star, .howto-widget h4:before, .fa-star-o {
+  color: #ebbf2a;
+}
+.boke-rating-star {
+  color: #ebbf2a;
+}
+.fa-star-o:before {
+  content: "";
+}
+.boke:after {
+  clear: both;
+}
+.boke:before, .boke:after {
+  content: " ";
+  display: table;
+}
+
+// ミュート
+#my:after {
+  clear: both;
+}
+#my:before, #my:after {
+  content: " ";
+  display: table;
 }
