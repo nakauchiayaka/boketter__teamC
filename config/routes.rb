@@ -4,10 +4,6 @@ Rails.application.routes.draw do
   put '/users/password_upadate',  to: 'users#password_update'
   resources :users, only: [:edit, :update]
 
-  #resources :odais
-  resources :odais do
-    resources :bokes
-  end
 
   scope :bokes do
     get "/hot" => "bokes#hot"
@@ -28,8 +24,8 @@ Rails.application.routes.draw do
     end
   end
   resources :odais do
+    resources :bokes
     collection do
-      post :preview
       get 'jinbutsu'
       get 'jinbutsu2ri'
       get 'animal'
