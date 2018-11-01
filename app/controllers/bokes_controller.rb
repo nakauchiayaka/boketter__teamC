@@ -1,5 +1,5 @@
 class BokesController < ApplicationController
-  before_action :set_odai, except: :hot
+  before_action :set_odai, except: :index
   def index
     @bokes = Boke.order("created_at DESC")
   end
@@ -13,10 +13,10 @@ class BokesController < ApplicationController
 
   end
 
-  def hot
-    @bokes = Boke.order("created_at DESC")
-    redirect_to root_path
-  end
+  #def hot
+    #@bokes = Boke.order("created_at DESC")
+    #redirect_to index
+  #end
 
   private
   def boke_params

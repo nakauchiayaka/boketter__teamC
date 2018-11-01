@@ -23,8 +23,8 @@
   a{
     text-decoration: none;
     img{
-      max-height: 272px;
-      max-width: 272px;
+      max-height: 450px;
+      max-width: 450px;
     }
   }
 }
@@ -35,6 +35,13 @@
 .pull-left{
   float: left;
 }
+.pull-right{
+  float: right;
+}
+.odai-photo-content-2{
+  display: inline-block;
+}
+
 
 .boke-photo-content{
   display: inline-block;
