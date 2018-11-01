@@ -1,5 +1,5 @@
 class UsersController < ApplicationController
-  before_action :name_check, only:[:update]
+  # before_action :name_check, only:[:update]
   before_action :password_check, only: [:password_update]
 
   def edit
@@ -9,7 +9,7 @@ class UsersController < ApplicationController
     if current_user.update(user_params)
       redirect_back(fallback_location: root_path)
     else
-      flash[:error] = @error_message
+      # flash[:error] = @error_message
       redirect_back(fallback_location: root_path)
     end
   end
@@ -22,6 +22,7 @@ class UsersController < ApplicationController
       render template: "accounts/password"
     else
       @error_message = "エラーが発生しました"
+      flash[:error] = @error_message
       render template: "accounts/password"
     end
   end
@@ -33,12 +34,12 @@ class UsersController < ApplicationController
   end
 end
 
-def name_check
-  new_name = user_params[:name]
-  if new_name.length > 10
-    @error_message = "ニックネームは10文字以内で入力してください"
-  end
-end
+# def name_check
+#   new_name = user_params[:name]
+#   if new_name.length > 10
+#     @error_message = "ニックネームは10文字以内で入力してください"
+#   end
+# end
 
 def password_check
   new_password = user_params[:new_password]
