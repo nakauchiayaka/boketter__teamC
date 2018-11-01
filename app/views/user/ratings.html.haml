@@ -1,0 +1,33 @@
+= render 'shared/header'
+#wrapper
+  #container
+    = render 'shared/header-news'
+
+    #main-container
+      = render 'users_shared/content-menu'
+
+      #content
+        .text-center
+          .btn-group.content-submenu
+            = link_to "★★★", "#", class: "btn btn-default active-category"
+            = link_to "★★", "#", class: "btn btn-default"
+            = link_to "★", "#", class: "btn btn-default"
+
+        .other-title
+          = current_user.name
+          さんのボケコレクション
+
+        #my
+          -# サンプル --------------------------------
+          = render 'user/sample_boke'
+          = render 'user/sample_boke'
+          -# ----------------------------------------
+
+      .bcl
+        = render 'mypage_shared/bcl'
+
+    = render 'mypage_shared/right-container'
+    .clearfix
+
+  = render 'mypage_shared/scroll-top'
+= render 'shared/footer'

@@ -1,0 +1,55 @@
+= render 'shared/header'
+#wrapper
+  #container
+    = render 'shared/header-news'
+
+    #main-container
+      = render 'users_shared/content-menu'
+
+      #content
+        .text-center
+          .btn-group.content-submenu
+            = link_to "お気に入り職人", "#", class: "btn btn-default active-category"
+            = link_to "お気に入られ職人", "#", class: "btn btn-default"
+
+        .other-title
+          = current_user.name
+          さんのお気に入り職人
+
+        #my
+          .user-content
+            = link_to "#" do
+              %img{:src => "//d3pb2x7032n52.cloudfront.net/static/images/user_img.gif"}
+            = link_to "#" do
+              %span sample
+          .user-content
+            = link_to "#" do
+              %img{:src => "//d3pb2x7032n52.cloudfront.net/static/images/user_img.gif"}
+            = link_to "#" do
+              %span sample
+          .user-content
+            = link_to "#" do
+              %img{:src => "//d3pb2x7032n52.cloudfront.net/static/images/user_img.gif"}
+            = link_to "#" do
+              %span sample
+          .user-content
+            = link_to "#" do
+              %img{:src => "//d3pb2x7032n52.cloudfront.net/static/images/user_img.gif"}
+            = link_to "#" do
+              %span sample
+          .user-content
+            = link_to "#" do
+              %img{:src => "//d3pb2x7032n52.cloudfront.net/static/images/user_img.gif"}
+            = link_to "#" do
+              %span sample
+
+        .pager
+
+      .bcl
+        = render 'mypage_shared/bcl'
+
+    = render 'mypage_shared/right-container'
+    .clearfix
+
+  = render 'mypage_shared/scroll-top'
+= render 'shared/footer'
