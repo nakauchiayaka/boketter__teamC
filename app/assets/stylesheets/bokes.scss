@@ -35,12 +35,36 @@
 .pull-left{
   float: left;
 }
-.boke-meta{
-  font-size: 50px;
-  font-weight: bold;
+
+.boke-photo-content{
+  display: inline-block;
 }
-.pull-center{
-  margin: 0 auto;
+.boke-photo img{
+  margin-bottom: 5px;
+  max-height:350px;
+  border:1px solid #999;
+}
+.boke-photo-meta{
+    text-align: right;
+    white-space:nowrap;
+    overflow: hidden;
+    text-overflow:ellipsis;
+  }
+.boke-photo-meta a{
+  text-decoration: none;
+  color:#2b6bc3;
+}
+.boke-text{
+  color: #000;
+  display: block;
+  font-family: Helvetica, Arial, "ヒラギノ角ゴ Pro W3", Hiragino Kaku Gothic Pro, sans-serif;
+  font-size:36px;
+  font-weight: bold;
+  line-height: 1.2;
+  margin: 10px auto 10px;
+  text-align: center;
+  width: 500px;
+  word-break:break-word;
 }
 .btn-default{
   color: #333;
