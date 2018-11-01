@@ -1,0 +1,54 @@
+.main
+  = render 'shared/header'
+  #wrapper
+    #container
+      = render 'shared/header-news'
+
+      #main-container
+        .content-menu
+          %ul.content-menu-list.inline-list
+            %li.content-menu-list-active
+              = link_to "新着",""
+            %li
+              = link_to "注目",""
+            %li
+              = link_to "人気",""
+            %li
+              = link_to "コラボ",""
+            %li
+              = link_to "ラベル",""
+            %li
+              = link_to "セレクト",""
+            %li
+              = link_to new_odai_path do
+                %i.fas.fa-upload
+                お題投稿
+        #content
+          .index-title
+            新着お題一覧
+          .text-center
+            .btn-group.category-tab-menu
+              %label.category-element
+                = link_to "全カテゴリ",odais_path
+              %label.category-element
+                = link_to "人物",jinbutsu_odais_path
+              %label.category-element
+                = link_to "人物2人以上",jinbutsu2ri_odais_path
+              %label.category-element.active-category
+                = link_to "動物",animal_odais_path
+              %label.category-element
+                = link_to "風景",scenery_odais_path
+              %label.category-element
+                = link_to "無機物",inorganicmatter_odais_path
+              %label.category-element
+                = link_to "イラスト",illustration_odais_path
+              %label.category-element
+                = link_to "その他",other_odais_path
+          = render 'odai-list'
+
+          %p.text-center
+            = link_to "もっと読み込む","",class: "btn-primary btn btn-long"
+
+
+      = render 'shared/right-container'
+  = render 'shared/footer'

@@ -1,0 +1,30 @@
+= render 'shared/header'
+#wrapper
+  #container
+    = render 'shared/header-news'
+
+    #main-container
+      = render 'mypage_shared/content-menu'
+
+      #content
+        = render 'mypage_shared/text-center'
+
+        .other-title 退会
+
+        %p.text
+          本当に退会しますか？
+        %p.text
+          退会をすると、今までのボケ等は削除されます。 また、再度同じ「ボケてアカウント名」「メールアドレス」での会員登録はできません。
+        %hr
+        .text-center
+          %button.btn.btn-warning
+            退会する
+
+      .bcl
+        = render 'mypage_shared/bcl'
+
+    = render 'mypage_shared/right-container'
+    .clearfix
+
+  = render 'mypage_shared/scroll-top'
+= render 'shared/footer'

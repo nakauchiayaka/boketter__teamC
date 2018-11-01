@@ -6,6 +6,22 @@
   .pin{
     display: inline-block;
     margin: 4px;
+    h3{
+      font-weight: bold;
+      font-size:12px;
+      margin-top:10px;
+      margin-bottom:0;
+      b{
+        text-align:right;
+        display: block;
+        margin: 0;
+        float: right;
+        a{
+          text-decoration: none;
+          color:#2b6bc3;
+        }
+      }
+    }
     .odai-inner{
       margin: 0 0 20px 0;
       padding: 0;
@@ -23,8 +39,8 @@
   a{
     text-decoration: none;
     img{
-      max-height: 272px;
-      max-width: 272px;
+      max-height: 300px;
+      max-width: 300px;
     }
   }
 }
@@ -68,8 +84,23 @@ label{
   font-size: 18px;
   border-radius:6px;
 }
-
-
+.gray-box{
+  padding:20px;
+  text-align:center;
+  margin-bottom:20px;
+}
+.image-preview{
+  max-height: 300px;
+  max-width: 300px;
+  background-color: #efefef;
+}
+.boke-new-form-input-radio-container{
+padding-left:16px;
+}
+.radio-inline{
+  padding-left: 20px;
+  font-weight: normal;
+}
 .alert-create{
   border-width:2px;
   padding: 15px;

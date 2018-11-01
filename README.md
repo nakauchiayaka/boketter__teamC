@@ -15,16 +15,6 @@
 - has_many :odai_categorys
 
 
-## odai_categorysテーブル
-|Column|Type|Options|
-|------|----|-------|
-|odai|references|null: false,index: true, foreign_key: true|
-|category|references|null: false,index: true, foreign_key: true|
-
-### Association
-- belongs_to :odai
-- belongs_to :category
-
 
 ## categorysテーブル
 |Column|Type|Options|
