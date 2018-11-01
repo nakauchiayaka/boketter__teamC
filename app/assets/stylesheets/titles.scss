@@ -391,6 +391,34 @@ ul .inline-list{
 }
 
 
+//未ログイン時にお題投稿するときに飛ぶページのcss
+#one-column-container{
+  padding: 0;
+  margin:0 0 80px 0;
+  min-height:400px;
+}
+.panel-notlogin{
+  text-align: center;
+  border:2px solid #f1839a;
+  margin-bottom:40px;
+  border-radius: 4px;
+}
+.panel-danger{
+  border-color:#f1839a;
+}
+.panel-body{
+  color:#000;
+}
+
+.little-margin-img{
+  margin: 20px;
+  img{
+    vertical-align: middle;
+  }
+}
+.sinkitouroku{
+  font-weight: bold;
+}
 //右の広告やコメントのあるところ
 
 #right-container{
