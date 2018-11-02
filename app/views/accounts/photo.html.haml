@@ -15,14 +15,15 @@
         .gray-box.ng-scope
           %div{style: "display:inline-table;"}
             .drag-area{style: "background-image:url();"}
-          -# = form_for(action: "/account/photo", method: "post", html: {class: "ng-pristine ng-valid"})
-          %div
-            %button.btn.btn-default{onclick: "$('input[id=fileInput]').click();"}
-              ファイルを選択
-          %br
-          %div
-            %button.btn.btn-primary{type: "submit"}
-              アップロード
+
+          = form_for (current_user), html: {class: "ng-pristine ng-valid"} do |f|
+            %div
+              = f.label :image, class: "button btn btn-default" do
+                ファイルを選択
+                = f.file_field :image, class: "user-img"
+            %br
+            %div
+              = f.submit "アップロード", class: "btn btn-primary"
 
         #preview_field
 
