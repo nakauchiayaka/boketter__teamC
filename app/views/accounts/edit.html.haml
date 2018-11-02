@@ -4,22 +4,28 @@
     = render 'shared/header-news'
 
     #main-container
-      = render 'mypage_shared/content-menu'
+      = render 'accounts/setting_content-menu'
 
       #content
-        = render 'mypage_shared/text-center'
+        .text-center
+          .btn-group.category-tab-menu
+            %label.category-element.active-category
+              = link_to "プロフィール編集", account_path, method: :get
+            %label.category-element
+              = link_to "プロフィール写真変更", account_photo_path, method: :get
+            %label.category-element
+              = link_to "パスワード変更", account_password_path, method: :get
+            %label.category-element
+              = link_to "メアド変更", account_email_path, method: :get
+            %label.category-element
+              = link_to "退会手続き", account_delete_path, method: :get
 
         .other-title
           プロフィールの変更
 
         .ng-scope{style: "width:600px;margin:0 auto;"}
-          - if flash[:error].present?
-            .alert.alert-danger.ng-hide
-              %ul
-                %li.ng-binding.ng-scope
-                  = flash[:error]
 
-          = form_for (current_user), html: {name: "validation_form", class: "form-horizontal ng-pristine ng-valid ng-valid-required"} do |f|
+          = form_for (current_user), html: {class: "form-horizontal ng-pristine ng-valid ng-valid-required"} do |f|
             .form-group
               %label.control-label.col-sm-4
                 メールアドレス
@@ -29,17 +35,17 @@
             .form-group
               = f.label :name, "ニックネーム（10文字以内)", class: "control-label col-sm-4"
               .col-sm-8
-                = f.text_field :name, class: "form-control ng-pristine ng-valid-maxlength ng-valid ng-valid-required"
+                = f.text_field :name, class: "form-control ng-pristine ng-valid-maxlength ng-valid ng-valid-required", maxlength: "10"
             %hr
             .form-group
               .col-sm-offset-4.col-sm-4
                 = f.submit "更新", class: "form-control active-btn button"
 
       .bcl
-        = render 'mypage_shared/bcl'
+        = render 'accounts/bcl'
 
-    = render 'mypage_shared/right-container'
+    = render 'accounts/right-container'
     .clearfix
 
-  = render 'mypage_shared/scroll-top'
+  = render 'accounts/scroll-top'
 = render 'shared/footer'

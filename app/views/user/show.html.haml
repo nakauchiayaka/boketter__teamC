@@ -1,0 +1,82 @@
+= render 'shared/header'
+#wrapper
+  #container
+    = render 'shared/header-news'
+
+    #main-container
+      .content-menu
+        %ul.content-menu-list.inline-list
+          %li.content-menu-list-active
+            = link_to "プロフィール", "/user/#{current_user.id}"
+          %li
+            = link_to "ボケ", "/user/#{current_user.id}/boke"
+          %li
+            = link_to "お題", "/user/#{current_user.id}/odai"
+          %li
+            = link_to "お気に入り職人", "/user/#{current_user.id}/favorites"
+          %li
+            = link_to "ボケコレ", "/user/#{current_user.id}/ratings3"
+
+      #content.content-boke.content-top-left-radius-none
+        .user-info
+          .user-info-photo
+            = image_tag current_user.image
+          .user-info-profile
+            .user-info-profile-title
+              = current_user.name
+              さんのページ
+            %table.table
+              %tbody
+                %tr
+                  %td{:width => "120"}
+                    %i.fa.fa-check
+                    &nbsp; ボケてID
+                  %td
+                    = current_user.name
+                %tr
+                  %td
+                    %i.fa.fa-star{:style => "color:#000"}
+                    &nbsp; 星の合計
+                  %td 0
+                %tr
+                  %td
+                    %i.fa.fa-comment
+                    &nbsp; ボケ投稿数
+                  %td 0
+                %tr
+                  %td
+                    %i.fa.fa-picture-o
+                    &nbsp; お題投稿数
+                  %td 0
+
+        .user-index-widget
+          .other-title
+            = current_user.name
+            さんの最近評価したボケ
+          .user-index-widget-content
+            -# 以下サンプル ---------------------------------------
+            = render 'accounts/sample_boke-horizon'
+            = render 'accounts/sample_boke-horizon'
+            = render 'accounts/sample_boke-horizon'
+            -# --------------------------------------------------
+            .clear
+
+          .text-right
+            = link_to "" do
+              = current_user.name
+              さんの評価したボケをもっとみる
+
+          = link_to ""
+
+        = link_to ""
+
+      = link_to ""
+
+      .bcl
+        = render 'accounts/bcl'
+
+    = render 'accounts/right-container'
+    .clearfix
+
+  = render 'accounts/scroll-top'
+= render 'shared/footer'

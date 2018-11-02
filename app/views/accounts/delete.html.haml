@@ -4,10 +4,22 @@
     = render 'shared/header-news'
 
     #main-container
-      = render 'mypage_shared/content-menu'
+      = render 'accounts/setting_content-menu'
+
 
       #content
-        = render 'mypage_shared/text-center'
+        .text-center
+          .btn-group.category-tab-menu
+            %label.category-element
+              = link_to "プロフィール編集", account_path, method: :get
+            %label.category-element
+              = link_to "プロフィール写真変更", account_photo_path, method: :get
+            %label.category-element
+              = link_to "パスワード変更", account_password_path, method: :get
+            %label.category-element
+              = link_to "メアド変更", account_email_path, method: :get
+            %label.category-element.active-category
+              = link_to "退会手続き", account_delete_path, method: :get
 
         .other-title 退会
 
@@ -20,11 +32,35 @@
           %button.btn.btn-warning
             退会する
 
-      .bcl
-        = render 'mypage_shared/bcl'
+      #user-delete-modal.modal{"aria-hidden" => "true", "aria-labelledby" => "", :role => "dialog", :style => "display: none;", :tabindex => "-1"}
+        .modal-dialog
+          .modal-content
+            .modal-header
+              %button.close{"data-dismiss" => "modal", :type => "button"}
+                %span{"aria-hidden" => "true"} ×
+                %span.sr-only Close
+              %h4.modal-title#myModalLabel 確認
+            .modal-body
+              %p.text
+                %b 本当に退会しますか？
+              %p.text
+                退会をすると、今後ログインが出来なくなり、今までのボケやお気に入り等は削除されます。また、再度同じ「ボケてアカウント名」「メールアドレス」での会員登録はできません。
+            .modal-footer
+              -# = form_for (current_user, url: /account/delete, method: "post", html: { class: "form-inline ng-pristine ng-valid" }) do |f|
+              .form-inline.ng-pristine.ng-valid
+                .text-center
+                  %button.btn.btn-default.close-btn{"data-dismiss" => "modal"}
+                    閉じる
+                  &nbsp;
+                  %button.btn.btn-warning{:type => "submit"}
+                    退会する
 
-    = render 'mypage_shared/right-container'
+
+      .bcl
+        = render 'accounts/bcl'
+
+    = render 'accounts/right-container'
     .clearfix
 
-  = render 'mypage_shared/scroll-top'
+  = render 'accounts/scroll-top'
 = render 'shared/footer'

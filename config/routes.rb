@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   root 'titles#index'
   put '/users/password_upadate',  to: 'users#password_update'
-  resources :users, only: [:edit, :update]
+  resources :users, only: [:edit, :show, :update]
 
   resources :bokes, only: :index
 
@@ -20,6 +20,7 @@ Rails.application.routes.draw do
      get 'notlogin'
     end
   end
+
   resources :odais do
     resources :bokes
     collection do
@@ -32,11 +33,12 @@ Rails.application.routes.draw do
       get 'other'
     end
   end
-  # namespace :odai do
-  #   resources :popular do
-  #     collection do
-  #       get 'jinbutsu'
-  #     end
-  #   end
-  # end
+
+  get '/user/:id/',           to: 'user#show'
+  get '/user/:id/boke',       to: 'user#boke'
+  get '/user/:id/odai',       to: 'user#odai'
+  get '/user/:id/favorites',  to: 'user#favorites'
+  get '/user/:id/ratings1',    to: 'user#ratings1'
+  get '/user/:id/ratings2',    to: 'user#ratings2'
+  get '/user/:id/ratings3',    to: 'user#ratings3'
 end
