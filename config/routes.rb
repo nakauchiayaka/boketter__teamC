@@ -1,9 +1,11 @@
 Rails.application.routes.draw do
   devise_for :users
   root 'titles#index'
-  get 'titles' => 'titles#index'
   put '/users/password_upadate',  to: 'users#password_update'
   resources :users, only: [:edit, :show, :update]
+
+  resources :bokes, only: :index
+
 
   get '/my',                to: 'accounts#my'
   get '/account',           to: 'accounts#edit'
@@ -13,7 +15,14 @@ Rails.application.routes.draw do
   get '/account/delete',    to: 'accounts#delete'
   get '/mute',              to: 'accounts#mute'
 
+  resources :titles do
+    collection do
+     get 'notlogin'
+    end
+  end
+
   resources :odais do
+    resources :bokes
     collection do
       get 'jinbutsu'
       get 'jinbutsu2ri'

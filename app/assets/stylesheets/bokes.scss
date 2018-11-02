@@ -6,22 +6,6 @@
   .pin{
     display: inline-block;
     margin: 4px;
-    h3{
-      font-weight: bold;
-      font-size:12px;
-      margin-top:10px;
-      margin-bottom:0;
-      b{
-        text-align:right;
-        display: block;
-        margin: 0;
-        float: right;
-        a{
-          text-decoration: none;
-          color:#2b6bc3;
-        }
-      }
-    }
     .odai-inner{
       margin: 0 0 20px 0;
       padding: 0;
@@ -39,8 +23,8 @@
   a{
     text-decoration: none;
     img{
-      max-height: 300px;
-      max-width: 300px;
+      max-height: 450px;
+      max-width: 450px;
     }
   }
 }
@@ -50,6 +34,44 @@
 }
 .pull-left{
   float: left;
+}
+.pull-right{
+  float: right;
+}
+.odai-photo-content-2{
+  display: inline-block;
+}
+
+
+.boke-photo-content{
+  display: inline-block;
+}
+.boke-photo img{
+  margin-bottom: 5px;
+  max-height:350px;
+  border:1px solid #999;
+}
+.boke-photo-meta{
+    text-align: right;
+    white-space:nowrap;
+    overflow: hidden;
+    text-overflow:ellipsis;
+  }
+.boke-photo-meta a{
+  text-decoration: none;
+  color:#2b6bc3;
+}
+.boke-text{
+  color: #000;
+  display: block;
+  font-family: Helvetica, Arial, "ヒラギノ角ゴ Pro W3", Hiragino Kaku Gothic Pro, sans-serif;
+  font-size:36px;
+  font-weight: bold;
+  line-height: 1.2;
+  margin: 10px auto 10px;
+  text-align: center;
+  width: 500px;
+  word-break:break-word;
 }
 .btn-default{
   color: #333;
@@ -84,23 +106,8 @@ label{
   font-size: 18px;
   border-radius:6px;
 }
-.gray-box{
-  padding:20px;
-  text-align:center;
-  margin-bottom:20px;
-}
-.image-preview{
-  max-height: 300px;
-  max-width: 300px;
-  background-color: #efefef;
-}
-.boke-new-form-input-radio-container{
-padding-left:16px;
-}
-.radio-inline{
-  padding-left: 20px;
-  font-weight: normal;
-}
+
+
 .alert-create{
   border-width:2px;
   padding: 15px;
@@ -118,3 +125,4 @@ padding-left:16px;
   font-size: 18px;
   border-radius:6px;
 }
+

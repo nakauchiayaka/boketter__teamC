@@ -2,7 +2,18 @@
   = render 'shared/header'
   #wrapper
     #container
-      = render 'shared/header-news'
+      #header-news
+        %span#header-news-catch
+          %h1.header-news-catch-heading
+        %span#header-news-stats
+          ボケ投稿数
+          %b
+            65450600
+          件&nbsp;お題投稿数
+          %b
+            111223
+          件&nbsp;
+
       #main-container
         .content-menu
           %ul.content-menu-list.inline-list
@@ -15,25 +26,23 @@
             %li
               = link_to "コラボ",""
             %li
-              = link_to "ラベル",""
-            %li
               = link_to "セレクト",""
             %li
-              = link_to new_odai_path do
-                %i.fas.fa-upload
-                お題投稿
+              = link_to "ピックアップ",""
+            %li
+              = link_to "殿堂入り",""
         #content
           .content-boke
             .alert-create.alert-info.text-center
               %p
                 = image_tag "boke_neko.png",style:"width:180px"
               %p
-                お題の投稿が完了しました。
+                ボケの投稿が完了しました。
                 %br
                 サイト上に反映されるまで少し時間がかかる可能性があります。
               %br
               %p
-                =link_to "新着お題へ",odais_path,class: "btn-primary btn btn-lg"
+                =link_to "新着ボケへ",bokes_path,class: "btn-primary btn btn-lg"
 
       = render 'shared/right-container'
   = render 'shared/footer'
