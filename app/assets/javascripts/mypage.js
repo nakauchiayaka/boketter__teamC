@@ -1,4 +1,5 @@
 $(function() {
+// 退会ポップアップ
   var flag = false;
 
   function close() {
@@ -33,6 +34,20 @@ $(function() {
       } else {
         flag = true;
       }
+    }
+  });
+
+
+// 画像プレビュー
+  $(".user-img").on("change", function(){
+    var inputFiles = $(this)[0].files[0];
+    if (inputFiles) {
+      var fileReader = new FileReader();
+      fileReader.onload = function(e){
+        var imgURI = event.target.result;
+        $(".drag-area").attr('style', `background-image:url(${imgURI});`);
+      }
+      fileReader.readAsDataURL(inputFiles);
     }
   });
 });
