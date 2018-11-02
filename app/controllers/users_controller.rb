@@ -9,7 +9,6 @@ class UsersController < ApplicationController
     if current_user.update(user_params)
       redirect_back(fallback_location: root_path)
     else
-      # flash[:error] = @error_message
       redirect_back(fallback_location: root_path)
     end
   end
@@ -30,16 +29,9 @@ class UsersController < ApplicationController
   private
 
   def user_params
-    params.require(:user).permit(:name, :email, :current_password, :new_password, :password_confirmation)
+    params.require(:user).permit(:name, :email, :current_password, :new_password, :password_confirmation, :image)
   end
 end
-
-# def name_check
-#   new_name = user_params[:name]
-#   if new_name.length > 10
-#     @error_message = "ニックネームは10文字以内で入力してください"
-#   end
-# end
 
 def password_check
   new_password = user_params[:new_password]
