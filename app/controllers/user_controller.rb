@@ -12,7 +12,12 @@ class UserController < ApplicationController
   def favorites
   end
 
-  def ratings
+  def ratings1
   end
 
+  def ratings2
+  end
+
+  def ratings3
+  end
 end
