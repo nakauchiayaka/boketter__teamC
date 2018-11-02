@@ -4,6 +4,7 @@ class User < ApplicationRecord
   has_many :odais
   devise :database_authenticatable, :registerable,
          :recoverable, :rememberable, :validatable
+  mount_uploader :image, ImageUploader
 
   validates :name,  length: {maximum: 10}
 end
