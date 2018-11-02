@@ -9,7 +9,7 @@
       #content.content-boke.content-top-left-radius-none
         .user-info
           .user-info-photo
-            %img{:src => "//d3pb2x7032n52.cloudfront.net/static/images/user_img.gif"}
+            = image_tag current_user.image
           .user-info-profile
             .user-info-profile-title
               = current_user.name

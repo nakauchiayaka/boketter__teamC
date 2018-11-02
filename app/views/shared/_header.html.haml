@@ -17,7 +17,7 @@
           - if user_signed_in?
             %li.right__style
               = link_to "/user/#{current_user.id}" do
-                = image_tag "wood_pattern.png",class: "user-icon-top-bar"
+                = image_tag current_user.image, class: "user-icon-top-bar"
                 = current_user.name
             %li.right__style
               = link_to "マイページ", my_path
