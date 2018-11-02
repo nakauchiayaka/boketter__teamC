@@ -23,13 +23,18 @@
                 %i.fas.fa-upload
                 お題投稿
         #content
-          .index-title
-            お題の投稿
-          .text-center{style:"margin:0 auto 20px;"}
-            .gray-box
-              = image_tag "",name:"preview",class:"image-preview"
-          .form
+          .other-title
+            %span.far.fa-image
+            &nbsp;お題の投稿
+          .gray-box
+            %div{:style => "display:inline-table;"}
+              .drag-area{:style => "background-image:url();"}
             = form_for @odai do |f|
+              %div
+                = f.label :image, class: "button btn btn-default" do
+                  1.&nbsp;ファイルを選択
+                  = f.file_field :image, class: "user-img"
+              %br
               %label
                 タイトル
               = f.text_field :title,placeholder:'タイトル入力',class: 'form-control input-lg'
@@ -60,8 +65,9 @@
                 %label.radio-inline
                   = f.radio_button :category_id,7
                   その他
-              %p.text-center
-                = f.submit 'Send',class: " btn-primary btn btn-long"
+              %br
+              %div
+                = f.submit '2. ファイルをアップロード',class: " btn-primary btn"
 
 
 
