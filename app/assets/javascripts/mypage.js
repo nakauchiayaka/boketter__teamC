@@ -45,7 +45,7 @@ $(function() {
       var fileReader = new FileReader();
       fileReader.onload = function(e){
         var imgURI = event.target.result;
-        $(".drag-area").attr('style', `background-image:url(${imgURI});`);
+        $(".drag-area").attr('style', "background-image:url("+ imgURI +");");
       }
       fileReader.readAsDataURL(inputFiles);
     }
