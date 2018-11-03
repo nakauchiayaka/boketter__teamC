@@ -23,6 +23,9 @@ Rails.application.routes.draw do
      get 'notlogin'
     end
   end
+  resources :bokes do
+      resources :stars ,only: [:create, :destroy]
+  end
   resources :odais do
     resources :bokes
     collection do

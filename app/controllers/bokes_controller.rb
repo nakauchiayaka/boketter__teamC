@@ -2,6 +2,7 @@ class BokesController < ApplicationController
   before_action :set_odai, except: :hot
   def index
     @bokes = Boke.order("created_at DESC")
+
   end
 
   def new
