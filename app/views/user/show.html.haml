@@ -20,7 +20,10 @@
       #content.content-boke.content-top-left-radius-none
         .user-info
           .user-info-photo
-            = image_tag current_user.image
+            - if current_user.image.file.nil?
+              = image_tag "user_img.gif"
+            - else
+              = image_tag current_user.image
           .user-info-profile
             .user-info-profile-title
               = current_user.name
