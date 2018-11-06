@@ -99,7 +99,13 @@ a {
 img {
   vertical-align: middle;
 }
-
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+table {
+  background-color: transparent;
+}
 
 // 修正
 .top-bar {

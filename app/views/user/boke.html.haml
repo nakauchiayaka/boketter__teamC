@@ -1,0 +1,40 @@
+= render 'shared/header'
+#wrapper
+  #container
+    = render 'shared/header-news'
+
+    #main-container
+      .content-menu
+        %ul.content-menu-list.inline-list
+          %li
+            = link_to "プロフィール", "/user/#{current_user.id}"
+          %li.content-menu-list-active
+            = link_to "ボケ", "/user/#{current_user.id}/boke"
+          %li
+            = link_to "お題", "/user/#{current_user.id}/odai"
+          %li
+            = link_to "お気に入り職人", "/user/#{current_user.id}/favorites"
+          %li
+            = link_to "ボケコレ", "/user/#{current_user.id}/ratings3"
+
+
+      #content
+        .other-title
+          = current_user.name
+          さんの投稿したボケ
+
+        .text-center
+          .btn-group.content-submenu
+            = link_to "新着", "#", class: "btn btn-default active-category"
+            = link_to "評価順", "#", class: "btn btn-default"
+
+        .pager
+
+      .bcl
+        = render 'accounts/bcl'
+
+    = render 'accounts/right-container'
+    .clearfix
+
+  = render 'accounts/scroll-top'
+= render 'shared/footer'

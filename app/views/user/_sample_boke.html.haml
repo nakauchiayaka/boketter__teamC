@@ -1,0 +1,92 @@
+.boke
+  .boke-photo
+
+    .boke-photo-content
+      = link_to "" do
+        = image_tag "wood_pattern.png"
+
+      .boke-photo-meta
+        = link_to "" do
+          %i.fas.fa-camera
+          photo by (写真投稿者)
+        &nbsp;
+        = link_to "" do
+          %i.far.fa-image
+          odai by (お題投稿者)
+
+  = link_to "sample", "", class: "boke-text"
+
+  .boke-meta
+    .boke-information
+      .boke-information-row.is-360
+        .boke-stars
+          = link_to "" do
+            %i.fas.fa-star{style:"color:#ebbf2a"}
+            1000
+
+        .boke-information-label
+          = link_to "1週間くらい前", ""
+        %span.boke-share-social
+          = link_to "" do
+            %i.fab.fa-facebook-f
+        %span.boke-share-social
+          = link_to "" do
+            %i.fab.fa-twitter
+
+    .boke-information-row.ng-scope
+      .boke-rate
+        = link_to "" do
+          %i.fas.fa-times-circle.boke-rate-times
+
+        %span.boke-rating
+          = link_to "" do
+            %i.far.fa-star{style:"color:#ebbf2a"}
+          = link_to "" do
+            %i.far.fa-star{style:"color:#ebbf2a"}
+          = link_to "" do
+            %i.far.fa-star{style:"color:#ebbf2a"}
+
+      .comment-action-parts
+        %p
+          %img.user-icon{:src => "//d3pb2x7032n52.cloudfront.net/static/images/user_icon.gif"}
+          = link_to "" do
+            %b.ng-binding.sample_user sample_user
+          さんのボケです
+
+
+        -# コメントボタン ----------
+        .comment-area.text-center
+          %button.btn.btn-default コメントする
+
+        -# コメント編集 ----------
+        -# .comment-area.text-center.ng-hide
+        -#   .boke-comment-input
+        -# ⬇︎ あとでformに ︎︎︎︎︎︎︎︎⬇︎ -----
+        -#     .form-inline.ng-pristine.ng-valid
+        -#       %img.user-icon{:src => "//d3pb2x7032n52.cloudfront.net/static/images/user_icon.gif"}
+        -#       %b.ng-binding
+        -#       &nbsp;
+        -#       %button.btn.btn-default コメントを編集する
+
+        -# コメントフォーム -----
+        -# .comment-action
+        -#   .comment-area
+        -#     .row.boke-comment-input{:style => "margin:0 0 0 1em;"}
+        -#       %label.col-sm-2.pull-left{:style => "margin-top:0.5em;"}
+        -#         コメント
+        -#       -# ⬇︎ あとでformに ︎︎︎︎︎︎︎︎-----
+        -#       .input-group.col-sm-9.ng-pristine.ng-valid
+        -#         %input.form-control.ng-pristine.ng-valid{:placeholder => "コメントを入力"}
+        -#         %span.input-group-btn
+        -#           %button.btn.btn-default 送信
+
+        -#       %span.col-sm-1.pull-left
+        -#         %button.close
+        -#           %span ×
+
+        - if @error_message
+          .alert.alert-danger
+            %ul{:style => "list-style-type:none"}
+              %li
+                %span.ng-binding.ng-scope
+                  コメントは60文字以内でお願いします

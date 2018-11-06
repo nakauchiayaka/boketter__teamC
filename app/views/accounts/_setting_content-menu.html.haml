@@ -1,8 +1,8 @@
 .content-menu
-  %ul.content-menu-list.inline-list
-    %li.content-menu-list-active
-      = link_to "マイページ", my_path
+  %ul.content-menu-list.inline-list.mypage_menu_list
     %li
+      = link_to "マイページ", my_path
+    %li.content-menu-list-active
       = link_to "設定", account_path(current_user)
     %li
       = link_to "ミュート", mute_path
