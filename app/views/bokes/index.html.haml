@@ -66,25 +66,16 @@
                     %i.fab.fa-twitter
             .boke-information-row.ng-scope
               .boke-rate
-                = link_to "" do
-                  %i.fas.fa-times-circle.boke-rate-times
+                %i.fas.fa-times-circle.boke-rate-times
                 - if boke.star_user(current_user.id)
                   %span.boke-rating
-                    = link_to boke_star_path(boke,boke_id:boke.id) ,method: :delete do
-                      %i.test.fas.fa-star.ccc{style:"color:#ebbf2a"}
-                    = link_to boke_star_path(boke,boke_id:boke.id) ,method: :delete do
-                      %i.test.fas.fa-star.ccc{style:"color:#ebbf2a"}
-                    = link_to boke_star_path(boke,boke_id:boke.id) ,method: :delete do
-                      %i.test.fas.fa-star.ccc{style:"color:#ebbf2a"}
+                    .a.star-1.decrement.fas.fa-star{style:"color:#ebbf2a"}
+                    / %input{name: "now-boke", type: "hidden", value: boke.id, class: 'now-boke_id' }
+
                 -else
                   %span.boke-rating
-                    = link_to boke_stars_path(boke,boke_id:boke.id,status:3) ,method: :post ,class: "linkaaa" do
-                      %i.test.far.fa-star.bbb{style:"color:#ebbf2a"}
-                    = link_to boke_stars_path(boke,boke_id:boke.id,status:2) ,method: :post ,class: "linkaaa" do
-                      %i.test.far.fa-star.bbb{style:"color:#ebbf2a"}
-                    = link_to boke_stars_path(boke,boke_id:boke.id,status:1) ,method: :post ,class: "linkaaa" do
-                      %i.test.far.fa-star.bbb{style:"color:#ebbf2a"}
-
+                    .a.star-1.increment.far.fa-star{style:"color:#ebbf2a","data-id": "#{boke.id}"}
+                    / %input{name: "now-boke", type: "hidden", value: boke.id, class: 'now-boke_id' }
 
 
           %p.text-center

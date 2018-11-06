@@ -2,7 +2,7 @@ class BokesController < ApplicationController
   before_action :set_odai, except: :index
   def index
     @bokes = Boke.order("created_at DESC")
-
+    @stars = Star.where(boke_id: params[:id])
   end
 
   def new
