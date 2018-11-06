@@ -46,15 +46,12 @@
               %p.text
                 退会をすると、今後ログインが出来なくなり、今までのボケやお気に入り等は削除されます。また、再度同じ「ボケてアカウント名」「メールアドレス」での会員登録はできません。
             .modal-footer
-              -# = form_for (current_user, url: /account/delete, method: "post", html: { class: "form-inline ng-pristine ng-valid" }) do |f|
-              .form-inline.ng-pristine.ng-valid
+              = form_for (current_user), url: "/users/#{current_user.id}", :method => "delete", html: {class: "form-inline ng-pristine ng-valid"} do |f|
                 .text-center
-                  %button.btn.btn-default.close-btn{"data-dismiss" => "modal"}
+                  %button.btn.btn-default.close-btn
                     閉じる
                   &nbsp;
-                  %button.btn.btn-warning{:type => "submit"}
-                    退会する
-
+                  = f.submit "退会する", class: "btn btn-warning"
 
       .bcl
         = render 'accounts/bcl'
