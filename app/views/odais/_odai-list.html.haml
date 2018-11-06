@@ -1,6 +1,6 @@
 .odai-list
   - @odais.each do |odai|
-    .pin
+    .pin{ 'data-odai-id': odai.id }
       .odai-inner
         %h3
           %b
