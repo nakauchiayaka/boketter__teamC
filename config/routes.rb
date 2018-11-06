@@ -2,7 +2,7 @@ Rails.application.routes.draw do
   devise_for :users
   root 'titles#index'
   put '/users/password_upadate',  to: 'users#password_update'
-  resources :users, only: [:edit, :show, :update]
+  resources :users, except: [:index, :new, :create]
 
   resources :bokes, only: :index
 
