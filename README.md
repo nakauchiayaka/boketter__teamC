@@ -24,6 +24,8 @@
 ### Association
 - has_many :odais ,through: :odai_categorys
 - has_many :odai_categorys
+- has_many :bokes ,through: :boke_categorys
+- has_many :boke_categorys
 
 
 
@@ -35,6 +37,7 @@
 |------|----|-------|
 |user|references|null: false, foreign_key: true|
 |odai|references|null: false, foreign_key: true|
+|category|references|null: false, foreign_key: true|
 |tag|references|null: false, foreign_key: true|
 |text|text|
 
@@ -45,6 +48,8 @@
 - has_many :comments
 - has_many :tags ,through: :boke_tags
 - has_many :boke_tags
+- has_many :categorys ,through: :boke_categorys
+- has_many :boke_categorys
 
 ## boke_tagsテーブル
 |Column|Type|Options|

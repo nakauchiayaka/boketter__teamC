@@ -37,7 +37,7 @@
 
           .text-center
             .btn-group.category-tab-menu
-              %label.category-element.active-category
+              %label.category-element
                 = link_to "全カテゴリ",bokes_path
               %label.category-element
                 = link_to "バカ",baka_bokes_path
@@ -51,11 +51,10 @@
                 = link_to "身内",relative_bokes_path
               %label.category-element
                 = link_to "例え",example_bokes_path
-              %label.category-element
+              %label.category-element.active-category
                 = link_to "その他",other_bokes_path
           = render 'boke-list'
 
 
       = render 'shared/right-container'
   = render 'shared/footer'
-
