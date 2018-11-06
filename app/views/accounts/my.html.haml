@@ -4,7 +4,16 @@
     = render 'shared/header-news'
 
     #one-column-container
-      = render 'mypage_shared/content-menu'
+      .content-menu
+        %ul.content-menu-list.inline-list.mypage_menu_list
+          %li.content-menu-list-active
+            = link_to "マイページ", my_path
+          %li
+            = link_to "設定", account_path(current_user)
+          %li
+            = link_to "ミュート", mute_path
+          %li
+            = link_to "ログアウト", destroy_user_session_path, method: :delete
 
       #content.content-top-left-radius-none
         .my-feed
@@ -100,9 +109,9 @@
           -#  ページネーション
 
       .bcl
-        = render 'mypage_shared/bcl'
+        = render 'accounts/bcl'
       .clearfix
 
     .clearfix
-  = render 'mypage_shared/scroll-top'
+  = render 'accounts/scroll-top'
 = render 'shared/footer'
