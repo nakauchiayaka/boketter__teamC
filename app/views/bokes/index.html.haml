@@ -69,7 +69,7 @@
                 %i.fas.fa-times-circle.boke-rate-times
                 - if boke.star_user(current_user.id)
                   %span.boke-rating
-                    .a.star-1.decrement.fas.fa-star{style:"color:#ebbf2a"}
+                    .a.star-1.decrement.fas.fa-star{style:"color:#ebbf2a","data-id": "#{boke.id}"}
                     / %input{name: "now-boke", type: "hidden", value: boke.id, class: 'now-boke_id' }
 
                 -else
