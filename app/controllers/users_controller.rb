@@ -1,5 +1,4 @@
 class UsersController < ApplicationController
-  # before_action :name_check, only:[:update]
   before_action :password_check, only: [:password_update]
 
   def edit
@@ -24,6 +23,11 @@ class UsersController < ApplicationController
       flash[:error] = @error_message
       render template: "accounts/password"
     end
+  end
+
+  def destroy
+    User.find(params[:id]).destroy
+    redirect_to root_path
   end
 
   private
