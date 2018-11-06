@@ -37,7 +37,7 @@
 
           .text-center
             .btn-group.category-tab-menu
-              %label.category-element.active-category
+              %label.category-element
                 = link_to "全カテゴリ",bokes_path
               %label.category-element
                 = link_to "バカ",baka_bokes_path
@@ -45,7 +45,7 @@
                 = link_to "シュール",surreal_bokes_path
               %label.category-element
                 = link_to "お下劣",ogeretu_bokes_path
-              %label.category-element
+              %label.category-element.active-category
                 = link_to "ブラック",black_bokes_path
               %label.category-element
                 = link_to "身内",relative_bokes_path

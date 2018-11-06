@@ -4,7 +4,7 @@ Rails.application.routes.draw do
   put '/users/password_upadate',  to: 'users#password_update'
   resources :users, only: [:edit, :update]
 
-  resources :bokes, only: :index
+
 
 
   get '/my',                to: 'accounts#my'
@@ -21,7 +21,7 @@ Rails.application.routes.draw do
     end
   end
   resources :odais do
-    resources :bokes
+    resources :bokes,only: [:new, :create]
     collection do
       get 'jinbutsu'
       get 'jinbutsu2ri'
@@ -39,4 +39,17 @@ Rails.application.routes.draw do
   #     end
   #   end
   # end
+
+  resources :bokes do
+    collection do
+      get 'baka'
+      get 'surreal'
+      get 'ogeretu'
+      get 'black'
+      get 'relative'
+      get 'example'
+      get 'other'
+    end
+  end
+
 end
