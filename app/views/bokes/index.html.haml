@@ -34,6 +34,27 @@
         #content
           .index-title
             新着ボケ一覧
+            
+          .text-center
+            .btn-group.category-tab-menu
+              %label.category-element.active-category
+                = link_to "全カテゴリ",bokes_path
+              %label.category-element
+                = link_to "バカ",baka_bokes_path
+              %label.category-element
+                = link_to "シュール",surreal_bokes_path
+              %label.category-element
+                = link_to "お下劣",ogeretu_bokes_path
+              %label.category-element
+                = link_to "ブラック",black_bokes_path
+              %label.category-element
+                = link_to "身内",relative_bokes_path
+              %label.category-element
+                = link_to "例え",example_bokes_path
+              %label.category-element
+                = link_to "その他",other_bokes_path
+                
+                
           - @bokes.each do |boke,odai|
             .boke
             .boke-photo
@@ -100,9 +121,6 @@
 
 
 
-          %p.text-center
-            = link_to "もっと読み込む","",class: "btn-primary btn btn-long"
-
-
       = render 'shared/right-container'
   = render 'shared/footer'
+

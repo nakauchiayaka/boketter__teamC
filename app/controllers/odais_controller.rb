@@ -3,8 +3,14 @@ class OdaisController < ApplicationController
   before_action :set_odais
 
   def index
-    @odais = Odai.order("created_at DESC")
+    @odais = Odai.order("created_at DESC").limit(4)
+    @more = Odai.where('id < ?', params[:id]).order("created_at DESC").limit(4)
+    respond_to do |format|
+      format.html
+      format.json
+    end
   end
+
   def new
     @odai =Odai.new
   end

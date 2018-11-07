@@ -10,15 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181102052626) do
+
+ActiveRecord::Schema.define(version: 20181102114529) do
 
   create_table "bokes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "user_id",                  null: false
-    t.integer  "odai_id",                  null: false
+    t.integer  "user_id",                   null: false
+    t.integer  "odai_id",                   null: false
     t.integer  "tag_id"
-    t.text     "text",       limit: 65535, null: false
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.text     "text",        limit: 65535, null: false
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+    t.integer  "category_id"
     t.index ["odai_id"], name: "index_bokes_on_odai_id", using: :btree
     t.index ["tag_id"], name: "index_bokes_on_tag_id", using: :btree
     t.index ["user_id"], name: "index_bokes_on_user_id", using: :btree

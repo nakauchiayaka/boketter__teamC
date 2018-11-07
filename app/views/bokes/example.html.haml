@@ -1,0 +1,61 @@
+.main
+  = render 'shared/header'
+  #wrapper
+    #container
+      #header-news
+        %span#header-news-catch
+          %h1.header-news-catch-heading
+        %span#header-news-stats
+          ボケ投稿数
+          %b
+            65450600
+          件&nbsp;お題投稿数
+          %b
+            111223
+          件&nbsp;
+
+      #main-container
+        .content-menu
+          %ul.content-menu-list.inline-list
+            %li.content-menu-list-active
+              = link_to "新着",bokes_path
+            %li
+              = link_to "注目",""
+            %li
+              = link_to "人気",""
+            %li
+              = link_to "コラボ",""
+            %li
+              = link_to "セレクト",""
+            %li
+              = link_to "ピックアップ",""
+            %li
+              = link_to "殿堂入り",""
+        #content
+          .index-title
+            新着ボケ一覧
+
+          .text-center
+            .btn-group.category-tab-menu
+              %label.category-element
+                = link_to "全カテゴリ",bokes_path
+              %label.category-element
+                = link_to "バカ",baka_bokes_path
+              %label.category-element
+                = link_to "シュール",surreal_bokes_path
+              %label.category-element
+                = link_to "お下劣",ogeretu_bokes_path
+              %label.category-element
+                = link_to "ブラック",black_bokes_path
+              %label.category-element
+                = link_to "身内",relative_bokes_path
+              %label.category-element.active-category
+                = link_to "例え",example_bokes_path
+              %label.category-element
+                = link_to "その他",other_bokes_path
+          = render 'boke-list'
+
+
+      = render 'shared/right-container'
+  = render 'shared/footer'
+

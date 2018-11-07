@@ -5,6 +5,8 @@ class Boke < ApplicationRecord
   has_many :stars
   has_many :boke_tags
   has_many :tags ,through: :boke_tags
+  has_many :categorys ,through: :boke_categorys
+  has_many :boke_categorys
 
   def star_user(user_id,boke_id)
    stars.find_by(user_id: user_id,boke_id:boke_id)
