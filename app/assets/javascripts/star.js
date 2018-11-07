@@ -1,4 +1,50 @@
 $(function() {
+  //星１つ目にカーソルを乗せた時
+  $(".star-1").hover(function(){
+    $(this).removeClass('far fa-star').addClass('fas fa-star');
+  },function(){
+    $(this).removeClass('fas fa-star').addClass('far fa-star');
+  }
+  );
+
+  //星２つ目にカーソルを乗せた時
+  $(".star-2").hover(function(){
+    var star1 = $(this).parent().find('.star-1');
+    star1.removeClass('far fa-star').addClass('fas fa-star');
+    $(this).removeClass('far fa-star').addClass('fas fa-star');
+  },function(){
+    var star1 = $(this).parent().find('.star-1');
+    star1.removeClass('fas fa-star').addClass('far fa-star');
+    $(this).removeClass('fas fa-star').addClass('far fa-star');
+  }
+  );
+
+  //星３つ目にカーソルを乗せた時
+  $(".star-3").hover(function(){
+    var star1 = $(this).parent().find('.star-1');
+    var star2 = $(this).parent().find('.star-2');
+
+    star1.removeClass('far fa-star').addClass('fas fa-star');
+    star2.removeClass('far fa-star').addClass('fas fa-star');
+    $(this).removeClass('far fa-star').addClass('fas fa-star');
+  },function(){
+    var star1 = $(this).parent().find('.star-1');
+    var star2 = $(this).parent().find('.star-2');
+
+    star1.removeClass('fas fa-star').addClass('far fa-star');
+    star2.removeClass('fas fa-star').addClass('far fa-star');
+    $(this).removeClass('fas fa-star').addClass('far fa-star');
+  }
+  );
+
+
+
+
+
+
+
+
+  //星１つめを押した時の処理
   $(".star-1").on("click", function() {
     var id = $(this).data('id');
     star_function_1(id, $(this));
@@ -24,6 +70,7 @@ $(function() {
   }
 
 
+  //星２つめを押した時の処理
   $(".star-2").on("click", function() {
     var id = $(this).data('id');
     star_function_2(id, $(this));
@@ -49,6 +96,10 @@ $(function() {
       })
     }
   }
+
+
+
+  //星３つめを押した時の処理
 
   $(".star-3").on("click", function() {
     var id = $(this).data('id');
@@ -79,7 +130,7 @@ $(function() {
   }
 
 
-
+//バツマークを押したときの処理
 $(".boke-rate-times").on("click",function(){
   var id = $(this).data('id');
   star_delete_function(id,$(this));
@@ -106,7 +157,6 @@ $(".boke-rate-times").on("click",function(){
     });
   }
   else if (star2.hasClass("decrement")){
-    console.log("222")
     $.ajax({url: "/bokes/" + id + "/stars/" + id,
               type: "delete",
               data: {boke_id: id,status:2},
