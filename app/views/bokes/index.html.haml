@@ -34,7 +34,7 @@
         #content
           .index-title
             新着ボケ一覧
-            
+
           .text-center
             .btn-group.category-tab-menu
               %label.category-element.active-category
@@ -53,73 +53,8 @@
                 = link_to "例え",example_bokes_path
               %label.category-element
                 = link_to "その他",other_bokes_path
-                
-                
-          - @bokes.each do |boke,odai|
-            .boke
-            .boke-photo
-              .boke-photo-content
-                = link_to "" do
-                  = image_tag boke.odai.image
-                .boke-photo-meta
-                  = link_to "" do
-                    %i.fas.fa-camera
-                    = boke.odai.user.name
-                  &nbsp;
-                  =link_to "" do
-                    %i.far.fa-image
-                    = boke.odai.user.name
-            = link_to boke.text,"",class: "boke-text"
-            .boke-meta
-            .boke-information
-              .boke-information-row.is-360
-                .boke-stars
-                  = link_to "" do
-                    %i.fas.fa-star{style:"color:#ebbf2a"}
-                    4772
-                .boke-information-label
-                  = link_to "２日くらい前",""
-                %span.boke-share-social
-                  = link_to "" do
-                    %i.fab.fa-facebook-f
-                %span.boke-share-social
-                  = link_to "" do
-                    %i.fab.fa-twitter
-            .boke-information-row.ng-scope
-              .boke-rate
-                %i.fas.fa-times-circle.boke-rate-times{"data-id": "#{boke.id}"}
-                - if boke.star_user(current_user.id,boke.id)
-                  -if boke.star_status_3(current_user.id,boke.id)
-                    %span.boke-rating
-                      .a.star-3.decrement.fas.fa-star{style:"color:#ebbf2a","data-id": "#{boke.id}"}
-                      .a.star-2.decrement.fas.fa-star{style:"color:#ebbf2a","data-id": "#{boke.id}"}
-                      .a.star-1.decrement.fas.fa-star{style:"color:#ebbf2a","data-id": "#{boke.id}"}
-                  -elsif boke.star_status_2(current_user.id,boke.id)
-                    %span.boke-rating
-                      .a.star-3.increment.far.fa-star{style:"color:#ebbf2a","data-id": "#{boke.id}"}
-                      .a.star-2.decrement.fas.fa-star{style:"color:#ebbf2a","data-id": "#{boke.id}"}
-                      .a.star-1.decrement.fas.fa-star{style:"color:#ebbf2a","data-id": "#{boke.id}"}
-                  -elsif boke.star_status_1(current_user.id,boke.id)
-                    %span.boke-rating
-                      .a.star-3.increment.far.fa-star{style:"color:#ebbf2a","data-id": "#{boke.id}"}
-                      .a.star-2.increment.far.fa-star{style:"color:#ebbf2a","data-id": "#{boke.id}"}
-                      .a.star-1.decrement.fas.fa-star{style:"color:#ebbf2a","data-id": "#{boke.id}"}
-                -else
-                  %span.boke-rating
-                    .a.test1.star-3.increment.far.fa-star{style:"color:#ebbf2a","data-id": "#{boke.id}"}
-                      / .fukidashi1
-                      /   %p.fukidashi-text
-                      /     最高に面白い
-                    .a.test1.star-2.increment.far.fa-star{style:"color:#ebbf2a","data-id": "#{boke.id}"}
-                      / .fukidashi1
-                      /   %p.fukidashi-text
-                      /     すごく面白い
-                    .a.test1.star-1.increment.far.fa-star{style:"color:#ebbf2a","data-id": "#{boke.id}"}
-                      / .fukidashi1
-                      /   %p.fukidashi-text
-                      /     面白いーー
 
-
+          = render 'boke-list'
 
       = render 'shared/right-container'
   = render 'shared/footer'
