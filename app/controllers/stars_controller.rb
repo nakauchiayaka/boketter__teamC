@@ -1,6 +1,6 @@
 class StarsController < ApplicationController
   def create
-    @star = Star.create(user_id: current_user.id, boke_id: params[:boke_id])
+    @star = Star.create(user_id: current_user.id, boke_id: params[:boke_id],status: params[:status])
     @stars = Star.where(boke_id: params[:boke_id])
     @bokes = Boke.all
 
@@ -11,7 +11,7 @@ class StarsController < ApplicationController
   end
 
   def destroy
-    @star = current_user.stars.find_by(boke_id: params[:boke_id])
+    @star = current_user.stars.find_by(boke_id: params[:boke_id],status:params[:status])
     @star.destroy
     respond_to do |format|
       format.html

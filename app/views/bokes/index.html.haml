@@ -68,14 +68,27 @@
               .boke-rate
                 %i.fas.fa-times-circle.boke-rate-times{"data-id": "#{boke.id}"}
                 - if boke.star_user(current_user.id)
-                  %span.boke-rating
-                    .a.star-1.decrement.fas.fa-star{style:"color:#ebbf2a","data-id": "#{boke.id}"}
-                    / %input{name: "now-boke", type: "hidden", value: boke.id, class: 'now-boke_id' }
-
+                  -if boke.star_status_3
+                    %span.boke-rating
+                      .a.star-3.decrement.fas.fa-star{style:"color:#ebbf2a","data-id": "#{boke.id}"}
+                      .a.star-2.decrement.fas.fa-star{style:"color:#ebbf2a","data-id": "#{boke.id}"}
+                      .a.star-1.decrement.fas.fa-star{style:"color:#ebbf2a","data-id": "#{boke.id}"}
+                  -elsif boke.star_status_2
+                    %span.boke-rating
+                      .a.star-3.decrement.far.fa-star{style:"color:#ebbf2a","data-id": "#{boke.id}"}
+                      .a.star-2.decrement.fas.fa-star{style:"color:#ebbf2a","data-id": "#{boke.id}"}
+                      .a.star-1.decrement.fas.fa-star{style:"color:#ebbf2a","data-id": "#{boke.id}"}
+                  -elsif boke.star_status_1
+                    %span.boke-rating
+                      .a.star-3.decrement.far.fa-star{style:"color:#ebbf2a","data-id": "#{boke.id}"}
+                      .a.star-2.decrement.far.fa-star{style:"color:#ebbf2a","data-id": "#{boke.id}"}
+                      .a.star-1.decrement.fas.fa-star{style:"color:#ebbf2a","data-id": "#{boke.id}"}
                 -else
                   %span.boke-rating
+                    .a.star-3.increment.far.fa-star{style:"color:#ebbf2a","data-id": "#{boke.id}"}
+                    .a.star-2.increment.far.fa-star{style:"color:#ebbf2a","data-id": "#{boke.id}"}
                     .a.star-1.increment.far.fa-star{style:"color:#ebbf2a","data-id": "#{boke.id}"}
-                    / %input{name: "now-boke", type: "hidden", value: boke.id, class: 'now-boke_id' }
+
 
 
           %p.text-center

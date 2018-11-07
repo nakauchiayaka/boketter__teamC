@@ -10,4 +10,16 @@ class Boke < ApplicationRecord
    stars.find_by(user_id: user_id)
   end
 
+  def star_status_1
+   stars.find_by(status:1)
+  end
+
+  def star_status_2
+   stars.find_by(status:2)
+  end
+
+  def star_status_3
+   stars.find_by(status:3)
+  end
+
 end
