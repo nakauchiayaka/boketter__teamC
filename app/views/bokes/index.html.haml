@@ -67,21 +67,21 @@
             .boke-information-row.ng-scope
               .boke-rate
                 %i.fas.fa-times-circle.boke-rate-times{"data-id": "#{boke.id}"}
-                - if boke.star_user(current_user.id)
-                  -if boke.star_status_3
+                - if boke.star_user(current_user.id,boke.id)
+                  -if boke.star_status_3(current_user.id,boke.id)
                     %span.boke-rating
                       .a.star-3.decrement.fas.fa-star{style:"color:#ebbf2a","data-id": "#{boke.id}"}
                       .a.star-2.decrement.fas.fa-star{style:"color:#ebbf2a","data-id": "#{boke.id}"}
                       .a.star-1.decrement.fas.fa-star{style:"color:#ebbf2a","data-id": "#{boke.id}"}
-                  -elsif boke.star_status_2
+                  -elsif boke.star_status_2(current_user.id,boke.id)
                     %span.boke-rating
-                      .a.star-3.decrement.far.fa-star{style:"color:#ebbf2a","data-id": "#{boke.id}"}
+                      .a.star-3.increment.far.fa-star{style:"color:#ebbf2a","data-id": "#{boke.id}"}
                       .a.star-2.decrement.fas.fa-star{style:"color:#ebbf2a","data-id": "#{boke.id}"}
                       .a.star-1.decrement.fas.fa-star{style:"color:#ebbf2a","data-id": "#{boke.id}"}
-                  -elsif boke.star_status_1
+                  -elsif boke.star_status_1(current_user.id,boke.id)
                     %span.boke-rating
-                      .a.star-3.decrement.far.fa-star{style:"color:#ebbf2a","data-id": "#{boke.id}"}
-                      .a.star-2.decrement.far.fa-star{style:"color:#ebbf2a","data-id": "#{boke.id}"}
+                      .a.star-3.increment.far.fa-star{style:"color:#ebbf2a","data-id": "#{boke.id}"}
+                      .a.star-2.increment.far.fa-star{style:"color:#ebbf2a","data-id": "#{boke.id}"}
                       .a.star-1.decrement.fas.fa-star{style:"color:#ebbf2a","data-id": "#{boke.id}"}
                 -else
                   %span.boke-rating
