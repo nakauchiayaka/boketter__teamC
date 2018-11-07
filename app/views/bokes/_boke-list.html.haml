@@ -3,7 +3,7 @@
     .boke-photo
       .boke-photo-content
         = link_to "" do
-          = image_tag boke.odai.image
+          = link_to image_tag(boke.odai.image),new_odai_boke_path(boke.odai)
         .boke-photo-meta
           = link_to "" do
             %i.fas.fa-camera
@@ -21,7 +21,7 @@
             %i.fas.fa-star{style:"color:#ebbf2a"}
             4772
         .boke-information-label
-          = link_to "２日くらい前",""
+          = link_to boke.created_at.to_s(:date),boke_path(boke.id)
         %span.boke-share-social
           = link_to "" do
             %i.fab.fa-facebook-f

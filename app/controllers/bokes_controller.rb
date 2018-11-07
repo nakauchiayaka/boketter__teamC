@@ -1,5 +1,5 @@
 class BokesController < ApplicationController
-  before_action :move_to_index, except: :index
+  before_action :move_to_index, except: [:index, :show]
   before_action :set_odai, only: [:new, :create]
   def index
     @bokes = Boke.order("created_at DESC")
@@ -12,6 +12,11 @@ class BokesController < ApplicationController
   def create
     @bokes = Boke.create(text: boke_params[:text], odai_id: params[:odai_id], user_id: current_user.id,category_id: boke_params[:category_id])
   end
+
+  def show
+    @boke = Boke.find(params[:id])
+  end
+
 
   def baka
     @bokes = Boke.where(category_id:8).order("created_at DESC")
