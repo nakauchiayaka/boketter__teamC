@@ -1,7 +1,7 @@
 //ボタンオレンジに変更
 $(function () {
     //マウスを乗せたら発動
-    $('.boke-information-label,.boke-share-social a,.tag-container .tag-content').hover(function () {
+    $('.category-element,.boke-information-label,.boke-share-social a,.tag-container .tag-content').hover(function () {
         //マウスを乗せたら色が変わる
         $(this).css('background', '#f4c535');
         //ここにはマウスを離したときの動作を記述

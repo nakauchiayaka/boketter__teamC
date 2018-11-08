@@ -21,6 +21,19 @@ Rails.application.routes.draw do
     end
   end
 
+  resources :bokes do
+      resources :stars ,only: [:create, :destroy]
+      collection do
+      get 'baka'
+      get 'surreal'
+      get 'ogeretu'
+      get 'black'
+      get 'relative'
+      get 'example'
+      get 'other'
+    end
+  end
+
   resources :odais do
     resources :bokes,only: [:new, :create]
     collection do
@@ -42,17 +55,6 @@ Rails.application.routes.draw do
   #   end
   # end
 
-  resources :bokes do
-    collection do
-      get 'baka'
-      get 'surreal'
-      get 'ogeretu'
-      get 'black'
-      get 'relative'
-      get 'example'
-      get 'other'
-    end
-  end
 
 
 
