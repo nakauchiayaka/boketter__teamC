@@ -55,10 +55,7 @@ Rails.application.routes.draw do
   #   end
   # end
 
-
-
-
-  get '/user/:id/',           to: 'user#show'
+  # get '/user/:id/',           to: 'user#show'
   get '/user/:id/boke',       to: 'user#boke'
   get '/user/:id/odai',       to: 'user#odai'
   get '/user/:id/favorites',  to: 'user#favorites'
