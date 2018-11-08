@@ -3,10 +3,11 @@
   %span#header-news-stats
     ボケ投稿数
     %b
-      66,962,143
+      =link_to Boke.count
+
     件&nbsp;お題投稿数
     %b
-      88,897,897
+      =link_to Odai.count
     件&nbsp;
     = link_to "#", cless: "safe-mode-btn" do
       %i.fa.fa-lg.fa-toggle-on
