@@ -9,7 +9,7 @@
           %li
             = link_to "プロフィール", user_path(id:current_user.id)
           %li
-            = link_to "ボケ", "/user/#{current_user.id}/boke"
+            = link_to "ボケ", boke_user_path(id:current_user.id)
           %li
             = link_to "お題", "/user/#{current_user.id}/odai"
           %li

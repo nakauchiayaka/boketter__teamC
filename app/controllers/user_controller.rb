@@ -1,7 +1,5 @@
 class UserController < ApplicationController
 
-  def boke
-  end
 
   def odai
   end
