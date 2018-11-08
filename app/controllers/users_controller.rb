@@ -1,6 +1,19 @@
 class UsersController < ApplicationController
   before_action :password_check, only: [:password_update]
 
+  def show
+    @odais = Odai.where(user_id:current_user.id)
+    @bokes = Boke.where(user_id:current_user.id)
+    @sum = 0
+    @bokes.each do |boke|
+      stars = Star.where(boke_id:boke.id)
+      stars.each do |star|
+        @sum += star.status
+      end
+    end
+    return @sum
+  end
+
   def edit
   end
 

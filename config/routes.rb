@@ -31,7 +31,7 @@ Rails.application.routes.draw do
       get 'relative'
       get 'example'
       get 'other'
-    end
+      end
   end
 
   resources :odais do
@@ -47,18 +47,20 @@ Rails.application.routes.draw do
     end
   end
 
-  # namespace :odai do
-  #   resources :popular do
-  #     collection do
-  #       get 'jinbutsu'
-  #     end
-  #   end
-  # end
+  resources :legends , only: [:index] do
+    collection do
+      get 'baka'
+      get 'surreal'
+      get 'ogeretu'
+      get 'black'
+      get 'relative'
+      get 'example'
+      get 'other'
+    end
+  end
 
 
-
-
-  get '/user/:id/',           to: 'user#show'
+  # get '/user/:id/',           to: 'user#show'
   get '/user/:id/boke',       to: 'user#boke'
   get '/user/:id/odai',       to: 'user#odai'
   get '/user/:id/favorites',  to: 'user#favorites'
