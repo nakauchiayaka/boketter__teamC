@@ -25,7 +25,7 @@ $(function(){
                             </div>
                           </div>
                           <div class="mt10">
-                            <a class="btn btn-default btn-sm btn-block" href="/odais/10/bokes/new">
+                            <a class="btn btn-default btn-sm btn-block" href="/odais/${more.odai_id}/bokes/new">
                             このお題でボケる
                             </a>
                           </div>
