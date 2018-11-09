@@ -10,21 +10,40 @@ class UsersController < ApplicationController
   end
 
   def ratings1
+    @bokes= []
+    @stars_favorite = Star.where(user_id:current_user.id)
+    @stars_favorite.each do |star|
+      if star.status == 1
+        boke_favorite = star.boke
+        @bokes << boke_favorite
+      end
+    end
   end
 
   def ratings2
+    @bokes= []
+    @stars_favorite = Star.where(user_id:current_user.id)
+    @stars_favorite.each do |star|
+      if star.status == 2
+        boke_favorite = star.boke
+        @bokes << boke_favorite
+      end
+    end
   end
 
   def ratings3
+    @bokes= []
+    @stars_favorite = Star.where(user_id:current_user.id)
+    @stars_favorite.each do |star|
+      if star.status == 3
+        boke_favorite = star.boke
+        @bokes << boke_favorite
+      end
+    end
   end
 
   def show
-    @bokes_favorite = []
-    @stars_favorite = Star.where(user_id:current_user.id)
-    @stars_favorite.each do |star|
-      boke_favorite = star.boke
-      @bokes_favorite << boke_favorite
-    end
+    @bokes_recent = Boke.where(user_id:current_user.id).order("created_at DESC")
 
     @odais = Odai.where(user_id:current_user.id)
     @bokes = Boke.where(user_id:current_user.id)
