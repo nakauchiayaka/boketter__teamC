@@ -12,8 +12,9 @@ Rails.application.routes.draw do
     end
   end
 
-
-
+  resources :bokes, only: [:index] do
+    resources :comments, only: [:create, :show, :update]
+  end
 
   get '/my',                to: 'accounts#my'
   get '/account',           to: 'accounts#edit'
