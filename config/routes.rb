@@ -4,8 +4,9 @@ Rails.application.routes.draw do
   put '/users/password_upadate',  to: 'users#password_update'
   resources :users, except: [:index, :new, :create]
 
-  resources :bokes, only: :index
-
+  resources :bokes, only: [:index] do
+    resources :comments, only: [:create, :show, :update]
+  end
 
   get '/my',                to: 'accounts#my'
   get '/account',           to: 'accounts#edit'
