@@ -1,10 +1,12 @@
 class CommentsController < ApplicationController
 
   def create
-    @comment = Comment.create(user_id: current_user.id, boke_id: params[:boke_id], text: params[:comment][:text])
-    respond_to do |format|
-      format.html
-      format.json
+    if params[:comment][:text].present?
+      @comment = Comment.create(user_id: current_user.id, boke_id: params[:boke_id], text: params[:comment][:text])
+      respond_to do |format|
+        format.html
+        format.json
+      end
     end
   end
 
