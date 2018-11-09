@@ -15,7 +15,9 @@
             %li
               = link_to "コラボ",""
             %li
-              = link_to "ラベル",""
+              = link_to new_odai_boke_path(@odai_random) do
+                %i.fas.fa-random
+                ランダム
             %li
               = link_to "セレクト",""
             %li.content-menu-list-active

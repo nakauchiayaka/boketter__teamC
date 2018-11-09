@@ -10,15 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181106053644) do
+ActiveRecord::Schema.define(version: 20181102114529) do
 
   create_table "bokes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
-    t.integer  "user_id",                  null: false
-    t.integer  "odai_id",                  null: false
+    t.integer  "user_id",                   null: false
+    t.integer  "odai_id",                   null: false
     t.integer  "tag_id"
-    t.text     "text",       limit: 65535, null: false
-    t.datetime "created_at",               null: false
-    t.datetime "updated_at",               null: false
+    t.text     "text",        limit: 65535, null: false
+    t.datetime "created_at",                null: false
+    t.datetime "updated_at",                null: false
+    t.integer  "category_id"
     t.index ["odai_id"], name: "index_bokes_on_odai_id", using: :btree
     t.index ["tag_id"], name: "index_bokes_on_tag_id", using: :btree
     t.index ["user_id"], name: "index_bokes_on_user_id", using: :btree
@@ -51,6 +52,16 @@ ActiveRecord::Schema.define(version: 20181106053644) do
     t.index ["user_id"], name: "index_odais_on_user_id", using: :btree
   end
 
+  create_table "stars", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "user_id",    null: false
+    t.integer  "boke_id",    null: false
+    t.integer  "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["boke_id"], name: "index_stars_on_boke_id", using: :btree
+    t.index ["user_id"], name: "index_stars_on_user_id", using: :btree
+  end
+
   create_table "users", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.string   "name",                                              null: false
     t.string   "email",                                default: "", null: false
@@ -70,4 +81,6 @@ ActiveRecord::Schema.define(version: 20181106053644) do
   add_foreign_key "comments", "bokes"
   add_foreign_key "comments", "users"
   add_foreign_key "odais", "users"
+  add_foreign_key "stars", "bokes"
+  add_foreign_key "stars", "users"
 end

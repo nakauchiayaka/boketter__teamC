@@ -16,7 +16,7 @@
         %ul.right
           - if user_signed_in?
             %li.right__style
-              = link_to "/user/#{current_user.id}" do
+              = link_to user_path(id:current_user.id) do
                 - if current_user.image.file.nil?
                   = image_tag "user_img.gif", class: "user-icon-top-bar"
                 - else

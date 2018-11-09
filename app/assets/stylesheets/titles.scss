@@ -335,6 +335,50 @@ ul .inline-list{
 .boke-rating{
   font-size:20px;
 }
+
+// 評価の吹き出し表示機能
+
+// .test1{
+//   position: relative;
+//   z-index: auto;
+// }
+// .fukidashi1{
+//   position: absolute;
+//   width: 80px; /* 吹き出しの幅 */
+//   height: 20px; /* 吹き出しの高さ */
+//   top: 30px; /* 画像と三角形の高さをプラスした値 */
+//   left: -20px;
+//   border-radius: 5px 5px 5px 5px;
+//   background-color: black;
+//   display: none;
+//   z-index: 2;
+// }
+// .fukidashi1:after{
+//   position: absolute;
+//   content: "";
+//   width: 0;
+//   height: 0;
+//   top: -23px; /* 吹き出しの高さと同じ値 */
+//   left: 15px;
+//   border: 16px solid transparent;
+//   border-bottom: 10px solid black;
+// }
+
+
+// .fukidashi-text{
+//   font-size: 10px;
+//   position: absolute;
+//   top: 4px;
+//   left: 10px;
+//   color: white;
+// }
+// .test1:hover{.fukidashi1{
+//   z-index: 2;
+//   display: block;
+//   }
+// }
+
+
 .text-center{
   text-align: center;
 }
@@ -570,4 +614,9 @@ hr{
   font-size:12px;
   font-style: normal;
   margin:0;
+}
+
+.fas.fa-star.ccc
+{
+  color:#ebbf2a;
 }

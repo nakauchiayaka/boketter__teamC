@@ -1,10 +1,11 @@
 .odai-list
   - @odais.each do |odai|
-    .pin
+    .pin{ 'data-odai-id': odai.id }
       .odai-inner
         %h3
           %b
-            = link_to "10個のボケ",""
+            = link_to Boke.where(odai: odai.id).count ,""
+            個のボケ
         .odai-photo-warapper
           = link_to "" ,class: "odai-photo" do
             = image_tag odai.image
