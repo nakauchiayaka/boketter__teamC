@@ -206,3 +206,9 @@ div.user-content img {
 .row:after {
   clear: both;
 }
+
+@media (min-width: 768px) {
+  .col-sm-9 {
+    width: 75%;
+  }
+}
