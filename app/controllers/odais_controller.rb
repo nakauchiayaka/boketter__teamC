@@ -5,6 +5,7 @@ class OdaisController < ApplicationController
   def index
     @odais = Odai.order("created_at DESC").limit(4)
     @more = Odai.where('id < ?', params[:id]).order("created_at DESC").limit(4)
+    @odai_random = Odai.order("RAND()").first
     respond_to do |format|
       format.html
       format.json
@@ -13,8 +14,10 @@ class OdaisController < ApplicationController
 
   def new
     @odai =Odai.new
+    @odai_random = Odai.order("RAND()").first
   end
   def create
+    @odai_random = Odai.order("RAND()").first
     Odai.create(title: odai_params[:title],image: odai_params[:image],user_id: current_user.id,category_id: odai_params[:category_id])
   end
 
@@ -24,25 +27,33 @@ class OdaisController < ApplicationController
 
   def jinbutsu
     @odais = Odai.where(category_id:1)
+    @odai_random = Odai.order("RAND()").first
   end
   def jinbutsu2ri
     @odais = Odai.where(category_id:2)
+    @odai_random = Odai.order("RAND()").first
   end
   def animal
     @odais = Odai.where(category_id:3)
+    @odai_random = Odai.order("RAND()").first
   end
   def scenery
     @odais = Odai.where(category_id:4)
+    @odai_random = Odai.order("RAND()").first
   end
   def inorganicmatter
     @odais = Odai.where(category_id:5)
+    @odai_random = Odai.order("RAND()").first
   end
   def illustration
     @odais = Odai.where(category_id:6)
+    @odai_random = Odai.order("RAND()").first
   end
   def other
     @odais = Odai.where(category_id:7)
+    @odai_random = Odai.order("RAND()").first
   end
+
 
   private
   def odai_params
