@@ -1,5 +1,4 @@
 $(function() {
-
   function hidden(target) {
     $(target).attr({
       'aria-hidden': 'true',
@@ -10,7 +9,6 @@ $(function() {
   function shown(target) {
     $(target).removeAttr('aria-hidden style')
   }
-
 
   $(".comment-action-parts").each(function() {
     var comment = $(this).children(".user_comment").data('comment');
@@ -73,9 +71,11 @@ $(function() {
       $($(target).find(".btn")).prop('disabled', false);
       var comment_edit = $(target).siblings("#comment_edit");
       shown(comment_edit);
-      $($(comment_edit).find("b")).html(`${data.text}`)
+      $($(comment_edit).find("b")).html(`${data.text}`);
+      hidden($(target).siblings(".alert.alert-danger"));
     })
     .fail(function(){
+      $($(target).find(".btn")).prop('disabled', false);
       $(target).siblings(".alert.alert-danger").removeAttr("aria-hidden style");
     })
   });
