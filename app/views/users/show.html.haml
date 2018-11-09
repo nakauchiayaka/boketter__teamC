@@ -11,11 +11,11 @@
           %li
             = link_to "ボケ", boke_user_path(id:current_user.id)
           %li
-            = link_to "お題", "/user/#{current_user.id}/odai"
+            = link_to "お題", odai_user_path(id:current_user.id)
           %li
             = link_to "お気に入り職人", "/user/#{current_user.id}/favorites"
           %li
-            = link_to "ボケコレ", "/user/#{current_user.id}/ratings3"
+            = link_to "ボケコレ", ratings3_user_path(id:current_user.id)
 
       #content.content-boke.content-top-left-radius-none
         .user-info

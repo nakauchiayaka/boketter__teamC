@@ -5,6 +5,19 @@ class UsersController < ApplicationController
     @bokes = Boke.where(user_id:current_user.id).order("created_at DESC")
   end
 
+  def odai
+    @odais = Odai.where(user_id:current_user.id).order("created_at DESC")
+  end
+
+  def ratings1
+  end
+
+  def ratings2
+  end
+
+  def ratings3
+  end
+
   def show
     @bokes_favorite = []
     @stars_favorite = Star.where(user_id:current_user.id)
