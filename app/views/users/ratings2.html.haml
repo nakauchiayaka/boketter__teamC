@@ -9,20 +9,20 @@
           %li
             = link_to "プロフィール", user_path(id:current_user.id)
           %li
-            = link_to "ボケ", "/user/#{current_user.id}/boke"
+            = link_to "ボケ", boke_user_path(id:current_user.id)
           %li
-            = link_to "お題", "/user/#{current_user.id}/odai"
+            = link_to "お題", odai_user_path(id:current_user.id)
           %li
             = link_to "お気に入り職人", "/user/#{current_user.id}/favorites"
           %li.content-menu-list-active
-            = link_to "ボケコレ", "/user/#{current_user.id}/ratings3"
+            = link_to "ボケコレ", ratings3_user_path(id:current_user.id)
 
       #content
         .text-center
           .btn-group.content-submenu
-            = link_to "★★★", "/user/#{current_user.id}/ratings3", class: "btn btn-default"
-            = link_to "★★", "/user/#{current_user.id}/ratings2", class: "btn btn-default active-category"
-            = link_to "★", "/user/#{current_user.id}/ratings1", class: "btn btn-default"
+            = link_to "★★★", ratings3_user_path(id:current_user.id), class: "btn btn-default"
+            = link_to "★★", ratings2_user_path(id:current_user.id), class: "btn btn-default active-category"
+            = link_to "★", ratings1_user_path(id:current_user.id), class: "btn btn-default"
 
         .other-title
           = current_user.name
@@ -30,7 +30,7 @@
 
         #my
           -# サンプル --------------------------------
-          = render 'user/sample_boke'
+          = render 'bokes/boke-list'
           -# ----------------------------------------
 
       .bcl

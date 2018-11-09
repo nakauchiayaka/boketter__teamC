@@ -1,7 +1,50 @@
 class UsersController < ApplicationController
   before_action :password_check, only: [:password_update]
 
+  def boke
+    @bokes = Boke.where(user_id:current_user.id).order("created_at DESC")
+  end
+
+  def odai
+    @odais = Odai.where(user_id:current_user.id).order("created_at DESC")
+  end
+
+  def ratings1
+    @bokes= []
+    @stars_favorite = Star.where(user_id:current_user.id)
+    @stars_favorite.each do |star|
+      if star.status == 1
+        boke_favorite = star.boke
+        @bokes << boke_favorite
+      end
+    end
+  end
+
+  def ratings2
+    @bokes= []
+    @stars_favorite = Star.where(user_id:current_user.id)
+    @stars_favorite.each do |star|
+      if star.status == 2
+        boke_favorite = star.boke
+        @bokes << boke_favorite
+      end
+    end
+  end
+
+  def ratings3
+    @bokes= []
+    @stars_favorite = Star.where(user_id:current_user.id)
+    @stars_favorite.each do |star|
+      if star.status == 3
+        boke_favorite = star.boke
+        @bokes << boke_favorite
+      end
+    end
+  end
+
   def show
+    @bokes_recent = Boke.where(user_id:current_user.id).order("created_at DESC")
+
     @odais = Odai.where(user_id:current_user.id)
     @bokes = Boke.where(user_id:current_user.id)
     @sum = 0
