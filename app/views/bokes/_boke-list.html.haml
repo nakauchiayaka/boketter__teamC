@@ -101,7 +101,11 @@
           .comment-area.text-center.ng-hide#comment_edit{"aria-hidden" => "true", :style => "display: none;"}
             .boke-comment-input
               .form-inline.ng-pristine.ng-valid
-                %img.user-icon{:src => current_user.image}
+                - if current_user.image.file.nil?
+                  - @user_img = "user_img.gif"
+                - else
+                  - @user_img = current_user.image
+                %img.user-icon{:src => @user_img}
                 %b.ng-binding
                   = @comment.text
                 &nbsp;
