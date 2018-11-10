@@ -26,6 +26,8 @@ class BokesController < ApplicationController
 
   def show
     @boke = Boke.find(params[:id])
+    @comments = Comment.includes(:user).where(boke_id: params[:id])
+    @stars = Star.where(boke_id: params[:id])
   end
 
   def baka

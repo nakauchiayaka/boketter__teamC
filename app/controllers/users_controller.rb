@@ -43,10 +43,11 @@ class UsersController < ApplicationController
   end
 
   def show
-    @bokes_recent = Boke.where(user_id:current_user.id).order("created_at DESC")
+    @user = User.find(params[:id])
+    @bokes_recent = Boke.where(user_id:@user.id).order("created_at DESC")
 
-    @odais = Odai.where(user_id:current_user.id)
-    @bokes = Boke.where(user_id:current_user.id)
+    @odais = Odai.where(user_id:@user.id)
+    @bokes = Boke.where(user_id:@user.id)
     @sum = 0
     @bokes.each do |boke|
       stars = Star.where(boke_id:boke.id)

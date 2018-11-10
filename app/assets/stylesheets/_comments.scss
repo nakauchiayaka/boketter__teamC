@@ -1,0 +1,27 @@
+.comments {
+  margin-top: -20px;
+}
+.comment {
+  width: 560px;
+  min-height: 24px;
+  max-height: 48px;
+  margin: 0 auto 5px;
+  font-size: 13px;
+  font-weight: bold;
+}
+.comment:before, .comment:after {
+  content: " ";
+  display: table;
+}
+.comment:after {
+  clear: both;
+}
+.comment-content {
+  width: 560px;
+  max-height: 48px;
+  float: left;
+}
+.comment-picture {
+  width: 36px;
+  display: inline;
+}
