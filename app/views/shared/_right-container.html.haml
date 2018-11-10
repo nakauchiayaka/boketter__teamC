@@ -20,7 +20,7 @@
               = link_to "aaaaaaaaaaaa",""
   .side-widget
     .side-widget-title
-      最近の評価されている職人
+      最近登録された職人
     .side-widget-content
       %ul
         - User.all.order("created_at DESC").each do |user|
