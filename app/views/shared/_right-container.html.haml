@@ -20,23 +20,17 @@
               = link_to "aaaaaaaaaaaa",""
   .side-widget
     .side-widget-title
-      最近の評価されている職人
+      最近登録された職人
     .side-widget-content
       %ul
-        %li
-          %dl
-            %dt
-              = link_to "" do
-                = image_tag "wood_pattern.png" ,class: "user-icon"
-            %dd
-              = link_to "ユーザー名",""
-        %li
-          %dl
-            %dt
-              = link_to "" do
-                = image_tag "wood_pattern.png" ,class: "user-icon"
-            %dd
-              = link_to "中内",""
+        - User.all.order("created_at DESC").each do |user|
+          %li
+            %dl
+              %dt
+                = link_to "" do
+                  = image_tag user.image ,class: "user-icon"
+              %dd
+                = link_to user.name,""
   .side-app
     = link_to "" do
       = image_tag "app_banner_apple.png"

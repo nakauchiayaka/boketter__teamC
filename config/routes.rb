@@ -44,7 +44,7 @@ Rails.application.routes.draw do
   end
 
   resources :odais do
-    resources :bokes,only: [:new, :create]
+    resources :bokes,only: [:new, :create, :edit, :update]
     collection do
       get 'jinbutsu'
       get 'jinbutsu2ri'
@@ -53,6 +53,7 @@ Rails.application.routes.draw do
       get 'inorganicmatter'
       get 'illustration'
       get 'other'
+      get 'search'
     end
   end
 

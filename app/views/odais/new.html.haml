@@ -19,7 +19,9 @@
                 %i.fas.fa-random
                 ランダム
             %li
-              = link_to "セレクト",""
+              = link_to search_odais_path do
+                %i.fas.fa-search
+                お題検索
             %li.content-menu-list-active
               = link_to new_odai_path do
                 %i.fas.fa-upload

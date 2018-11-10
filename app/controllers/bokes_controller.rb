@@ -14,12 +14,21 @@ class BokesController < ApplicationController
     @bokes = Boke.create(text: boke_params[:text], odai_id: params[:odai_id], user_id: current_user.id,category_id: boke_params[:category_id])
   end
 
+  def edit
+    @boke = Boke.find(params[:id])
+
+  end
+
+  def update
+    @boke = Boke.find(params[:id])
+    @boke.update(boke_params)
+  end
+
   def show
     @boke = Boke.find(params[:id])
     @comments = Comment.includes(:user).where(boke_id: params[:id])
     @stars = Star.where(boke_id: params[:id])
   end
-
 
   def baka
     @bokes = Boke.where(category_id:8).order("created_at DESC")

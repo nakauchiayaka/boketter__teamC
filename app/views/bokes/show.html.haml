@@ -44,18 +44,43 @@
                 .boke-information-row.is-360
                   .boke-stars
                     = link_to "" do
-                      %i.fas.fa-star{style:"color:#ebbf2a"}
-                      4772
-                  .boke-information-label
-                    = link_to @boke.created_at.to_s(:date)
-                  %span.boke-share-social
-                    = link_to "" do
-                      %i.fab.fa-facebook-f
-                  %span.boke-share-social
-                    = link_to "" do
-                      %i.fab.fa-twitter
-              .boke-information-row.ng-scope
-                .boke-rate
+                      %i.fas.fa-camera
+                      = @boke.odai.user.name
+                    &nbsp;
+                    =link_to "" do
+                      %i.far.fa-image
+                      = @boke.odai.user.name
+                    - if current_user
+                      - if current_user.id == @boke.user_id
+                        = link_to "  編集",edit_boke_path,method: :get
+
+            = link_to @boke.text,"",class: "boke-text"
+
+
+            .boke-meta
+            .boke-information
+              .boke-information-row.is-360
+                .boke-stars
+                  = link_to "" do
+                    %i.fas.fa-star{style:"color:#ebbf2a"}
+                    4772
+                .boke-information-label
+                  = link_to @boke.created_at.to_s(:date)
+                %span.boke-share-social
+                  = link_to "" do
+                    %i.fab.fa-facebook-f
+                %span.boke-share-social
+                  = link_to "" do
+                    %i.fab.fa-twitter
+            .boke-information-row.ng-scope
+              .boke-rate
+                = link_to "" do
+                  %i.fas.fa-times-circle.boke-rate-times
+                %span.boke-rating
+                  = link_to "" do
+                    %i.far.fa-star{style:"color:#ebbf2a"}
+                  = link_to "" do
+                    %i.far.fa-star{style:"color:#ebbf2a"}
                   = link_to "" do
                     %i.fas.fa-times-circle.boke-rate-times
                   %span.boke-rating
