@@ -1,0 +1,38 @@
+.main
+  = render 'shared/header'
+  #wrapper
+    #container
+      = render 'shared/header-news'
+
+      #main-container
+        .content-menu
+          %ul.content-menu-list.inline-list
+            %li
+              = link_to "新着", odais_path
+            %li
+              = link_to "注目",""
+            %li
+              = link_to "人気",""
+            %li
+              = link_to "コラボ",""
+            %li
+              = link_to "セレクト",""
+            %li
+              = link_to "ピックアップ",""
+            %li
+              = link_to "殿堂入り",""
+        #content
+          .content-boke
+            .alert-create.alert-info.text-center
+              %p
+                = image_tag "boke_neko.png",style:"width:180px"
+              %p
+                ボケの修正が完了しました。
+                %br
+                サイト上に反映されるまで少し時間がかかる可能性があります。
+              %br
+              %p
+                =link_to "詳細ボケへ",boke_path,class: "btn-primary btn btn-lg"
+
+      = render 'shared/right-container'
+  = render 'shared/footer'
