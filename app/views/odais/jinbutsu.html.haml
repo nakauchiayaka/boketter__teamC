@@ -8,7 +8,7 @@
         .content-menu
           %ul.content-menu-list.inline-list
             %li.content-menu-list-active
-              = link_to "新着",""
+              = link_to "新着",odais_path
             %li
               = link_to "注目",""
             %li
@@ -16,7 +16,9 @@
             %li
               = link_to "コラボ",""
             %li
-              = link_to "ラベル",""
+              = link_to new_odai_boke_path(@odai_random) do
+                %i.fas.fa-random
+                ランダム
             %li
               = link_to "セレクト",""
             %li

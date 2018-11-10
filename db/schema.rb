@@ -10,7 +10,9 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20181102114529) do
+
+ActiveRecord::Schema.define(version: 20181106053644) do
+
 
   create_table "bokes", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
     t.integer  "user_id",                   null: false
@@ -30,6 +32,16 @@ ActiveRecord::Schema.define(version: 20181102114529) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.index ["name"], name: "index_categories_on_name", using: :btree
+  end
+
+  create_table "comments", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
+    t.integer  "user_id",                  null: false
+    t.integer  "boke_id",                  null: false
+    t.text     "text",       limit: 65535, null: false
+    t.datetime "created_at",               null: false
+    t.datetime "updated_at",               null: false
+    t.index ["boke_id"], name: "index_comments_on_boke_id", using: :btree
+    t.index ["user_id"], name: "index_comments_on_user_id", using: :btree
   end
 
   create_table "odais", force: :cascade, options: "ENGINE=InnoDB DEFAULT CHARSET=utf8" do |t|
@@ -68,6 +80,8 @@ ActiveRecord::Schema.define(version: 20181102114529) do
 
   add_foreign_key "bokes", "odais"
   add_foreign_key "bokes", "users"
+  add_foreign_key "comments", "bokes"
+  add_foreign_key "comments", "users"
   add_foreign_key "odais", "users"
   add_foreign_key "stars", "bokes"
   add_foreign_key "stars", "users"

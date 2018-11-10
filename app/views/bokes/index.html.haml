@@ -20,7 +20,7 @@
             %li
               = link_to "ピックアップ",""
             %li
-              = link_to "殿堂入り",""
+              = link_to "殿堂入り",legends_path
         #content
           .index-title
             新着ボケ一覧
@@ -43,8 +43,9 @@
                 = link_to "例え",example_bokes_path
               %label.category-element
                 = link_to "その他",other_bokes_path
-
           = render 'boke-list'
+          .pager
+            = paginate(@bokes)
 
       = render 'shared/right-container'
   = render 'shared/footer'

@@ -5,7 +5,7 @@ $(function(){
                       <div class="odai-inner">
                         <h3>
                           <b>
-                            <a href="">10個のボケ</a>
+                            <a href="">${more.boke_count}個のボケ</a>
                           </b>
                         </h3>
                         <div class="odai-photo-warapper">
@@ -25,7 +25,7 @@ $(function(){
                             </div>
                           </div>
                           <div class="mt10">
-                            <a class="btn btn-default btn-sm btn-block" href="/odais/10/bokes/new">
+                            <a class="btn btn-default btn-sm btn-block" href="/odais/${more.odai_id}/bokes/new">
                             このお題でボケる
                             </a>
                           </div>
