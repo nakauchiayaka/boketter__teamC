@@ -5,11 +5,11 @@
         = link_to "" do
           = link_to image_tag(boke.odai.image),new_odai_boke_path(boke.odai)
         .boke-photo-meta
-          = link_to "" do
+          = link_to user_path(id:boke.odai.user.id) do
             %i.fas.fa-camera
             = boke.odai.user.name
           &nbsp;
-          =link_to "" do
+          =link_to user_path(id:boke.odai.user.id) do
             %i.far.fa-image
             = boke.odai.user.name
     = link_to boke.text,"",class: "boke-text"
@@ -111,7 +111,7 @@
         .comment-action-parts
           %p
             %img.user-icon{:src => "//d3pb2x7032n52.cloudfront.net/static/images/user_icon.gif"}
-            = link_to "" do
+            = link_to user_path(id:boke.user.id) do
               %b.ng-binding.sample_user
                 = boke.user.name
             さんのボケです

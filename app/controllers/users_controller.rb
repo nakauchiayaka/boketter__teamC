@@ -2,14 +2,17 @@ class UsersController < ApplicationController
   before_action :password_check, only: [:password_update]
 
   def boke
+    @user = User.find(params[:id])
     @bokes = Boke.where(user_id:current_user.id).order("created_at DESC")
   end
 
   def odai
+    @user = User.find(params[:id])
     @odais = Odai.where(user_id:current_user.id).order("created_at DESC")
   end
 
   def ratings1
+    @user = User.find(params[:id])
     @bokes= []
     @stars_favorite = Star.where(user_id:current_user.id)
     @stars_favorite.each do |star|
@@ -21,6 +24,7 @@ class UsersController < ApplicationController
   end
 
   def ratings2
+    @user = User.find(params[:id])
     @bokes= []
     @stars_favorite = Star.where(user_id:current_user.id)
     @stars_favorite.each do |star|
@@ -32,6 +36,7 @@ class UsersController < ApplicationController
   end
 
   def ratings3
+    @user = User.find(params[:id])
     @bokes= []
     @stars_favorite = Star.where(user_id:current_user.id)
     @stars_favorite.each do |star|
