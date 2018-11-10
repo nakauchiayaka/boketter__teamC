@@ -1,0 +1,49 @@
+.main
+  = render 'shared/header'
+  #wrapper
+    #container
+      = render 'shared/header-news'
+
+      #main-container
+        .content-menu
+          %ul.content-menu-list.inline-list
+            %li
+              = link_to "新着", odais_path
+            %li
+              = link_to "注目",""
+            %li
+              = link_to "人気",""
+            %li
+              = link_to "コラボ",""
+            %li
+              = link_to "セレクト",""
+            %li
+              = link_to "ピックアップ",""
+            %li
+              = link_to "殿堂入り",""
+
+        #content
+          .index-title
+            ボケを編集する
+          /.boke
+          .boke-photo
+            .boke-photo-content
+              = link_to "" do
+                = image_tag @boke.odai.image
+                .boke-photo-meta
+                  = link_to "" do
+                    %i.fas.fa-camera
+                    = @boke.odai.user.name
+                  &nbsp;
+                  =link_to "" do
+                    %i.far.fa-image
+                    = @boke.odai.user.name
+
+          .form
+            = form_for @boke, url: boke_path do |f|
+              %label
+                ボケテキスト
+              = f.text_field :text,class: 'form-control input-lg'
+              .form__mask
+              %p.text-center
+                = f.submit 'Send',class: " btn-primary btn btn-long"

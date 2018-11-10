@@ -38,7 +38,12 @@
                     =link_to "" do
                       %i.far.fa-image
                       = @boke.odai.user.name
+                    - if current_user
+                      - if current_user.id == @boke.user_id
+                        = link_to "  編集",edit_boke_path,method: :get
+
             = link_to @boke.text,"",class: "boke-text"
+
 
             .boke-meta
             .boke-information
