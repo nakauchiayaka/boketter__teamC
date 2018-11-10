@@ -15,10 +15,8 @@
             %li
               = link_to "コラボ",""
             %li
-              = link_to new_odai_boke_path(@odai_random) do
-                %i.fas.fa-random
-                ランダム
-            %li
+              = link_to "ラベル",""
+            %li.content-menu-list-active
               = link_to search_odais_path do
                 %i.fas.fa-search
                 お題検索
@@ -27,17 +25,20 @@
                 %i.fas.fa-upload
                 お題投稿
         #content
-          .content-boke
-            .alert-create.alert-info.text-center
-              %p
-                = image_tag "boke_neko.png",style:"width:180px"
-              %p
-                お題の投稿が完了しました。
-                %br
-                サイト上に反映されるまで少し時間がかかる可能性があります。
-              %br
-              %p
-                =link_to "新着お題へ",odais_path,class: "btn-primary btn btn-lg"
+          .other-title
+            %span.far.fa-image
+            &nbsp;お題の検索
+          %label
+            お題を入力してください
+          .form
+            = form_tag(search_odais_path, :method => 'get' ) do
+              = text_field_tag :search, '', placeholder:'#',class: 'form-control input-lg',id: "search"
+            %br
+            
+        
+
+           
+            = render 'odai-search'
 
       = render 'shared/right-container'
   = render 'shared/footer'
