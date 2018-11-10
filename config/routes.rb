@@ -53,6 +53,7 @@ Rails.application.routes.draw do
       get 'inorganicmatter'
       get 'illustration'
       get 'other'
+      get 'search'
     end
   end
 
