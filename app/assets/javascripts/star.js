@@ -1,43 +1,46 @@
 $(function() {
-  // //星１つ目にカーソルを乗せた時
-  // $(".star-1").hover(function(){
-  //   $(this).removeClass('far fa-star').addClass('fas fa-star');
-  // },function(){
-  //   $(this).removeClass('fas fa-star').addClass('far fa-star');
-  // }
-  // );
-
-  // //星２つ目にカーソルを乗せた時
-  // $(".star-2").hover(function(){
-  //   var star1 = $(this).parent().find('.star-1');
-  //   star1.removeClass('far fa-star').addClass('fas fa-star');
-  //   $(this).removeClass('far fa-star').addClass('fas fa-star');
-  // },function(){
-  //   var star1 = $(this).parent().find('.star-1');
-  //   star1.removeClass('fas fa-star').addClass('far fa-star');
-  //   $(this).removeClass('fas fa-star').addClass('far fa-star');
-  // }
-  // );
-
-  // //星３つ目にカーソルを乗せた時
-  // $(".star-3").hover(function(){
-  //   var star1 = $(this).parent().find('.star-1');
-  //   var star2 = $(this).parent().find('.star-2');
-
-  //   star1.removeClass('far fa-star').addClass('fas fa-star');
-  //   star2.removeClass('far fa-star').addClass('fas fa-star');
-  //   $(this).removeClass('far fa-star').addClass('fas fa-star');
-  // },function(){
-  //   var star1 = $(this).parent().find('.star-1');
-  //   var star2 = $(this).parent().find('.star-2');
-
-  //   star1.removeClass('fas fa-star').addClass('far fa-star');
-  //   star2.removeClass('fas fa-star').addClass('far fa-star');
-  //   $(this).removeClass('fas fa-star').addClass('far fa-star');
-  // }
-  // );
 
 
+//   function method(){
+//   //星１つ目にカーソルを乗せた時
+//   $(".star-1").hover(function(){
+//     $(this).removeClass('far fa-star').addClass('fas fa-star');
+//   },function(){
+//     $(this).removeClass('fas fa-star').addClass('far fa-star');
+//   }
+//   );
+
+//   //星２つ目にカーソルを乗せた時
+//   $(".star-2").hover(function(){
+//     var star1 = $(this).parent().find('.star-1');
+//     star1.removeClass('far fa-star').addClass('fas fa-star');
+//     $(this).removeClass('far fa-star').addClass('fas fa-star');
+//   },function(){
+//     var star1 = $(this).parent().find('.star-1');
+//     star1.removeClass('fas fa-star').addClass('far fa-star');
+//     $(this).removeClass('fas fa-star').addClass('far fa-star');
+//   }
+//   );
+
+//   //星３つ目にカーソルを乗せた時
+//   $(".star-3").hover(function(){
+//     var star1 = $(this).parent().find('.star-1');
+//     var star2 = $(this).parent().find('.star-2');
+
+//     star1.removeClass('far fa-star').addClass('fas fa-star');
+//     star2.removeClass('far fa-star').addClass('fas fa-star');
+//     $(this).removeClass('far fa-star').addClass('fas fa-star');
+//   },function(){
+//     var star1 = $(this).parent().find('.star-1');
+//     var star2 = $(this).parent().find('.star-2');
+
+//     star1.removeClass('fas fa-star').addClass('far fa-star');
+//     star2.removeClass('fas fa-star').addClass('far fa-star');
+//     $(this).removeClass('fas fa-star').addClass('far fa-star');
+//   }
+//   );
+
+// }
 
 
 
@@ -188,7 +191,6 @@ $(".boke-rate-times").on("click",function(){
   }
 
   }
-
 
 
 

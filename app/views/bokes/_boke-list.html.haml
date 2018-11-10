@@ -35,47 +35,78 @@
           - if boke.star_user(current_user.id,boke.id)
             -if boke.star_status_3(current_user.id,boke.id)
               %span.boke-rating
-                .a.star-3.decrement.fas.fa-star{style:"color:#ebbf2a","data-id": "#{boke.id}"}
-                .a.star-2.decrement.fas.fa-star{style:"color:#ebbf2a","data-id": "#{boke.id}"}
-                .a.star-1.decrement.fas.fa-star{style:"color:#ebbf2a","data-id": "#{boke.id}"}
+                .a.test1.star-3.decrement.fas.fa-star{style:"color:#ebbf2a","data-id": "#{boke.id}"}
+                  .fukidashi1
+                    %p.fukidashi-text
+                      最高に面白い
+                .a.test1.star-2.decrement.fas.fa-star{style:"color:#ebbf2a","data-id": "#{boke.id}"}
+                  .fukidashi1
+                    %p.fukidashi-text
+                      すごく面白い
+                .a.test1.star-1.decrement.fas.fa-star{style:"color:#ebbf2a","data-id": "#{boke.id}"}
+                  .fukidashi1
+                    %p.fukidashi-text
+                      面白いーー
+
             -elsif boke.star_status_2(current_user.id,boke.id)
               %span.boke-rating
-                .a.star-3.increment.far.fa-star{style:"color:#ebbf2a","data-id": "#{boke.id}"}
-                .a.star-2.decrement.fas.fa-star{style:"color:#ebbf2a","data-id": "#{boke.id}"}
-                .a.star-1.decrement.fas.fa-star{style:"color:#ebbf2a","data-id": "#{boke.id}"}
+                .a.test1.star-3.increment.far.fa-star{style:"color:#ebbf2a","data-id": "#{boke.id}"}
+                  .fukidashi1
+                    %p.fukidashi-text
+                      最高に面白い
+                .a.test1.star-2.decrement.fas.fa-star{style:"color:#ebbf2a","data-id": "#{boke.id}"}
+                  .fukidashi1
+                    %p.fukidashi-text
+                      すごく面白い
+                .a.test1.star-1.decrement.fas.fa-star{style:"color:#ebbf2a","data-id": "#{boke.id}"}
+                  .fukidashi1
+                    %p.fukidashi-text
+                      面白いーー
+
             -elsif boke.star_status_1(current_user.id,boke.id)
               %span.boke-rating
-                .a.star-3.increment.far.fa-star{style:"color:#ebbf2a","data-id": "#{boke.id}"}
-                .a.star-2.increment.far.fa-star{style:"color:#ebbf2a","data-id": "#{boke.id}"}
-                .a.star-1.decrement.fas.fa-star{style:"color:#ebbf2a","data-id": "#{boke.id}"}
+                .a.test1.star-3.increment.far.fa-star{style:"color:#ebbf2a","data-id": "#{boke.id}"}
+                  .fukidashi1
+                    %p.fukidashi-text
+                      最高に面白い
+                .a.test1.star-2.increment.far.fa-star{style:"color:#ebbf2a","data-id": "#{boke.id}"}
+                  .fukidashi1
+                    %p.fukidashi-text
+                      すごく面白い
+                .a.test1.star-1.decrement.fas.fa-star{style:"color:#ebbf2a","data-id": "#{boke.id}"}
+                  .fukidashi1
+                    %p.fukidashi-text
+                      面白いーー
+
           -else
             %span.boke-rating
               .a.test1.star-3.increment.far.fa-star{style:"color:#ebbf2a","data-id": "#{boke.id}"}
-                / .fukidashi1
-                /   %p.fukidashi-text
-                /     最高に面白い
+                .fukidashi1
+                  %p.fukidashi-text
+                    最高に面白い
               .a.test1.star-2.increment.far.fa-star{style:"color:#ebbf2a","data-id": "#{boke.id}"}
-                / .fukidashi1
-                /   %p.fukidashi-text
-                /     すごく面白い
+                .fukidashi1
+                  %p.fukidashi-text
+                    すごく面白い
               .a.test1.star-1.increment.far.fa-star{style:"color:#ebbf2a","data-id": "#{boke.id}"}
-                / .fukidashi1
-                /   %p.fukidashi-text
-                /     面白いーー
+                .fukidashi1
+                  %p.fukidashi-text
+                    面白いーー
+
         -else
           %span.boke-rating
             .a.test1.star-3.increment.far.fa-star{style:"color:#ebbf2a","data-id": "#{boke.id}"}
-              / .fukidashi1
-              /   %p.fukidashi-text
-              /     最高に面白い
+              .fukidashi1
+                %p.fukidashi-text
+                  最高に面白い
             .a.test1.star-2.increment.far.fa-star{style:"color:#ebbf2a","data-id": "#{boke.id}"}
-              / .fukidashi1
-              /   %p.fukidashi-text
-              /     すごく面白い
+              .fukidashi1
+                %p.fukidashi-text
+                  すごく面白い
             .a.test1.star-1.increment.far.fa-star{style:"color:#ebbf2a","data-id": "#{boke.id}"}
-              / .fukidashi1
-              /   %p.fukidashi-text
-              /     面白いーー
+              .fukidashi1
+                %p.fukidashi-text
+                  面白いーー
       -if user_signed_in?
         .comment-action-parts
           %p
