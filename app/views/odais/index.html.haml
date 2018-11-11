@@ -14,15 +14,18 @@
             %li
               = link_to "人気",""
             %li
-              = link_to "コラボ",""
-            %li
               = link_to new_odai_boke_path(@odai_random) do
                 %i.fas.fa-random
                 ランダム
             %li
-              = link_to search_odais_path do
-                %i.fas.fa-search
-                お題検索
+              -if current_user
+                = link_to search_odais_path do
+                  %i.fas.fa-search
+                  お題検索
+              -else
+                = link_to notlogin_titles_path do
+                  %i.fas.fa-search
+                  お題検索
             %li
               -if current_user
                 = link_to new_odai_path do

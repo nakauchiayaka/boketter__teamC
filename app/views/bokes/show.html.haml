@@ -60,6 +60,11 @@
                 %span.boke-share-social
                   = link_to "" do
                     %i.fab.fa-twitter
+                -# 削除ボタン
+                -if user_signed_in? && current_user.id == @boke.user_id
+                  %span.boke-share-social#delete
+                    = link_to boke_path, method: :delete, data: { confirm: '本当に削除しますか？' } do
+                      %i.fas.fa-trash-alt
             .boke-information-row.ng-scope
               .boke-rate
                 = link_to "" do

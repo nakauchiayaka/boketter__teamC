@@ -6,6 +6,9 @@
           %b
             = link_to Boke.where(odai: odai.id).count ,""
             個のボケ
+          -# .pull-left
+          -# %b
+          -#   = odai.title
         .odai-photo-warapper
           = link_to "" ,class: "odai-photo" do
             = image_tag odai.image

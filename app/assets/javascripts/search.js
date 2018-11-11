@@ -10,6 +10,11 @@ $(function () {
                             <a href="">${odai.boke_count}個のボケ</a>
                           </b>
                         </h3>
+                        <div class='pull-left'>
+                            <b>
+                              ${odai.title}
+                            </b>
+                        </div>
                         <div class="odai-photo-warapper">
                           <a class="odai-photo" href="">
                             <img src="${odai.odai_phot}">

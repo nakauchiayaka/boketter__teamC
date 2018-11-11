@@ -1,0 +1,38 @@
+.main
+  = render 'shared/header'
+  #wrapper
+    #container
+      = render 'shared/header-news'
+
+      #main-container
+        .content-menu
+          %ul.content-menu-list.inline-list
+            %li
+              = link_to "新着", odais_path
+            %li
+              = link_to "注目",""
+            %li
+              = link_to "人気",""
+            %li
+              = link_to "コラボ",""
+            %li
+              = link_to "セレクト",""
+            %li
+              = link_to "ピックアップ",""
+            %li
+              = link_to "殿堂入り",legends_path
+        #content
+          .content-boke
+            .alert-create.alert-info.text-center
+              %p
+                = image_tag "medical_anrakushi.png",style:"width:500px"
+              %p
+                ボケの投稿を削除しました。
+                %br
+                サイト上に反映されるまで少し時間がかかる可能性があります。
+              %br
+              %p
+                =link_to "ボケ一覧へ戻る",bokes_path,class: "btn-primary btn btn-lg"
+
+      = render 'shared/right-container'
+  = render 'shared/footer'
