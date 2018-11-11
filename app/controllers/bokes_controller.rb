@@ -13,6 +13,13 @@ class BokesController < ApplicationController
   def create
     @bokes = Boke.create(text: boke_params[:text], odai_id: params[:odai_id], user_id: current_user.id,category_id: boke_params[:category_id])
   end
+  
+  def destroy
+    boke = Boke.find(params[:id])
+    if boke.user_id == current_user.id
+      boke.destroy
+    end
+  end
 
   def edit
     @boke = Boke.find(params[:id])
