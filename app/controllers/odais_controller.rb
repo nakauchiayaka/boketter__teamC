@@ -22,6 +22,7 @@ class OdaisController < ApplicationController
   end
 
   def search
+    @odai_random = Odai.order("RAND()").first
     @odais = Odai.where('title LIKE(?)', "%#{params[:keyword]}%").limit(20)
     respond_to do |format|
     format.html

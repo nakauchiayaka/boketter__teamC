@@ -13,9 +13,9 @@
             %li
               = link_to "人気",""
             %li
-              = link_to "コラボ",""
-            %li
-              = link_to "ラベル",""
+              = link_to new_odai_boke_path(@odai_random) do
+                %i.fas.fa-random
+                無茶振り
             %li.content-menu-list-active
               = link_to search_odais_path do
                 %i.fas.fa-search
@@ -34,10 +34,10 @@
             = form_tag(search_odais_path, :method => 'get' ) do
               = text_field_tag :search, '', placeholder:'#',class: 'form-control input-lg',id: "search"
             %br
-            
-        
 
-           
+
+
+
             = render 'odai-search'
 
       = render 'shared/right-container'
