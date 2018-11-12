@@ -21,6 +21,11 @@ class OdaisController < ApplicationController
     Odai.create(title: odai_params[:title],image: odai_params[:image],user_id: current_user.id,category_id: odai_params[:category_id])
   end
 
+  def show
+  @odai = Odai.find(params[:id])
+  @bokes = Boke.where(odai_id: params[:id])
+  end
+
   def search
     @odai_random = Odai.order("RAND()").first
     @odais = Odai.where('title LIKE(?)', "%#{params[:keyword]}%").limit(20)
