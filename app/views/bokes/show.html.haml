@@ -24,7 +24,24 @@
               = link_to "殿堂入り",legends_path
 
           #content
+            .boke
+              .boke-photo
+                .boke-photo-content
+                  = link_to "" do
+                    = image_tag @boke.odai.image
+                    .boke-photo-meta
+                      = link_to "" do
+                        %i.fas.fa-camera
+                        = @boke.odai.user.name
+                      &nbsp;
+                      =link_to "" do
+                        %i.far.fa-image
+                        = @boke.odai.user.name
+                      - if current_user
+                        - if current_user.id == @boke.user_id
+                          = link_to "  編集",edit_boke_path,method: :get
 
+<<<<<<< HEAD
 
             .boke-photo
               .boke-photo-content
@@ -40,6 +57,9 @@
                       = @boke.odai.user.name
 
             = link_to @boke.text,"",class: "boke-text"
+=======
+              = link_to @boke.text,"",class: "boke-text"
+>>>>>>> master
 
 
             .boke-meta
@@ -57,12 +77,20 @@
                 %span.boke-share-social
                   = link_to "" do
                     %i.fab.fa-twitter
+<<<<<<< HEAD
                 - if current_user
                   - if current_user.id == @boke.user_id
                     %span.boke-share-social
                       = link_to edit_boke_path,method: :get  do
                         %i.far.fa-edit
 
+=======
+                -# 削除ボタン
+                -if user_signed_in? && current_user.id == @boke.user_id
+                  %span.boke-share-social#delete
+                    = link_to boke_path, method: :delete, data: { confirm: '本当に削除しますか？' } do
+                      %i.fas.fa-trash-alt
+>>>>>>> master
             .boke-information-row.ng-scope
               .boke-rate
                 = link_to "" do
@@ -75,6 +103,11 @@
                   = link_to "" do
                     %i.far.fa-star{style:"color:#ebbf2a"}
 
+            .comments#boke-comments
+              = render @comments
+              .pager.ng-scope
+                %button.btn.btn-primary.btn-long
+                  もっと読み込む
+
       = render 'shared/right-container'
   = render 'shared/footer'
-
