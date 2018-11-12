@@ -4,8 +4,9 @@
       .odai-inner
         %h3
           %b
-            = link_to Boke.where(odai: odai.id).count ,""
-            個のボケ
+            = link_to odai_path(odai.id) do
+              = Boke.where(odai: odai.id).count
+              個のボケ
         .odai-photo-warapper
           = link_to "" ,class: "odai-photo" do
             = image_tag odai.image
