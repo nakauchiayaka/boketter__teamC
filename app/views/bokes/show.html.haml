@@ -38,9 +38,6 @@
                     =link_to "" do
                       %i.far.fa-image
                       = @boke.odai.user.name
-                    - if current_user
-                      - if current_user.id == @boke.user_id
-                        = link_to "  編集",edit_boke_path,method: :get
 
             = link_to @boke.text,"",class: "boke-text"
 
@@ -60,6 +57,12 @@
                 %span.boke-share-social
                   = link_to "" do
                     %i.fab.fa-twitter
+                - if current_user
+                  - if current_user.id == @boke.user_id
+                    %span.boke-share-social
+                      = link_to edit_boke_path,method: :get  do
+                        %i.far.fa-edit
+
             .boke-information-row.ng-scope
               .boke-rate
                 = link_to "" do
