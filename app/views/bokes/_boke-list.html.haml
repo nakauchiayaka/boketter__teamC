@@ -5,11 +5,11 @@
         = link_to "" do
           = link_to image_tag(boke.odai.image),new_odai_boke_path(boke.odai)
         .boke-photo-meta
-          = link_to user_path(id:boke.odai.user.id) do
+          = link_to "" do
             %i.fas.fa-camera
             = boke.odai.user.name
           &nbsp;
-          =link_to user_path(id:boke.odai.user.id) do
+          =link_to "" do
             %i.far.fa-image
             = boke.odai.user.name
     = link_to boke.text,"",class: "boke-text"
@@ -28,11 +28,6 @@
         %span.boke-share-social
           = link_to "" do
             %i.fab.fa-twitter
-        -# 削除ボタン
-        -if user_signed_in? && current_user.id == boke.user_id
-          %span.boke-share-social#delete
-            = link_to "/bokes/#{boke.id}", method: :delete, data: { confirm: '本当に削除しますか？' } do
-              %i.fas.fa-trash-alt
     .boke-information-row.ng-scope
       .boke-rate
         %i.fas.fa-times-circle.boke-rate-times{"data-id": "#{boke.id}"}
@@ -40,83 +35,52 @@
           - if boke.star_user(current_user.id,boke.id)
             -if boke.star_status_3(current_user.id,boke.id)
               %span.boke-rating
-                .a.test1.star-3.decrement.fas.fa-star{style:"color:#ebbf2a","data-id": "#{boke.id}"}
-                  .fukidashi1
-                    %p.fukidashi-text
-                      最高に面白い
-                .a.test1.star-2.decrement.fas.fa-star{style:"color:#ebbf2a","data-id": "#{boke.id}"}
-                  .fukidashi1
-                    %p.fukidashi-text
-                      すごく面白い
-                .a.test1.star-1.decrement.fas.fa-star{style:"color:#ebbf2a","data-id": "#{boke.id}"}
-                  .fukidashi1
-                    %p.fukidashi-text
-                      面白いーー
-
+                .a.star-3.decrement.fas.fa-star{style:"color:#ebbf2a","data-id": "#{boke.id}"}
+                .a.star-2.decrement.fas.fa-star{style:"color:#ebbf2a","data-id": "#{boke.id}"}
+                .a.star-1.decrement.fas.fa-star{style:"color:#ebbf2a","data-id": "#{boke.id}"}
             -elsif boke.star_status_2(current_user.id,boke.id)
               %span.boke-rating
-                .a.test1.star-3.increment.far.fa-star{style:"color:#ebbf2a","data-id": "#{boke.id}"}
-                  .fukidashi1
-                    %p.fukidashi-text
-                      最高に面白い
-                .a.test1.star-2.decrement.fas.fa-star{style:"color:#ebbf2a","data-id": "#{boke.id}"}
-                  .fukidashi1
-                    %p.fukidashi-text
-                      すごく面白い
-                .a.test1.star-1.decrement.fas.fa-star{style:"color:#ebbf2a","data-id": "#{boke.id}"}
-                  .fukidashi1
-                    %p.fukidashi-text
-                      面白いーー
-
+                .a.star-3.increment.far.fa-star{style:"color:#ebbf2a","data-id": "#{boke.id}"}
+                .a.star-2.decrement.fas.fa-star{style:"color:#ebbf2a","data-id": "#{boke.id}"}
+                .a.star-1.decrement.fas.fa-star{style:"color:#ebbf2a","data-id": "#{boke.id}"}
             -elsif boke.star_status_1(current_user.id,boke.id)
               %span.boke-rating
-                .a.test1.star-3.increment.far.fa-star{style:"color:#ebbf2a","data-id": "#{boke.id}"}
-                  .fukidashi1
-                    %p.fukidashi-text
-                      最高に面白い
-                .a.test1.star-2.increment.far.fa-star{style:"color:#ebbf2a","data-id": "#{boke.id}"}
-                  .fukidashi1
-                    %p.fukidashi-text
-                      すごく面白い
-                .a.test1.star-1.decrement.fas.fa-star{style:"color:#ebbf2a","data-id": "#{boke.id}"}
-                  .fukidashi1
-                    %p.fukidashi-text
-                      面白いーー
-
+                .a.star-3.increment.far.fa-star{style:"color:#ebbf2a","data-id": "#{boke.id}"}
+                .a.star-2.increment.far.fa-star{style:"color:#ebbf2a","data-id": "#{boke.id}"}
+                .a.star-1.decrement.fas.fa-star{style:"color:#ebbf2a","data-id": "#{boke.id}"}
           -else
             %span.boke-rating
               .a.test1.star-3.increment.far.fa-star{style:"color:#ebbf2a","data-id": "#{boke.id}"}
-                .fukidashi1
-                  %p.fukidashi-text
-                    最高に面白い
+                / .fukidashi1
+                /   %p.fukidashi-text
+                /     最高に面白い
               .a.test1.star-2.increment.far.fa-star{style:"color:#ebbf2a","data-id": "#{boke.id}"}
-                .fukidashi1
-                  %p.fukidashi-text
-                    すごく面白い
+                / .fukidashi1
+                /   %p.fukidashi-text
+                /     すごく面白い
               .a.test1.star-1.increment.far.fa-star{style:"color:#ebbf2a","data-id": "#{boke.id}"}
-                .fukidashi1
-                  %p.fukidashi-text
-                    面白いーー
-
+                / .fukidashi1
+                /   %p.fukidashi-text
+                /     面白いーー
         -else
           %span.boke-rating
             .a.test1.star-3.increment.far.fa-star{style:"color:#ebbf2a","data-id": "#{boke.id}"}
-              .fukidashi1
-                %p.fukidashi-text
-                  最高に面白い
+              / .fukidashi1
+              /   %p.fukidashi-text
+              /     最高に面白い
             .a.test1.star-2.increment.far.fa-star{style:"color:#ebbf2a","data-id": "#{boke.id}"}
-              .fukidashi1
-                %p.fukidashi-text
-                  すごく面白い
+              / .fukidashi1
+              /   %p.fukidashi-text
+              /     すごく面白い
             .a.test1.star-1.increment.far.fa-star{style:"color:#ebbf2a","data-id": "#{boke.id}"}
-              .fukidashi1
-                %p.fukidashi-text
-                  面白いーー
+              / .fukidashi1
+              /   %p.fukidashi-text
+              /     面白いーー
       -if user_signed_in?
         .comment-action-parts
           %p
             %img.user-icon{:src => "//d3pb2x7032n52.cloudfront.net/static/images/user_icon.gif"}
-            = link_to user_path(id:boke.user.id) do
+            = link_to "" do
               %b.ng-binding.sample_user
                 = boke.user.name
             さんのボケです
