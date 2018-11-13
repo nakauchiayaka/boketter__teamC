@@ -38,45 +38,40 @@
                         %i.far.fa-image
                         = @boke.odai.user.name
 
-            = link_to @boke.text,"",class: "boke-text"
+              = link_to @boke.text,"",class: "boke-text"
 
 
-            .boke-meta
-            .boke-information
-              .boke-information-row.is-360
-                .boke-stars
-                  = link_to "" do
-                    %i.fas.fa-star{style:"color:#ebbf2a"}
-                    4772
-                .boke-information-label
-                  = link_to @boke.created_at.to_s(:date)
+              .boke-meta
+              .boke-information
+                .boke-information-row.is-360
+                  .boke-stars
+                    = link_to "" do
+                      %i.fas.fa-star{style:"color:#ebbf2a"}
+                      = @boke.status_calculation(@boke.id,@boke.stars)
+                  .boke-information-label
+                    = link_to @boke.created_at.to_s(:date)
 
-                -if user_signed_in? && current_user.id == @boke.user_id
-                  %span.boke-share-social#delete
-                    = link_to boke_path, method: :delete, data: { confirm: '本当に削除しますか？' } do
-                      %i.fas.fa-trash-alt
-                %span.boke-share-social
+                  - if current_user
+                    - if current_user.id == @boke.user_id
+                      %span.boke-share-social
+                        = link_to edit_boke_path,method: :get  do
+                          %i.far.fa-edit
+                  -if user_signed_in? && current_user.id == @boke.user_id
+                    %span.boke-share-social#delete
+                      = link_to boke_path, method: :delete, data: { confirm: '本当に削除しますか？' } do
+                        %i.fas.fa-trash-alt
+
+              .boke-information-row.ng-scope
+                .boke-rate
                   = link_to "" do
-                    %i.fab.fa-facebook-f
-                %span.boke-share-social
-                  = link_to "" do
-                    %i.fab.fa-twitter
-                - if current_user
-                  - if current_user.id == @boke.user_id
-                    %span.boke-share-social
-                      = link_to edit_boke_path,method: :get  do
-                        %i.far.fa-edit
-            .boke-information-row.ng-scope
-              .boke-rate
-                = link_to "" do
-                  %i.fas.fa-times-circle.boke-rate-times
-                %span.boke-rating
-                  = link_to "" do
-                    %i.far.fa-star{style:"color:#ebbf2a"}
-                  = link_to "" do
-                    %i.far.fa-star{style:"color:#ebbf2a"}
-                  = link_to "" do
-                    %i.far.fa-star{style:"color:#ebbf2a"}
+                    %i.fas.fa-times-circle.boke-rate-times
+                  %span.boke-rating
+                    = link_to "" do
+                      %i.far.fa-star{style:"color:#ebbf2a"}
+                    = link_to "" do
+                      %i.far.fa-star{style:"color:#ebbf2a"}
+                    = link_to "" do
+                      %i.far.fa-star{style:"color:#ebbf2a"}
 
             .comments#boke-comments
               = render @comments
