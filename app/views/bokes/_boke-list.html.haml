@@ -91,11 +91,13 @@
             - @status = ""
           - if @user_comment = Comment.where(boke_id: boke.id).find_by(user_id: current_user.id)
             - @comment = @user_comment
-            - @url = "/bokes/#{@comment.boke_id}/comments/#{@comment.id}"
+            - @url = "/bokes/#{boke.id}/comments/#{@comment.id}"
+            - @type = "PATCH"
           - else
             - @comment = Comment.new
-            - @url = "/bokes/#{boke.id}/comments"
-          %input#user_rate{:type => "hidden", "data-comment" => @comment.text, "data-url" => @url, "data-status" => @status}
+            - @url = boke_comments_path(boke.id)
+            - @type = "POST"
+          %input.user_info{:type => "hidden", "data-comment" => @comment.text, "data-url" => @url, "data-status" => @status, "data-boke_id" => boke.id, "data-type" => @type}
 
           -# コメントボタン ----------
           .comment-area.text-center.comment_btn{"aria-hidden" => "true", :style => "display: none;"}
