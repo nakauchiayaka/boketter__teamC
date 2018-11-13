@@ -11,11 +11,11 @@
           %li
             = link_to "ボケ", boke_user_path(id:current_user.id)
           %li
-            = link_to "お題", odai_user_path(id:current_user.id)
+            = link_to "お題", "/user/#{current_user.id}/odai"
           %li.content-menu-list-active
             = link_to "お気に入り職人", "/user/#{current_user.id}/favorites"
           %li
-            = link_to "ボケコレ", ratings3_user_path(id:current_user.id)
+            = link_to "ボケコレ", "/user/#{current_user.id}/ratings3"
 
       #content
         .text-center
@@ -59,7 +59,7 @@
       .bcl
         = render 'accounts/bcl'
 
-    = render 'shared/right-container'
+    = render 'accounts/right-container'
     .clearfix
 
   = render 'accounts/scroll-top'

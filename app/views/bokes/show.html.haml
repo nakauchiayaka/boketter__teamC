@@ -38,7 +38,23 @@
                         %i.far.fa-image
                         = @boke.odai.user.name
 
-              = link_to @boke.text,"",class: "boke-text"
+
+
+
+            .boke-photo
+              .boke-photo-content
+                = link_to "" do
+                  = image_tag @boke.odai.image
+                  .boke-photo-meta
+                    = link_to "" do
+                      %i.fas.fa-camera
+                      = @boke.odai.user.name
+                    &nbsp;
+                    =link_to "" do
+                      %i.far.fa-image
+                      = @boke.odai.user.name
+
+            = link_to @boke.text,"",class: "boke-text"
 
 
             .boke-meta
@@ -50,13 +66,8 @@
                     4772
                 .boke-information-label
                   = link_to @boke.created_at.to_s(:date)
-                -#%span.boke-share-social
-                  -#= link_to "" do
-                    -#%i.fab.fa-facebook-f
-                -#%span.boke-share-social
-                  -#= link_to "" do
-                    -#%i.fab.fa-twitter
-                -# 編集・削除ボタン
+
+                
                 -if user_signed_in? && current_user.id == @boke.user_id
                   %span.boke-share-social
                     = link_to edit_boke_path, method: :get  do
@@ -64,6 +75,7 @@
                   %span.boke-share-social#delete
                     = link_to boke_path, method: :delete, data: { confirm: '本当に削除しますか？' } do
                       %i.fas.fa-trash-alt
+
             .boke-information-row.ng-scope
               .boke-rate
                 = link_to "" do
@@ -76,11 +88,6 @@
                   = link_to "" do
                     %i.far.fa-star{style:"color:#ebbf2a"}
 
-            .comments#boke-comments
-              = render @comments
-              .pager.ng-scope
-                %button.btn.btn-primary.btn-long
-                  もっと読み込む
-
       = render 'shared/right-container'
   = render 'shared/footer'
+

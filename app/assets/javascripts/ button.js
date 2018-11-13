@@ -20,14 +20,6 @@ $(function () {
     });
 });
 
-//ボタン赤に変更
-$(function () {
-    $('#delete.boke-share-social a').hover(function () {
-        $(this).css('background', '#ff5722');
-    }, function () {
-        $(this).css('background', '');
-    });
-});
 
 //リンクテキストがオレンジに変更
 $(function () {
