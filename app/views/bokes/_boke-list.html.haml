@@ -22,14 +22,12 @@
             = boke.status_calculation(boke.id,boke.stars)
         .boke-information-label
           = link_to boke.created_at.to_s(:date),boke_path(boke.id)
-        %span.boke-share-social
-          = link_to "" do
-            %i.fab.fa-facebook-f
-        %span.boke-share-social
-          = link_to "" do
-            %i.fab.fa-twitter
-        -# 削除ボタン
+
+        -# 編集・削除ボタン
         -if user_signed_in? && current_user.id == boke.user_id
+          %span.boke-share-social#edit
+            = link_to "/bokes/#{boke.id}/edit", method: :get  do
+              %i.far.fa-edit
           %span.boke-share-social#delete
             = link_to "/bokes/#{boke.id}", method: :delete, data: { confirm: '本当に削除しますか？' } do
               %i.fas.fa-trash-alt
