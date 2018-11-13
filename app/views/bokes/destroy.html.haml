@@ -3,6 +3,7 @@
   #wrapper
     #container
       = render 'shared/header-news'
+
       #main-container
         .content-menu
           %ul.content-menu-list.inline-list
@@ -13,29 +14,25 @@
             %li
               = link_to "人気",""
             %li
-              = link_to new_odai_boke_path(@odai_random) do
-                %i.fas.fa-random
-                無茶振り
+              = link_to "コラボ",""
             %li
-              = link_to search_odais_path do
-                %i.fas.fa-search
-                お題検索
+              = link_to "セレクト",""
             %li
-              = link_to new_odai_path do
-                %i.fas.fa-upload
-                お題投稿
+              = link_to "ピックアップ",""
+            %li
+              = link_to "殿堂入り",legends_path
         #content
           .content-boke
             .alert-create.alert-info.text-center
               %p
-                = image_tag "boke_neko.png",style:"width:180px"
+                = image_tag "medical_anrakushi.png",style:"width:500px"
               %p
-                お題の投稿が完了しました。
+                ボケの投稿を削除しました。
                 %br
                 サイト上に反映されるまで少し時間がかかる可能性があります。
               %br
               %p
-                =link_to "新着お題へ",odais_path,class: "btn-primary btn btn-lg"
+                =link_to "ボケ一覧へ戻る",bokes_path,class: "btn-primary btn btn-lg"
 
       = render 'shared/right-container'
   = render 'shared/footer'
