@@ -13,13 +13,6 @@ class BokesController < ApplicationController
   def create
     @bokes = Boke.create(text: boke_params[:text], odai_id: params[:odai_id], user_id: current_user.id,category_id: boke_params[:category_id])
   end
-  
-  def destroy
-    boke = Boke.find(params[:id])
-    if boke.user_id == current_user.id
-      boke.destroy
-    end
-  end
 
   def edit
     @boke = Boke.find(params[:id])
@@ -33,30 +26,28 @@ class BokesController < ApplicationController
 
   def show
     @boke = Boke.find(params[:id])
-    @comments = Comment.includes(:user).where(boke_id: params[:id])
-    @stars = Star.where(boke_id: params[:id])
   end
 
   def baka
-    @bokes = Boke.where(category_id:8).order("created_at DESC").page(params[:page]).per(4)
+    @bokes = Boke.where(category_id:8).order("created_at DESC")
   end
   def surreal
-    @bokes = Boke.where(category_id:9).order("created_at DESC").page(params[:page]).per(4)
+    @bokes = Boke.where(category_id:9).order("created_at DESC")
   end
   def ogeretu
-    @bokes = Boke.where(category_id:10).order("created_at DESC").page(params[:page]).per(4)
+    @bokes = Boke.where(category_id:10).order("created_at DESC")
   end
   def black
-    @bokes = Boke.where(category_id:11).order("created_at DESC").page(params[:page]).per(4)
+    @bokes = Boke.where(category_id:11).order("created_at DESC")
   end
   def relative
-    @bokes = Boke.where(category_id:12).order("created_at DESC").page(params[:page]).per(4)
+    @bokes = Boke.where(category_id:12).order("created_at DESC")
   end
   def example
-    @bokes = Boke.where(category_id:13).order("created_at DESC").page(params[:page]).per(4)
+    @bokes = Boke.where(category_id:13).order("created_at DESC")
   end
   def other
-    @bokes = Boke.where(category_id:14).order("created_at DESC").page(params[:page]).per(4)
+    @bokes = Boke.where(category_id:14).order("created_at DESC")
   end
 
   private

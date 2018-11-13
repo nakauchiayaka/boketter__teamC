@@ -7,19 +7,19 @@
       .content-menu
         %ul.content-menu-list.inline-list
           %li
-            = link_to "プロフィール", user_path(id:@user.id)
+            = link_to "プロフィール", user_path(id:current_user.id)
           %li.content-menu-list-active
-            = link_to "ボケ", boke_user_path(id:@user.id)
+            = link_to "ボケ", boke_user_path(id:current_user.id)
           %li
-            = link_to "お題", odai_user_path(id:@user.id)
+            = link_to "お題", odai_user_path(id:current_user.id)
           %li
             = link_to "お気に入り職人", "/user/#{current_user.id}/favorites"
           %li
-            = link_to "ボケコレ", ratings3_user_path(id:@user.id)
+            = link_to "ボケコレ", ratings3_user_path(id:current_user.id)
 
       #content
         .other-title
-          = @user.name
+          = current_user.name
           さんの投稿したボケ
 
         .text-center
@@ -32,7 +32,7 @@
       .bcl
         = render 'accounts/bcl'
 
-    = render 'shared/right-container'
+    = render 'accounts/right-container'
     .clearfix
 
   = render 'accounts/scroll-top'

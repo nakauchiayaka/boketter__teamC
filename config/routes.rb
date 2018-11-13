@@ -53,7 +53,6 @@ Rails.application.routes.draw do
       get 'inorganicmatter'
       get 'illustration'
       get 'other'
-      get 'search'
     end
   end
 
@@ -74,8 +73,8 @@ Rails.application.routes.draw do
   # get '/user/:id/boke',       to: 'user#boke'
   # get '/user/:id/odai',       to: 'user#odai'
   get '/user/:id/favorites',  to: 'user#favorites'
-  # get '/user/:id/ratings1',    to: 'user#ratings1'
-  # get '/user/:id/ratings2',    to: 'user#ratings2'
-  # get '/user/:id/ratings3',    to: 'user#ratings3'
+  get '/user/:id/ratings1',    to: 'user#ratings1'
+  get '/user/:id/ratings2',    to: 'user#ratings2'
+  get '/user/:id/ratings3',    to: 'user#ratings3'
 
 end
