@@ -5,7 +5,7 @@ $(function(){
                       <div class="odai-inner">
                         <h3>
                           <b>
-                            <a href="">${more.boke_count}個のボケ</a>
+                            <a href="odais/${more.odai_id}">${more.boke_count}個のボケ</a>
                           </b>
                         </h3>
                         <div class="odai-photo-warapper">
