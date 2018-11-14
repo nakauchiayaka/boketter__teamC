@@ -9,27 +9,21 @@
           .login-header
             .other-title
               ボケてにログイン
+
           .login-form
             .login-form-content
-
-              - if @error_message
-                .alert.alert-danger
-                  %ul
-                    %li.ng-binding.ng-scope
-                      = @error_message
-
-              - else
-                = form_for(resource, as: resource_name, url: session_path(resource_name), class: "ng-pristine ng-invalid ng-invalid-required") do |f|
-                  .form-group
-                    = f.label :email, "メールアドレス"
-                    %br/
-                    = f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", placeholder: "メールアドレス"
-                  .form-group
-                    = f.label :password, "パスワード"
-                    %br/
-                    = f.password_field :password, autocomplete: "current-password", class: "form-control", placeholder: "パスワード"
-                  .actions
-                    = f.submit "ログイン", {class: "btn btn-primary btn-lg"}
+              = devise_error_messages!
+              = form_for(resource, as: resource_name, url: session_path(resource_name), class: "ng-pristine ng-invalid ng-invalid-required") do |f|
+                .form-group
+                  = f.label :email, "メールアドレス"
+                  %br/
+                  = f.email_field :email, autofocus: true, autocomplete: "email", class: "form-control", placeholder: "メールアドレス"
+                .form-group
+                  = f.label :password, "パスワード"
+                  %br/
+                  = f.password_field :password, autocomplete: "current-password", class: "form-control", placeholder: "パスワード"
+                .actions
+                  = f.submit "ログイン", {class: "btn btn-primary btn-lg"}
 
             .login-description
               %p.text
@@ -43,18 +37,8 @@
                 から新しく登録をお願いします。登録・利用ともに完全無料です。
 
       .bcl
-        %ol
-          %li
-            = link_to "/" do
-              %div
-              😃
-              %span
-                ボケて（bokete）トップ
-          >
-          %li
-            = link_to "#" do
-              %span
-                ログイン
+        = render 'accounts/bcl'
+
     .clearfix
     <!-- / #main-container -->
   .clearfix
