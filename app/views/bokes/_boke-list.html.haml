@@ -17,7 +17,7 @@
     .boke-information
       .boke-information-row.is-360
         .boke-stars
-          = link_to "" do
+          = link_to boke_path(boke.id) do
             %i.fas.fa-star{style:"color:#ebbf2a"}
             = boke.status_calculation(boke.id,boke.stars)
         .boke-information-label
