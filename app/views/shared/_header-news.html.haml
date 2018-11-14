@@ -2,12 +2,11 @@
   %span#header-news-catch
   %span#header-news-stats
     ボケ投稿数
-    %b
-      =link_to Boke.count
-
+    %b 
+      = Boke.count
     件&nbsp;お題投稿数
     %b
-      =link_to Odai.count
+      = Odai.count
     件&nbsp;
     = link_to "#", cless: "safe-mode-btn" do
       %i.fa.fa-lg.fa-toggle-on
