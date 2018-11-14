@@ -60,7 +60,7 @@ $(function(){
           console.log('あるよ')
             $(document).on('click', '#boke_text', function(){
               document.getElementById('hayosei').innerHTML = '<span id="ok">がんばー</span>';
-              $("#hayo").fadeOut(30000)
+              $("#hayo").fadeOut(3000)
             });
         }
       },60000);
@@ -69,7 +69,7 @@ $(function(){
           console.log('いるよ')
             $(document).on('click', '#boke_text', function(){
               document.getElementById('hayosei').innerHTML = '<span id="ok">はやくしてよぉ〜</span>';
-              $("#hayo").fadeOut(30000)
+              $("#hayo").fadeOut(3000)
             });
             setTimeout(function(){
               document.getElementById('hayosei').innerHTML = 'どう〜？';
