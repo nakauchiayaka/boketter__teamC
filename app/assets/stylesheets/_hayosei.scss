@@ -1,0 +1,26 @@
+#hayo{
+  float: right;
+  margin-top: -200px;
+  .icon{
+    background-image: url("../images/bokelogo.png");
+    background-repeat: no-repeat;
+    background-position: right;
+    height: 76px;
+    width: 400px;
+    .baloon{
+      position: relative;
+      width: 80%;
+      height: 76px;
+      #hayosei{
+        display: block;
+        position: absolute;
+        bottom: 0;
+        right:0;
+        #oko{
+          color: red;
+          font-weight: bold;
+        }
+      }
+    }
+  }
+}
