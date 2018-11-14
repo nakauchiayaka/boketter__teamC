@@ -1,61 +1,88 @@
 $(function() {
+
+  // 非表示
   function hidden(target) {
     $(target).attr({
       'aria-hidden': 'true',
       'style': 'display: none;'
     });
   }
-
+  // 表示
   function shown(target) {
-    $(target).removeAttr('aria-hidden style')
+    $(target).removeAttr('aria-hidden style');
   }
 
   $(".comment-action-parts").each(function() {
-    var comment = $(this).children(".user_comment").data('comment');
-    if (comment != null) {
-      shown($(this).children("#comment_edit"));
-    } else {
-      shown($(this).children("#comment_btn"));
+    var comment = $(this).find(".user_info").attr('data-comment');
+    var status = $(this).find(".user_info").attr('data-status');
+    if (status != "") {
+      shown($(this).find("p"));
+      if (comment == null) {
+        shown($(this).find(".comment_btn"));
+      } else {
+        shown($(this).find(".comment_edit"));
+      }
     }
   });
 
+  // 星ボタン押下
+  $(".star-1, .star-2, .star-3").on('click', function() {
+    var comment_action_parts = $(this).parents(".boke-rate").siblings(".comment-action-parts");
+    var status = $(comment_action_parts).find(".user_info").attr('data-status');
+    if (status == "") {
+      shown($(comment_action_parts).find("p"));
+      shown($(comment_action_parts).find(".comment_btn"));
+    }
+  });
+
+  // 星の「×」ボタン押下
+  $(".boke-rate-times").on("click",function() {
+    var comment_parent = $(this).parents(".boke-rate").siblings(".comment-action-parts");
+    hidden($(comment_parent).find("p, .comment_btn, .comment_edit, .comment-action, .alert-danger"));
+    $(comment_parent).find(".user_info").attr('data-comment', "");
+    $(comment_parent).find(".user_info").attr('data-status', "");
+    $(comment_parent).find("#comment_text").val("");
+    var user_info = $(comment_parent).find(".user_info");
+    var boke_id = $(user_info).attr('data-boke_id');
+    $(user_info).attr('data-url', `/bokes/${boke_id}/comments`);
+    $(user_info).attr('data-type', 'POST');
+  });
+
   // 「コメントする」ボタン押下
-  $("#comment_btn > button").on('click', function(e) {
-    var target = $(this).parents("#comment_btn");
-    hidden(target);
-    shown($(target).siblings(".comment-action"));
+  $(".comment_btn").on('click', "button", function(e) {
+    var comment_btn = $(this).parents(".comment_btn");
+    hidden(comment_btn);
+    shown($(comment_btn).siblings(".comment-action"));
   });
 
   // 「コメントを編集する」ボタン押下
-  $(".form-inline > button").on('click', function(e) {
-    var target = $(this).parents("#comment_edit");
-    hidden(target);
-    shown($(target).siblings(".comment-action"));
+  $(".comment_edit").on('click', "button", function(e) {
+    var comment_edit = $(this).parents(".comment_edit");
+    hidden(comment_edit);
+    shown($(comment_edit).siblings(".comment-action"));
   });
 
-  // 「×」ボタン押下
-  $("button.close").on('click', function(e) {
-    var target = $(this).parents(".comment-action");
-    hidden(target);
-    var comment = $(target).siblings(".user_comment").data('comment');
-    if (comment != null) {
-      shown($(target).siblings("#comment_edit"));
+  // フォームの「×」ボタン押下
+  $(".comment-action").on('click', ".close", function(e) {
+    var comment_action = $(this).parents(".comment-action");
+    hidden(comment_action);
+    hidden($(comment_action).siblings(".alert-danger"))
+    var comment = $(comment_action).siblings(".user_info").attr('data-comment');
+    if (comment == null || comment == "") {
+      shown($(comment_action).siblings(".comment_btn"));
     } else {
-      shown($(target).siblings("#comment_btn"));
+      shown($(comment_action).siblings(".comment_edit"));
     }
   });
 
   // 「送信」ボタン押下
   $(".input-group").on('submit', function(e) {
     e.preventDefault();
-    var target = $(this).parents(".comment-action");
-    var url = $(target).siblings(".user_comment").data('url');
-    var comment = $(target).siblings(".user_comment").data('comment');
-    if (comment != null) {
-      var type = "PATCH";
-    } else {
-      var type = "POST";
-    }
+    var comment_action = $(this).parents(".comment-action");
+    var user_info = $(comment_action).siblings(".user_info");
+    var url = $(user_info).attr('data-url');
+    var boke_id = $(user_info).attr('data-boke_id');
+    var type = $(user_info).attr('data-type');
     var formData = new FormData(this);
 
     $.ajax({
@@ -67,16 +94,20 @@ $(function() {
       contentType: false
     })
     .done(function(data) {
-      hidden(target);
-      $($(target).find(".btn")).prop('disabled', false);
-      var comment_edit = $(target).siblings("#comment_edit");
-      shown(comment_edit);
+      $($(comment_action).find(".btn")).prop('disabled', false);
+      $(user_info).attr('data-type', 'PATCH');
+      hidden(comment_action);
+      hidden($(comment_action).siblings(".alert-danger"));
+
+      var comment_edit = $(comment_action).siblings(".comment_edit");
       $($(comment_edit).find("b")).html(`${data.text}`);
-      hidden($(target).siblings(".alert.alert-danger"));
+      shown(comment_edit);
+      $(user_info).attr('data-comment', `${data.text}`);
+      $(user_info).attr('data-url', `/bokes/${boke_id}/comments/${data.id}`);
     })
     .fail(function(){
-      $($(target).find(".btn")).prop('disabled', false);
-      $(target).siblings(".alert.alert-danger").removeAttr("aria-hidden style");
+      $($(comment_action).find(".btn")).prop('disabled', false);
+      $(comment_action).siblings(".alert-danger").removeAttr("aria-hidden style");
     })
   });
 });

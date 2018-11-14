@@ -13,6 +13,10 @@ class StarsController < ApplicationController
   def destroy
     @star = current_user.stars.find_by(boke_id: params[:boke_id],status:params[:status])
     @star.destroy
+    @comment = Comment.where(boke_id: params[:boke_id]).find_by(user_id: current_user.id)
+    if @comment
+      @comment.destroy
+    end
     respond_to do |format|
       format.html
       format.json

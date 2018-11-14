@@ -37,11 +37,8 @@
                       =link_to "" do
                         %i.far.fa-image
                         = @boke.odai.user.name
-                      - if current_user
-                        - if current_user.id == @boke.user_id
-                          = link_to "  編集",edit_boke_path,method: :get
 
-              = link_to @boke.text,"",class: "boke-text"
+            = link_to @boke.text,"",class: "boke-text"
 
 
             .boke-meta
@@ -53,17 +50,22 @@
                     4772
                 .boke-information-label
                   = link_to @boke.created_at.to_s(:date)
+
+                -if user_signed_in? && current_user.id == @boke.user_id
+                  %span.boke-share-social#delete
+                    = link_to boke_path, method: :delete, data: { confirm: '本当に削除しますか？' } do
+                      %i.fas.fa-trash-alt
                 %span.boke-share-social
                   = link_to "" do
                     %i.fab.fa-facebook-f
                 %span.boke-share-social
                   = link_to "" do
                     %i.fab.fa-twitter
-                -# 削除ボタン
-                -if user_signed_in? && current_user.id == @boke.user_id
-                  %span.boke-share-social#delete
-                    = link_to boke_path, method: :delete, data: { confirm: '本当に削除しますか？' } do
-                      %i.fas.fa-trash-alt
+                - if current_user
+                  - if current_user.id == @boke.user_id
+                    %span.boke-share-social
+                      = link_to edit_boke_path,method: :get  do
+                        %i.far.fa-edit
             .boke-information-row.ng-scope
               .boke-rate
                 = link_to "" do

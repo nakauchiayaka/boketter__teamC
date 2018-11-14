@@ -114,30 +114,40 @@
                   面白いーー
       -if user_signed_in?
         .comment-action-parts
-          %p
+          %p{"aria-hidden" => "true", :style => "display: none;"}
             %img.user-icon{:src => "//d3pb2x7032n52.cloudfront.net/static/images/user_icon.gif"}
             = link_to user_path(id:boke.user.id) do
               %b.ng-binding.sample_user
                 = boke.user.name
             さんのボケです
 
+          - if @star = Star.where(boke_id:boke.id).find_by(user_id:current_user.id)
+            - @status = @star.status
+          - else
+            - @status = ""
           - if @user_comment = Comment.where(boke_id: boke.id).find_by(user_id: current_user.id)
             - @comment = @user_comment
-            - @url = "/bokes/#{@comment.boke_id}/comments/#{@comment.id}"
+            - @url = "/bokes/#{boke.id}/comments/#{@comment.id}"
+            - @type = "PATCH"
           - else
             - @comment = Comment.new
-            - @url = "/bokes/#{boke.id}/comments"
-          %input.user_comment{:type => "hidden", "data-comment" => @comment.text, "data-url" => @url}
+            - @url = boke_comments_path(boke.id)
+            - @type = "POST"
+          %input.user_info{:type => "hidden", "data-comment" => @comment.text, "data-url" => @url, "data-status" => @status, "data-boke_id" => boke.id, "data-type" => @type}
 
           -# コメントボタン ----------
-          .comment-area.text-center#comment_btn{"aria-hidden" => "true", :style => "display: none;"}
+          .comment-area.text-center.comment_btn{"aria-hidden" => "true", :style => "display: none;"}
             %button.btn.btn-default コメントする
 
           -# コメント編集ボタン ----------
-          .comment-area.text-center.ng-hide#comment_edit{"aria-hidden" => "true", :style => "display: none;"}
+          .comment-area.text-center.ng-hide.comment_edit{"aria-hidden" => "true", :style => "display: none;"}
             .boke-comment-input
               .form-inline.ng-pristine.ng-valid
-                %img.user-icon{:src => current_user.image}
+                - if current_user.image.file.nil?
+                  - @user_img = "user_img.gif"
+                - else
+                  - @user_img = current_user.image
+                %img.user-icon{:src => @user_img}
                 %b.ng-binding
                   = @comment.text
                 &nbsp;
@@ -157,10 +167,11 @@
                   %button.close{:type => "button"}
                     %span ×
 
+          -# エラー
           .alert.alert-danger{"aria-hidden" => "true", :style => "display: none;"}
             %ul{:style => "list-style-type:none"}
               %li
                 %span.ng-binding.ng-scope
-                  エラーが発生しました
+                  コメントは1〜60文字で入力してください
 
     .boke
