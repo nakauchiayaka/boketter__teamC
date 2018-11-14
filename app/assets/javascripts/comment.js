@@ -33,16 +33,24 @@ $(function() {
       shown($(comment_action_parts).find("p"));
       shown($(comment_action_parts).find(".comment_btn"));
     }
+    status_class = $(this).attr('class');
+    if (status_class.match(/.star-3/)) {
+      $(comment_action_parts).find(".user_info").attr('data-status', "3");
+    } else if (status_class.match(/.star-2/)) {
+      $(comment_action_parts).find(".user_info").attr('data-status', "2");
+    } else if (status_class.match(/.star-1/)) {
+      $(comment_action_parts).find(".user_info").attr('data-status', "1");
+    }
   });
 
   // 星の「×」ボタン押下
   $(".boke-rate-times").on("click",function() {
     var comment_parent = $(this).parents(".boke-rate").siblings(".comment-action-parts");
     hidden($(comment_parent).find("p, .comment_btn, .comment_edit, .comment-action, .alert-danger"));
-    $(comment_parent).find(".user_info").attr('data-comment', "");
-    $(comment_parent).find(".user_info").attr('data-status', "");
     $(comment_parent).find("#comment_text").val("");
     var user_info = $(comment_parent).find(".user_info");
+    $(user_info).attr('data-comment', "");
+    $(user_info).attr('data-status', "");
     var boke_id = $(user_info).attr('data-boke_id');
     $(user_info).attr('data-url', `/bokes/${boke_id}/comments`);
     $(user_info).attr('data-type', 'POST');
