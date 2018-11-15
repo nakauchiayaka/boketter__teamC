@@ -13,9 +13,11 @@
           %li
             = link_to "お題", odai_user_path(id:@user.id)
           %li
-            = link_to "お気に入り職人", "/user/#{current_user.id}/favorites"
+            = link_to "お気に入り職人", favorites_user_path(id:@user.id)
           %li
-            = link_to "ボケコレ", ratings3_user_path(id:@user.id)
+            = link_to ratings3_user_path(id:@user.id) do
+              %i.fa.fa-star
+              &nbsp; 評価したボケ
 
       #content
         .other-title
@@ -30,7 +32,6 @@
         .pager
 
       .bcl
-        = render 'accounts/bcl'
 
     = render 'shared/right-container'
     .clearfix

@@ -11,6 +11,10 @@ class UsersController < ApplicationController
     @odais = Odai.where(user_id:current_user.id).order("created_at DESC")
   end
 
+  def favorites
+    @user = User.find(params[:id])
+  end
+
   def ratings1
     @user = User.find(params[:id])
     @bokes= []

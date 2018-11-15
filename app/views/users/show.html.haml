@@ -13,15 +13,17 @@
           %li
             = link_to "お題", odai_user_path(id:@user.id)
           %li
-            = link_to "お気に入り職人", "/user/#{@user.id}/favorites"
+            = link_to "お気に入り職人", favorites_user_path(id:@user.id)
           %li
-            = link_to "ボケコレ", ratings3_user_path(id:@user.id)
+            = link_to ratings3_user_path(id:@user.id) do
+              %i.fa.fa-star
+              &nbsp; 評価したボケ
 
       #content.content-boke.content-top-left-radius-none
         .user-info
           .user-info-photo
             - if @user.image.file.nil?
-              = image_tag "user_img.gif"
+              = image_tag "//d3pb2x7032n52.cloudfront.net/static/images/user_icon.gif"
             - else
               = image_tag @user.image
           .user-info-profile
@@ -60,11 +62,8 @@
             = @user.name
             さんの最近投稿したボケ
           .user-index-widget-content
-            -# 以下サンプル ---------------------------------------
-            = render 'accounts/sample_boke-horizon'
-            / = render 'accounts/sample_boke-horizon'
-            / = render 'accounts/sample_boke-horizon'
-            -# --------------------------------------------------
+            = render 'users/boke-horizon'
+
             .clear
 
           .text-right
@@ -79,7 +78,6 @@
       = link_to ""
 
       .bcl
-        = render 'accounts/bcl'
 
     = render 'shared/right-container'
     .clearfix
