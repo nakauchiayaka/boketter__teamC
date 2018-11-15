@@ -119,3 +119,38 @@ padding-left:16px;
   font-size: 18px;
   border-radius:6px;
 }
+
+
+
+//user_rankingページ
+.user_ranking_title.user_ranking_top3{
+  border:1px solid #ccc;
+  border-radius:4px;
+  padding:1em;
+  margin-bottom:1em;
+}
+.userranking_list-top3{
+    margin-left:20px;
+    display: inline;
+    font-size: 16px;
+    p{
+      img{
+        float: left;
+      }
+      a{
+        float: left;
+      }
+    }
+  }
+ul.inline-list{
+  margin:0;
+  padding: 0;
+  list-style: none;
+  overflow: hidden;
+  li{
+    padding: 0;
+    margin:0 0.8em 0 0;
+    display: block;
+    float: left;
+  }
+}
