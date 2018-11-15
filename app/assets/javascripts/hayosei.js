@@ -1,5 +1,7 @@
 $(function(){
-    var menu =`
+    var url = location.href;
+    if (url.match(/\/odais\/\d+\/bokes\/new/)){
+    var html =`
               <div id="hayo">
                 <div class="icon">
                   <div class="baloon">
@@ -8,65 +10,62 @@ $(function(){
                 </div>
               </div>
               `
-    var hayo = $('#content').append(menu);
+    var hayo = $('#content').append(html);
     $("#hayo").hide()
-    var url = location.href;
-    if (url.match(/\/odais\/\d+\/bokes\/new/)){
 
-      setTimeout(function(){
-        $("#hayo").fadeIn()
-      },10000);
-      setTimeout(function(){
-        $("#hayo").fadeOut()
-      },15000);
+
+      // setTimeout(function(){
+      //   $("#hayo").fadeIn()
+      // },5000);
+      // setTimeout(function(){
+      //   $("#hayo").fadeOut()
+      // },7000);
 
       setTimeout(function(){
         document.getElementById('hayosei').innerHTML = 'ボケったー楽しんでる？';
         $("#hayo").fadeIn()
-      },20000);
+      },5000);
       setTimeout(function(){
         $("#hayo").fadeOut()
-      },25000);
+      },7000);
 
-      setTimeout(function(){
-        document.getElementById('hayosei').innerHTML = 'ねぇ、30秒たったよ';
-        $("#hayo").fadeIn()
-      },30000);
-      setTimeout(function(){
-        $("#hayo").fadeOut()
-      },35000);
+      // setTimeout(function(){
+      //   document.getElementById('hayosei').innerHTML = 'ねぇ、30秒たったよ（倍速）';
+      //   $("#hayo").fadeIn()
+      // },15000);
+      // setTimeout(function(){
+      //   $("#hayo").fadeOut()
+      // },17000);
 
           setTimeout(function(){
         document.getElementById('hayosei').innerHTML = 'まだー？';
         $("#hayo").fadeIn()
-      },40000);
+      },10000);
       setTimeout(function(){
         $("#hayo").fadeOut()
-      },45000);
+      },12000);
 
-      setTimeout(function(){
-        document.getElementById('hayosei').innerHTML = '・・・';
-        $("#hayo").fadeIn()
-      },50000);
-      setTimeout(function(){
-        $("#hayo").fadeOut()
-      },55000);
+      // setTimeout(function(){
+      //   document.getElementById('hayosei').innerHTML = '・・・';
+      //   $("#hayo").fadeIn()
+      // },25000);
+      // setTimeout(function(){
+      //   $("#hayo").fadeOut()
+      // },27000);
 
       setTimeout(function(){
         document.getElementById('hayosei').innerHTML = '<span id="oko">はよせい！！</span>';
         $("#hayo").fadeIn()
 
         if ($("#oko").length !==0){
-          console.log('あるよ')
             $(document).on('click', '#boke_text', function(){
               document.getElementById('hayosei').innerHTML = '<span id="ok">がんばー</span>';
               $("#hayo").fadeOut(3000)
             });
         }
-      },60000);
+      },15000);
 
       $('#boke_text').blur(function(){
-          console.log('いるよ')
             $(document).on('click', '#boke_text', function(){
               document.getElementById('hayosei').innerHTML = '<span id="ok">はやくしてよぉ〜</span>';
               $("#hayo").fadeOut(3000)
@@ -74,15 +73,15 @@ $(function(){
             setTimeout(function(){
               document.getElementById('hayosei').innerHTML = 'どう〜？';
               $("#hayo").fadeIn()
-            },20000);
+            },5000);
             setTimeout(function(){
               document.getElementById('hayosei').innerHTML = '傑作できちゃった？';
               $("#hayo").fadeIn()
-            },40000);
+            },10000);
             setTimeout(function(){
               document.getElementById('hayosei').innerHTML = '<span id="oko">はよせい！！</span>';
               $("#hayo").fadeIn()
-            },60000);
+            },15000);
       });
     }
 });
