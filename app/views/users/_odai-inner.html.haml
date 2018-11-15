@@ -1,0 +1,22 @@
+- odais.each do |odai|
+  .odai
+    .odai-inner
+      %h3
+        %b
+          = link_to odai_path(odai.id) do
+            = Boke.where(odai: odai.id).count
+            個のボケ &nbsp;
+      .odai-photo-warapper
+        .odai-photo{:style => "background-image: url(#{odai.image});"}
+      .odai-meta
+        .clearfix
+          .pull-left
+            = link_to user_path(id:odai.user.id) do
+              %i.fas.fa-camera
+              = odai.user.name
+            &nbsp;
+            = link_to user_path(id:odai.user.id) do
+              %i.far.fa-image
+              = odai.user.name
+        .mt10
+          = link_to "このお題でボケる",new_odai_boke_path(odai),class: "btn btn-default btn-sm btn-block"

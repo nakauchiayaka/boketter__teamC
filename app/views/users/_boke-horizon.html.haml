@@ -1,4 +1,4 @@
-- @bokes_recent.each do |boke,odai|
+- bokes.each do |boke,odai|
   .boke-horizon
     = link_to new_odai_boke_path(boke.odai),class: "photo" do
       = image_tag(boke.odai.image)
@@ -11,9 +11,9 @@
         %i.far.fa-image
         = boke.odai.user.name
     .text
-      = link_to boke.text,""
+      = boke.text
     .rating
-      = link_to "#" do
+      = link_to boke_path(boke.id) do
         %i.fa.fa-star.fa-lg
         &nbsp;
         %b

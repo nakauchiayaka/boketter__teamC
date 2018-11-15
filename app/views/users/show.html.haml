@@ -57,25 +57,43 @@
                   %td
                     = @odais.count
 
-        .user-index-widget
-          .other-title
-            = @user.name
-            さんの最近投稿したボケ
-          .user-index-widget-content
-            = render 'users/boke-horizon'
-
-            .clear
-
-          .text-right
-            = link_to "" do
+        - if @bokes_recent.present?
+          .user-index-widget
+            .other-title
               = @user.name
-              さんの評価したボケをもっとみる
+              さんの最近投稿したボケ
+            .user-index-widget-content
+              = render 'users/boke-horizon', bokes: @bokes_recent
+            %div{:style => "clear:both;"}
+            .text-right
+              = link_to boke_user_path(@user.id) do
+                = @user.name
+                さんの投稿したボケをもっとみる
 
-          = link_to ""
+        - if @odais_recent.present?
+          .user-index-widget
+            .other-title
+              = @user.name
+              さんの最近投稿したお題
+            = render 'users/odai-inner', odais: @odais_recent
+          %div{:style => "clear:both;"}
+          .text-right
+            = link_to odai_user_path(@user.id) do
+              = @user.name
+              さんの投稿したお題をもっとみる
 
-        = link_to ""
-
-      = link_to ""
+        - if @stars_recent.present?
+          .user-index-widget
+            .other-title
+              = @user.name
+              さんの最近評価したボケ
+            .user-index-widget-content
+              = render 'users/boke-horizon', bokes: @stars_recent
+            %div{:style => "clear:both;"}
+            .text-right
+              = link_to ratings3_user_path(@user.id) do
+                = @user.name
+                さんの評価したボケをもっとみる
 
       .bcl
 
