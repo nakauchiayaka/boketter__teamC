@@ -8,8 +8,11 @@
           %li
             %dl
               %dt
-                = link_to user_path(id:comment.user.id) do
-                  = image_tag comment.user.image ,class: "user-icon"
+
+                - if comment.user.image.file.nil?
+                  = image_tag "user_img.gif", class: "user-icon-top-bar"
+                - else
+                  = image_tag comment.user.image, class: "user-icon-top-bar"
               %dd
                 = link_to comment.text,""
   .side-widget
@@ -21,8 +24,10 @@
           %li
             %dl
               %dt
-                = link_to user_path(id:user.id) do
-                  = image_tag user.image ,class: "user-icon"
+                - if user.image.file.nil?
+                  = image_tag "user_img.gif", class: "user-icon-top-bar"
+                - else
+                  = image_tag user.image, class: "user-icon-top-bar"
               %dd
                 = link_to user.name,user_path(id:user.id)
   .side-app
