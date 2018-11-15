@@ -23,7 +23,7 @@
         .user-info
           .user-info-photo
             - if @user.image.file.nil?
-              = image_tag "user_img.gif"
+              = image_tag "//d3pb2x7032n52.cloudfront.net/static/images/user_icon.gif"
             - else
               = image_tag @user.image
           .user-info-profile
@@ -78,7 +78,6 @@
       = link_to ""
 
       .bcl
-        = render 'accounts/bcl'
 
     = render 'shared/right-container'
     .clearfix

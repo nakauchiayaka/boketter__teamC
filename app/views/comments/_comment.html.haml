@@ -16,7 +16,7 @@
         %i.far.fa-star.fa-lg
     .comment-picture
       - if comment.user.image.file.nil?
-        = image_tag("user_img.gif", :class => "user-icon")
+        = image_tag("//d3pb2x7032n52.cloudfront.net/static/images/user_icon.gif", :class => "user-icon")
       - else
         = image_tag(comment.user.image, :class => "user-icon")
     = link_to comment.user.name, user_path(comment.user.id)
