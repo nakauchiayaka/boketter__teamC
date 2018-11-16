@@ -208,5 +208,6 @@ ja:
 # pagenate gem kaminari
   views:
     pagination:
-      previous: ＜
-      next: ＞
+      previous: "<"
+      next: ">"
+      truncate: "..."
