@@ -47,7 +47,7 @@
                   合計
                   = @user_1_sum
                   個
-          = render :partial => "bokes/boke-horizon", :locals => { bokes: @bokes_user_1 }
+          = render partial: "bokes/boke-horizon", locals: { bokes: @bokes_user_1 }
           .user_ranking_title.user_ranking_top3
             %ul.inline-list
               %li
@@ -67,7 +67,7 @@
                   合計
                   = @user_2_sum
                   個
-          = render :partial => "bokes/boke-horizon", :locals => { bokes: @bokes_user_2 }
+          = render partial: "bokes/boke-horizon", locals: { bokes: @bokes_user_2 }
           .user_ranking_title.user_ranking_top3
             %ul.inline-list
               %li
@@ -87,7 +87,7 @@
                   合計
                   = @user_3_sum
                   個
-          = render :partial => "bokes/boke-horizon", :locals => { bokes: @bokes_user_3 }
+          = render partial: "bokes/boke-horizon", locals: { bokes: @bokes_user_3 }
 
       = render 'shared/right-container'
   = render 'shared/footer'
