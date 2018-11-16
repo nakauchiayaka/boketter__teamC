@@ -78,12 +78,15 @@ class BokesController < ApplicationController
       if @sum == sum_array[0]
         @user_1 = user
         @user_1_sum = @sum
+        @bokes_user_1 = Boke.where(user_id:@user_1.id).limit(3).order("created_at DESC")
       elsif @sum ==sum_array[1]
         @user_2 = user
         @user_2_sum = @sum
+        @bokes_user_2 = Boke.where(user_id:@user_2.id).limit(3).order("created_at DESC")
       elsif @sum ==sum_array[2]
         @user_3 = user
         @user_3_sum = @sum
+        @bokes_user_3 = Boke.where(user_id:@user_3.id).limit(3).order("created_at DESC")
       end
     end
 
