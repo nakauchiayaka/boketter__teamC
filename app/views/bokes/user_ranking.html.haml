@@ -1,0 +1,93 @@
+.main
+  = render 'shared/header'
+  #wrapper
+    #container
+      = render 'shared/header-news'
+
+      #main-container
+        .content-menu
+          %ul.content-menu-list.inline-list
+            %li.content-menu-list-active
+              = link_to "星の合計",""
+            %li
+              = link_to "アベレージ",""
+            %li
+              = link_to "お題職人",""
+
+        #content
+          .index-title
+            週間職人ランキング（星の合計）
+
+          .text-center
+            .btn-group.category-tab-menu
+              %label.category-element.active-category
+                = link_to "週間",""
+              %label.category-element
+                = link_to "月間",""
+              %label.category-element
+                = link_to "トータル",""
+              %label.category-element
+                = link_to "ルーキー",""
+          .user_ranking_title.user_ranking_top3
+            %ul.inline-list
+              %li
+                = image_tag "week_1.png",style:"width:96px; height:96px;"
+              %li.userranking_list-top3
+                %p
+                  %b
+                    1位
+                %p
+                  - if @user_1.image.file.nil?
+                    = image_tag "//d3pb2x7032n52.cloudfront.net/static/images/user_icon.gif", class: "user-icon-top-bar"
+                  - else
+                    = image_tag @user_1.image, class: "user-icon-top-bar"
+                  = link_to @user_1.name,""
+                %p
+                  %i.fa.fa-star
+                  合計
+                  = @user_1_sum
+                  個
+          = render :partial => "bokes/boke-horizon", :locals => { bokes: @bokes_user_1 }
+          .user_ranking_title.user_ranking_top3
+            %ul.inline-list
+              %li
+                = image_tag "week_2.png",style:"width:96px; height:96px;"
+              %li.userranking_list-top3
+                %p
+                  %b
+                    2位
+                %p
+                  - if @user_2.image.file.nil?
+                    = image_tag "//d3pb2x7032n52.cloudfront.net/static/images/user_icon.gif", class: "user-icon-top-bar"
+                  - else
+                    = image_tag @user_2.image, class: "user-icon-top-bar"
+                  = link_to @user_2.name,""
+                %p
+                  %i.fa.fa-star
+                  合計
+                  = @user_2_sum
+                  個
+          = render :partial => "bokes/boke-horizon", :locals => { bokes: @bokes_user_2 }
+          .user_ranking_title.user_ranking_top3
+            %ul.inline-list
+              %li
+                = image_tag "week_3.png",style:"width:96px; height:96px;"
+              %li.userranking_list-top3
+                %p
+                  %b
+                    3位
+                %p
+                  - if @user_3.image.file.nil?
+                    = image_tag "//d3pb2x7032n52.cloudfront.net/static/images/user_icon.gif", class: "user-icon-top-bar"
+                  - else
+                    = image_tag @user_3.image, class: "user-icon-top-bar"
+                  = link_to @user_3.name,""
+                %p
+                  %i.fa.fa-star
+                  合計
+                  = @user_3_sum
+                  個
+          = render :partial => "bokes/boke-horizon", :locals => { bokes: @bokes_user_3 }
+
+      = render 'shared/right-container'
+  = render 'shared/footer'

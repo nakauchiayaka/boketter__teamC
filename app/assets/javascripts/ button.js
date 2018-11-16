@@ -37,3 +37,12 @@ $(function () {
         $(this).css('color', '');
     });
 });
+
+//バツマークを黒に変更
+$(function () {
+    $('.boke-rate-times').hover(function () {
+        $(this).css('color', 'black');
+    }, function () {
+        $(this).css('color', '');
+    });
+});

@@ -41,6 +41,8 @@ Rails.application.routes.draw do
       get 'relative'
       get 'example'
       get 'other'
+
+      get 'user_ranking'
       end
   end
 
